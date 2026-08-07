@@ -5,7 +5,7 @@ print("엄마와 함께 한 걸음 나아가 볼까요?")
 mood = input("오늘 기분은 어떠신가요?")
 if "좋아" in mood:
     print("기분이 좋으시다니 저도 좋아요!")
-elif "힘듬" in mood:
+elif "힘들" in mood:
     print("힘드시군요. 잠시 쉬어가도 괜찮아요.")
 else:
     print("그렇군요. 오늘 기분을 조금 더 이야기해 주세요.")
