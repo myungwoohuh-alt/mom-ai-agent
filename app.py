@@ -13,6 +13,8 @@ print("말해 주셔서 감사합니다.")
 print("자, 오늘도 함께 한 걸음 또 나아가 볼까요?")
 while True:
     print("다시 질문합니다.")
+    question = input("무엇을 이야기하고 싶으세요?")
+    print("말씀하신 내용:", question)
     answer = input("계속 할까요? (종료하려면 '종료' 입력):")
     if answer == "종료":
         break
