@@ -1,3 +1,13 @@
+from openai import OpenAI
+from dotenv import load_dotenv
+load_dotenv()
+
+client = OpenAI()
+response = client.responses.create(
+model="gpt-5-mini",
+input="안녕하세요. 한 문장으로 인사해 주세요."
+)
+print(response.output_text)
 name=input("이름을 입력하세요:")
 print("안녕하세요.",name + "님!")
 print("엄마와 함께 AI 에이전트입니다.")
