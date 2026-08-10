@@ -18,7 +18,11 @@ if "좋아" in mood:
 elif "힘들" in mood:
     print("힘드시군요. 잠시 쉬어가도 괜찮아요.")
 else:
-    print("그렇군요. 오늘 기분을 조금 더 이야기해 주세요.")
+    response = client.responses.create(
+        model="gpt-5-mini",
+        input=mood
+)
+    print(response.output_text)
 print("말해 주셔서 감사합니다.")
 print("자, 오늘도 함께 한 걸음 또 나아가 볼까요?")
 while True:
