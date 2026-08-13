@@ -34,7 +34,11 @@ while True:
     elif "힘들" in question:
         print("힘드셨군요. 잠시쉬어가도 괜찮아요.")
     else:
-        print('그렇군요. 계속 이야기해 주세요.')
+        response = client.responses.create (
+            model="gpt-5-mini",
+                input="2-3문장으로 짧게 요약 친근하게 답해주세요.\n질문:" + question
+                ) 
+        print(response.output_text)       
     answer = input("계속 할까요? (종료하려면 '종료' 입력):")
     if answer == "종료":
         break
