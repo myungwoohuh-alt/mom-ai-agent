@@ -23,20 +23,15 @@ else:
         input=mood
 )
     print(response.output_text)
-print("말해 주셔서 감사합니다.")
-print("자, 오늘도 함께 한 걸음 또 나아가 볼까요?")
 while True:
-    print("다시 질문합니다.")
     question = input("무엇을 이야기하고 싶으세요?")
     print("말씀하신 내용:", question)
     if "재미" in question:
         print("재미를 느끼셨군요!")
-    elif "힘들" in question:
-        print("힘드셨군요. 잠시쉬어가도 괜찮아요.")
     else:
         response = client.responses.create (
             model="gpt-5-mini",
-                input="2-3문장으로 짧게 요약 친근하게 답해주세요.\n이름:" + name + "\n질문:" + question
+                input="2-3문장으로 짧게 요약 친근하게 답해주세요.\n이름:" + name + "\n기분:" + mood + "\n질문:" + question
                 ) 
         print(response.output_text)       
     answer = input("계속 할까요? (종료하려면 '종료' 입력):")
