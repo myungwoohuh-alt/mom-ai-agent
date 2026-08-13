@@ -20,7 +20,6 @@ response = client.responses.create(
 print(response.output_text)
 while True:
     question = input("무엇을 이야기하고 싶으세요?")
-    print("말씀하신 내용:", question)
     if "재미" in question:
         print("재미를 느끼셨군요!")
     else:
