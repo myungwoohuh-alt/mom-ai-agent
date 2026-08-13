@@ -31,7 +31,7 @@ while True:
     else:
         response = client.responses.create (
             model="gpt-5-mini",
-                input="2-3문장으로 짧게 요약 친근하게 답해주세요.\n이름:" + name + "\n기분:" + mood + "\n질문:" + question
+                input="2-3문장으로 짧고 친근하게 답하되 이름은 항상 존칭 쓰세요.\n이름:" + name + "\n기분:" + mood + "\n질문:" + question
                 ) 
         print(response.output_text)       
     answer = input("계속 할까요? (종료하려면 '종료' 입력):")
