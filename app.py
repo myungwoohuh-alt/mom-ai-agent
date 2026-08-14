@@ -18,16 +18,19 @@ response = client.responses.create(
     input="2-3문장으로 짧고 친근하게 답해주세요.\n기분:" + mood
 )
 print(response.output_text)
+history = ""
 while True:
     question = input("무엇을 이야기하고 싶으세요?")
+    history = history + "\n사용자:" + question
     if "재미" in question:
         print("재미를 느끼셨군요!")
     else:
         response = client.responses.create (
             model="gpt-5-mini",
-                input="2-3문장으로 짧고 친근하게 답하되 이름은 항상 존칭 쓰세요.\n이름:" + name + "\n기분:" + mood + "\n질문:" + question
+                input="2-3문장으로 짧고 친근하게 답하되 이름은 항상 존칭 쓰세요.필요할 때만 자연스럽게 공감하고, 같은 공감 표현을 반복하지 말고 질문울 하나 해주세요. \n이름:" + name + "\n기분:" + mood + "\n질문:" + question + "\n대화기록:" + history
                 ) 
-        print(response.output_text)       
+        print(response.output_text)
+        history = history + "\nAI:" + response.output_text       
     answer = input("계속 할까요? (종료하려면 '종료' 입력):")
     if answer == "종료":
         break
