@@ -1,7 +1,6 @@
 from openai import OpenAI
 from dotenv import load_dotenv
 load_dotenv()
-
 client = OpenAI()
 response = client.responses.create(
 model="gpt-5-mini",
@@ -15,18 +14,18 @@ print("엄마와 함께 한 걸음 나아가 볼까요?")
 mood = input("오늘 기분은 어떠신가요?")
 response = client.responses.create(
     model="gpt-5-mini",
-    input="2-3문장으로 짧고 친근하게 답해주세요.\n기분:" + mood
+    input="편안하고 자연스럽게 존댓말로 짧게 답해주세요.조언이나 제안, 질문으로 대화를 이어가려 하지 마세요.\n기분:" + mood
 )
 print(response.output_text)
 history = ""
 while True:
     question = input("무엇을 이야기하고 싶으세요?")
+    if question == "종료": 
+        break
     response = client.responses.create (
             model="gpt-5-mini",
                 input="편안하고 자연스럽게 대화하되 항상 존댓말을 사용하세요.사용자의 말을 성급히 해석하거나 설명하려 하지 마세요.덧붙이는 조언.제안.질문 없이 필요한 말만 짧게 답하세요. \n이름:" + name + "\n기분:" + mood + "\n질문:" + question + "\n대화기록:" + history
                 ) 
     print(response.output_text)
     history = history + "\n사용자:" + question + "\nAI:" + response.output_text       
-    answer = input("계속 할까요? (종료하려면 '종료' 입력):")
-    if answer == "종료":
-        break
+    
