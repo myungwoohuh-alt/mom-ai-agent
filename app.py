@@ -22,6 +22,9 @@ while True:
     question = input("무엇을 이야기하고 싶으세요?")
     if question == "종료": 
         break
+    elif question == "도움":
+        print("어떤 도움이 필요한지 말씀해 주세요.")
+        continue
     response = client.responses.create (
             model="gpt-5-mini",
                 input="편안하고 자연스럽게 대화하되 항상 존댓말을 사용하세요.사용자의 말을 성급히 해석하거나 설명하려 하지 마세요.덧붙이는 조언.제안.질문 없이 필요한 말만 짧게 답하세요. \n이름:" + name + "\n기분:" + mood + "\n질문:" + "\n대화기록:" + "\n이전 대화:" + history + "\n사용자:" + question 
