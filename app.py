@@ -22,12 +22,18 @@ while True:
     question = input("무엇을 이야기하고 싶으세요?")
     if question == "종료": 
         break
-    elif question == "도움":
+    elif question in  ["도움", "도와줘", "도와주세요."]:
         print("어떤 도움이 필요한지 말씀해 주세요.")
+        continue
+    elif question == "안내":
+        print("종료, 도움 또는 자유롭게 이야기할 수 있어요.")
+        continue
+    elif question == "👍":
+        print("새로운 아이디어가 떠올랐군요.")
         continue
     response = client.responses.create (
             model="gpt-5-mini",
-                input="편안하고 자연스럽게 대화하되 항상 존댓말을 사용하세요.사용자의 말을 성급히 해석하거나 설명하려 하지 마세요.덧붙이는 조언.제안.질문 없이 필요한 말만 짧게 답하세요. \n이름:" + name + "\n기분:" + mood + "\n질문:" + "\n대화기록:" + "\n이전 대화:" + history + "\n사용자:" + question 
+                input="사용자의 말에서 분위기를 파악하되 평가하거나 설명하지 말고 답변에 자연스럽게 반영하세요. 편안하고 자연스럽게 대화하되 항상 존댓말을 사용하세요.사용자의 말을 성급히 해석하거나 설명하려 하지 마세요.덧붙이는 조언.제안.질문 없이 필요한 말만 짧게 답하세요."+"\n이전대화:"+ history + "\n사용자:" + question 
                 ) 
     print(response.output_text)
     history = history + "\n사용자:" + question + "\nAI:" + response.output_text       
