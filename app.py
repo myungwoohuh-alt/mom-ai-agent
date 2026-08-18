@@ -1,5 +1,6 @@
 from openai import OpenAI
 from dotenv import load_dotenv
+import os
 load_dotenv()
 client = OpenAI()
 response = client.responses.create(
@@ -17,7 +18,12 @@ response = client.responses.create(
     input="편안하고 자연스럽게 존댓말로 짧게 답해주세요.조언이나 제안, 질문으로 대화를 이어가려 하지 마세요.\n기분:" + mood
 )
 print(response.output_text)
-history = ""
+MAX_HISTORY = 1000
+HISTORY_FILE = "history.txt"
+history=""
+if os.path.exists(HISTORY_FILE):
+    with open(HISTORY_FILE,"r", encoding="utf-8") as file:
+        history=file.read()
 while True:
     question = input("무엇을 이야기하고 싶으세요?")
     if question == "종료": 
@@ -37,4 +43,6 @@ while True:
                 ) 
     print(response.output_text)
     history = history + "\n사용자:" + question + "\nAI:" + response.output_text       
-    
+    history = history[-MAX_HISTORY:]
+    with open(HISTORY_FILE,"w", encoding="utf-8")as file:
+        file.write(history)
