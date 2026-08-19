@@ -28,6 +28,12 @@ while True:
     question = input("무엇을 이야기하고 싶으세요?")
     if question == "종료": 
         break
+    elif question == "기억삭제":
+        history=""
+        with open(HISTORY_FILE,"w", encoding="utf-8") as file:
+            file.write("")
+        print("기억을 삭제했어요.")
+        continue
     elif question in  ["도움", "도와줘", "도와주세요."]:
         print("어떤 도움이 필요한지 말씀해 주세요.")
         continue
