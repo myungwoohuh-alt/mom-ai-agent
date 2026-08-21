@@ -51,6 +51,20 @@ while True:
             file.write("")
         print("중요한 기억을 삭제했어요.")
         continue
+    elif question == "중요기억보기":
+        with open(MEMORY_FILE,"r",encoding = "utf-8") as file:
+            memory = file.read()
+        print("중요기억:",memory)  
+        continue
+    elif question.startswith("중요기억선택삭제:"):
+        target = question.replace("중요기억선택삭제:", "").strip()
+        with open(MEMORY_FILE,"r", encoding = "utf-8") as file:
+            lines = file.readlines()
+        lines = [line for line in lines if line.strip() !=target]
+        with open(MEMORY_FILE,"w", encoding = "utf-8") as file:
+            file.writelines(lines)
+        print("선택한 중요기억을 삭제했어요.")
+        continue
     elif question in  ["도움", "도와줘", "도와주세요."]:
         print("어떤 도움이 필요한지 말씀해 주세요.")
         continue
