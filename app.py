@@ -40,9 +40,10 @@ while True:
         print("기억을 삭제했어요.")
         continue
     elif question.startswith("기억해:"):
-        memory = question.replace("기억해:", "").strip()
+        new_memory = question.replace("기억해:", "").strip()
         with open(MEMORY_FILE,"a", encoding = "utf-8") as file:
-            file.write(memory + "\n")
+            file.write(new_memory + "\n")
+        memory = memory + new_memory + "\n"
         print("중요한 기억으로 저장했어요.")
         continue
     elif question == "중요기억삭제":
