@@ -57,6 +57,16 @@ while True:
             memory = file.read()
         print("중요기억:",memory)  
         continue
+    elif question.startswith("기억찾기"):
+        keyword = question.replace("기억찾기:", "").strip()
+        with open(MEMORY_FILE, "r", encoding="utf-8") as file:
+            lines = file.readlines()
+        matches = [line.strip() for line in lines if keyword in line]
+        if matches:
+            print("찾은 기억:", matches)
+        else:
+            print("찾은 기억이 없어요.")
+        continue
     elif question.startswith("중요기억선택삭제:"):
         target = question.replace("중요기억선택삭제:", "").strip()
         with open(MEMORY_FILE,"r", encoding = "utf-8") as file:
