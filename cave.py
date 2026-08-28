@@ -17,6 +17,10 @@ def add_next_button(text,command):
     button=tk.Button(root,text=text,
     font=("Arial",12), command=command)
     button.place(x=600,y=480)
+def add_previous_button(text,command,y=480):
+    button=tk.Button(root,text=text,
+    font=("Arial",12),command=command)
+    button.place(x=70,y=y)
 def add_message(text,x=70,y=100,size=16):
     message=tk.Label(root,text=text,
     font=("Arial",size),justify="left")
@@ -71,6 +75,7 @@ def show_tool_room():
     title.place(x=30,y=20)
     add_next_button("장착할 도구들을 찾아볼까요?",
     show_browser)
+    add_previous_button("이전",show_ready)
 #-------------------
 # 컷 4 : 인터넷 연결 확인
 #-------------------
@@ -88,6 +93,7 @@ def show_browser():
     message.place(x=70,y=100)
     add_next_button("엄마와 함께 실행 확인했어요.",
     show_ai)
+    add_previous_button("이전",show_tool_room)
 #--------------------
 # 컷 5 : AI와 이야기하기
 #--------------------
@@ -109,6 +115,7 @@ def show_ai():
     font=("Arial",12),
     command=show_two_tools)
     finish.place(x=620,y=530)
+    add_previous_button("이전",show_browser)
 #-------------------------
 # 컷 6 : 새로운 두가지 도구
 #-------------------------
@@ -124,6 +131,7 @@ def show_two_tools():
     add_message(text)
     add_next_button("먼저 Python부터 만나볼까요?",
     show_python_download)
+    add_previous_button("이전",show_ai)
 #----------------------------
 # 컷 7: Python 다운로드
 #----------------------------
@@ -142,6 +150,7 @@ def show_python_download():
     add_message(text)
     add_next_button("Python 설치 확인했어요.",
     show_vscode_download)
+    add_previous_button("이전",show_two_tools,y=530)
 #------------------------------
 # 컷 8: VS Code 다운로드
 #------------------------------
@@ -159,6 +168,7 @@ def show_vscode_download():
     add_message(text)
     add_next_button("VS Code도 준비됐어요.",
     show_workspace)
+    add_previous_button("이전",show_python_download)
 #-------------------------------
 # 컷 9: 우리의 작업실
 #-------------------------------
@@ -175,6 +185,7 @@ def show_workspace():
     add_message(text)
     add_next_button("작업실 구조를 확인했어요.",
     show_run_method)
+    add_previous_button("이전",show_vscode_download)  
 #--------------------------------
 # 컷 10: 저장하고 실행하기
 #--------------------------------
@@ -191,6 +202,7 @@ def show_run_method():
     add_message(text)
     add_next_button("이제 직접 해볼까요?",
     show_nickname)
+    add_previous_button("이전",show_workspace)
 #----------------------------------
 # 컷 11: 닉네임 만들기
 #----------------------------------
@@ -206,6 +218,7 @@ def show_nickname():
     add_message(text)
     add_next_button("우리 이름 정했어요.",
     show_first_code)
+    add_previous_button("이전",show_run_method)
 #------------------------------------
 # 컷 12: 첫 코드
 #------------------------------------
@@ -225,6 +238,7 @@ def show_first_code():
     add_message(text,y=80,size=15)
     add_next_button("코드 입력하고 저장했어요.",
     show_first_run)
+    add_previous_button("이전",show_nickname)
 #--------------------------------------
 # 컷 13: 첫 실행
 #--------------------------------------
@@ -243,6 +257,7 @@ def show_first_run():
     add_message(text)
     add_next_button("첫 소통 성공!",
     show_mom_code)
+    add_previous_button("이전",show_first_code,y=530)
 #----------------------------------------
 # 컷 14: 엄마도 함께
 #----------------------------------------
@@ -265,6 +280,7 @@ def show_mom_code():
     add_message(text,y=80,size=15)
     add_next_button("둘 다 소통됐어요!",
     show_finish_today)
+    add_previous_button("이전",show_first_run,y=530)
 #----------------------------------------
 # 컷 15: 오늘은 여기까지
 #----------------------------------------
@@ -281,6 +297,7 @@ def show_finish_today():
     add_message(text,y=80,size=15)
     add_next_button("탐사 첫 준비단계 일정 마쳤어요.",
     show_review)
+    add_previous_button("이전",show_mom_code)
 #------------------------------------------
 # 컷 16: 엄마와 함께 되돌아 보기
 #------------------------------------------
@@ -297,6 +314,7 @@ def show_review():
     add_message(text)
     add_next_button("많이 생각해 봤어요.",
     show_last)
+    add_previous_button("이전",show_finish_today)
 #---------------------------------------------
 # 컷 17: 진짜 탐사의 시작
 #---------------------------------------------
@@ -314,6 +332,7 @@ def show_last():
     "이제부터 왜 그런지 다른 방법도 있는지,\n"
     "직접 다음 단계의 진짜 탐사를 시작해 볼까요?")
     add_message(text)
+    add_previous_button("이전",show_review)
 
 show_entrance()
 root.mainloop()
