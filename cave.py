@@ -42,7 +42,7 @@ def show_entrance():
     go=tk.Button(root,text="Go!",
     font=("Arial",14,"bold"),
     command=show_ready)
-    go.place(x=260,y=20)
+    go.place(x=600,y=480)
 #-------------
 # 컷 2 : 사전 준비물 확인
 #-------------
@@ -58,7 +58,9 @@ def show_ready():
     chatgpt=tk.Checkbutton(root,text="휴대폰에서 ChatGpt 같은 AI와 직접 이야기할 준비 되어있나요?",
     font=("Arial", 16))
     chatgpt.place(x=70,y=280)
+    add_previous_button("이전",show_entrance)
     add_next_button("OK! 함께 들어갈까요?", show_tool_room)
+
 #----------------
 # 컷 3: 도구방
 #----------------
