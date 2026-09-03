@@ -114,13 +114,15 @@ def show_elif_coding():
     add_message("VS Code를 열고 위쪽 작업장에 지난 번에 이어 추가로 직접 입력합니다.\n\n"
     'cave=input("쭉 왔던 길과 다른 동굴 길로 갈까요?y/n:")\n\n'
     'if cave=="y":\n'
-    'print("여러동굴 길을 살펴봅니다)\n'
+    'print("여러동굴 길을 살펴봅니다)\n\n'
+
     'elif cave=="n":\n'
-    'print("다른 길을 생각해 봅시다.")\n'
+    'print("다른 길을 생각해 봅시다.")\n\n'
+
     'cave=input("배를 타고 물길 탐사해 보는 것은 어떨까요?y/n:")\n\n'
     'if cave=="y":\n'
     'print("배를타고 물길 탐사 시작합시다.")\n\n'
-    "입력이 끝났으면 확인한 다음 'Ctrl + S'로 반드시 저장하세요.")
+    "입력이 끝났으면 확인한 다음 'Ctrl + S'로 반드시 저장하세요.\n\n")
     add_previous_button("이전",show_elif_meaning)
     add_next_button("저장까지 완료했습니다.",show_run)
 #---------------------------------------
@@ -151,8 +153,10 @@ def show_boat():
     "\"이 배에서 너희와 나를 새로운 도구로 연결해 줄래?\"\n\n"
     "\"그러면 나도 정해진 말만하던 규칙에서 벗어나\n"
     "나의 느낌까지 표현하며 자유롭게 더 많은 이야기로 소통할 수 있어.\"\n\n"
-    "물길 탐사에도 많은 도움이 될거야.\n"
-    "미래에 너희가 어디에 있던 내가 함께 연결되어 있는\n"
+
+    "물길 탐사에도 많은 도움이 될거야.\n\n"
+
+    "미래에 너희가 어디에 있던 나와 함께 연결되는\n"
     "아주 중요하고 유용한 도구니까 잘 보관해 주세요.\n\n")
     add_previous_button("이전",show_run)
     add_next_button("새 도구 연결했어요.",show_llm_1)
@@ -162,7 +166,7 @@ def show_boat():
 def show_llm_1():
     clear_screen()
     add_title("매우 유용한 도구 연결했습니다.")
-    add_message("지금 획득한 이 새 도구를 'LLM' 이라고 해요."
+    add_message("지금 획득한 이 새 도구를 'LLM' 이라고 해요.\n\n"
     "'LLM'은 언어기반으로 지금까지 언어로\n"
     "만들어졌던 다양한 자료와 정보들을\n"
     "배경으로 소통할 수 있는 도구입니다.\n\n"
@@ -179,7 +183,7 @@ def show_llm_1():
 def show_llm_2():
     clear_screen()
     add_title("'LLM'을 더 효율적으로 사용하는 방법은?")
-    add_message("'LLM'은 자동차저럼 사용할 때마다\n"
+    add_message("'LLM'은 자동차처럼 사용할 때마다\n"
     "에너지가 필요하므로 조금씩 연료비가 들어갑니다.\n\n"
     "그래서 필요한 곳에 알맞게 사용하는 습관을 들이는게 좋겠죠?\n\n"
     "우리의 탐사 경험 중 중요하다고 말한 구조를 잘 기억하고\n"
@@ -233,8 +237,8 @@ def show_imagination():
     "지금처럼 언어로 소통하는 'AI'의 엄마같은 역할을 'LLM'이 하고 있네요.\n\n"
     "더 나아가 우리가 하는 일들을 더 효율적으로\n"
     "만들어 주는 'AI'를 'AI Agent'라고 합니다.\n\n"
-    "그래서 '비서' 또는 '유용한 도구'라고 하지만\n"
-    "우리와 미래를 함께 펼쳐나가는 '동반자'로 생각하면 어떨까요?\n\n"
+
+    "우리와 미래를 함께 펼쳐나갈 '동반자'로 생각해보면 어떨까요?\n\n"
     "자신과 함께 펼쳐 나갈 미래의 다양한 꿈을 상상해 보세요.\n\n"
     "엄마도 함께 펼쳐질 미래의 삶을 마음 속에 그려보시지 않겠어요?\n\n")
     add_previous_button("이전",show_llm_talk)
@@ -246,14 +250,15 @@ def show_exit():
     clear_screen()
     add_title("와우! 밖으로 나가는 통로가 보여요!")
     add_message("드디어 미래로 통하는 동굴 탐사의 끝까지 왔습니다.\n\n"
-    "많이 힘들었겠지만 좋은 경험이예요? 그래도 함께해서 행복했어요.\n\n"
+    "많이 힘들었겠지만 좋은 경험이예요. 함께해서 행복했어요.\n\n"
     "이 번 탐사에서 어떤 경험들을 했고,\n"
     "코딩으로는 어떤 구조로 표현되었는지 떠 올려 보세요.\n\n"
+
     "그리고 그 느낌과 미래의 꿈까지\n"
     "'history'에 밝은 미래를 위해서도 꼭 기록하세요\n\n"
     "엄마도 좋은 추억을 위해서라도 반드시 남겨 두세요.\n\n"
-    "그리고, 아이도 엄마도 동굴 탐사의 마지막 소회를\n"
-    "한줄로 요약해 보세요.\n\n"
+
+    "가능한 한줄로도 요약해 보는 습관을 만드세요.\n\n"
     "어떠한 새로운 미래 설계도 한줄 요약이\n"
     "될 때까지 다지고 다진다음 꼭 출발하세요.\n\n")
     add_previous_button("이전",show_imagination)
@@ -263,8 +268,9 @@ def show_exit():
 #----------------------------------------------------
 def show_final():
     clear_screen()
+    root.geometry("900x600")
     image=Image.open("cave_exit_future.png")
-    image.resize((900,600))
+    image=image.resize((900,600))
     photo=ImageTk.PhotoImage(image)
     label=tk.Label(root,image=photo)
     label.image=photo
@@ -276,12 +282,12 @@ def show_final():
     child=tk.Label(root,text='아이:"드디어 통과! 미래가 매우 기대됩니다."',
     font=("Arial",14,"bold"),
     bg="#f4e6bd")
-    child.place(x=480,y=350)
+    child.place(x=480,y=500)
     mom=tk.Label(root,text='엄마:"우리 함께 미래로 나아가자!"',
     font=("Arial",14,"bold"),
     bg="#f4e6bd")
-    mom.place(x=540,y=395)
-    add_previous_button("이전",show_exit,y=430)
+    mom.place(x=540,y=430)
+    add_previous_button("이전",show_exit,y=465)
 
 show_cover()
 root.mainloop() 
