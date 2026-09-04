@@ -9,22 +9,22 @@ root.geometry("900x600")
 def clear_screen():
     for widget in root.winfo_children():
         widget.destroy()
-def add_title(text):
+def add_title(text,size=25):
     title=tk.Label(root,text=text,
-    font=("Arial",24,"bold"))
-    title.pack(pady=30)
-def add_next_button(text,command,y=480):
+    font=("나눔고딕",size,"bold"))
+    title.place(x=30,y=20)
+def add_next_button(text,command,x=650,y=480):
     button=tk.Button(root,text=text,
-    font=("Arial",12), command=command)
-    button.place(x=600,y=y)
+    font=("나눔고딕",12), command=command)
+    button.place(x=x,y=y)
 def add_previous_button(text,command,y=480):
     button=tk.Button(root,text=text,
-    font=("Arial",12), command=command)
+    font=("나눔고딕",12), command=command)
     button.place(x=70,y=y)
-def add_message(text):
+def add_message(text,x=70,y=100,size=16):
     message=tk.Label(root,text=text,
-    font=("Arial",14), justify="left")
-    message.pack(pady=20)
+    font=("나눔고딕",size), justify="left")
+    message.place(x=x,y=y)
     #---------------------
     # 1.겉표지
     # --------------------
@@ -36,17 +36,18 @@ def show_cover():
     label=tk.Label(root,image=photo)
     label.image=photo
     label.place(x=0,y=0)
-    add_next_button("탐사시작",show_review,y=530)
+    add_next_button("탐사시작",show_review,x=800,y=530)
 #---------------------
 #2. 준비단계 돌아보기
 #---------------------
 def show_review():
     clear_screen()
-    add_title("준비된 도구들 다시 살펴볼까요?")
-    add_message("Python은 어떤 일을 했었죠?\n\n"
-    "VS Code에서는 무슨 작업을 했었나요?\n\n"
-    "잘 기억나지 않으면 \n"
-    "지난 준비단계 탐사에서 직접 확인해 보세요.\n\n")
+    add_title("준비된 도구들 다시 살펴볼까요?",size=30)
+    text=("'Python'은 어떤 일을 했었죠?\n\n"
+    "'VS Code'에서는 무슨 작업을 했었나요?\n\n"
+    "잘 기억나지 않으면 \n\n"
+    "지난 준비단계 탐사에서 직접 확인해 보세요.")
+    add_message(text,x=150,y=140,size=20)
     add_previous_button("이전",show_cover)
     add_next_button("직접 확인해 볼게요",show_run_check)
 #-----------------------
