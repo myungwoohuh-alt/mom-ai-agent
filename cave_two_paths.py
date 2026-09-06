@@ -25,7 +25,7 @@ def add_previous_button(text,command,size=12,x=70,y=480):
     button.place(x=x,y=y)
 def add_message(text,x=70,y=100,size=16):
     message=tk.Label(root,text=text,
-    font=("나눔고딕",size), justify="left")
+    font=("나눔고딕",size,"bold"), justify="left")
     message.place(x=x,y=y)
     #---------------------
     # 1.겉표지
