@@ -15,15 +15,15 @@ def add_title(text,size=25,x=25,y=30):
     title.place(x=x,y=y)
 def add_next_button(text,command,x=650,y=480,size=12):
     button=tk.Button(root,text=text,
-    font=("나눔고딕",size), command=command)
+    font=("나눔고딕",size,"bold"), command=command)
     button.place(x=x,y=y)
 def add_previous_button(text,command,x=50,y=480,size=12):
     button=tk.Button(root,text=text,
-    font=("나눔고딕",size),command=command)
+    font=("나눔고딕",size,"bold"),command=command)
     button.place(x=70,y=y)
 def add_message(text,x=70,y=100,size=16):
     message=tk.Label(root,text=text,
-    font=("나눔고딕",size),justify="left")
+    font=("나눔고딕",size,"bold"),justify="left")
     message.place(x=x,y=y)
 #--------------- 
 # 컷 1: 미래로 통하는 동굴
