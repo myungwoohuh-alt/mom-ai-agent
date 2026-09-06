@@ -264,9 +264,22 @@ def show_history_write():
     "생각과 느낌을 그때그때 요약 기록해 두세요.")
     add_message(text,x=70,y=120,size=20)
     add_previous_button("이전",show_history,x=70)
-    add_next_button("계속 기록 할게요",show_second_door)
+    add_next_button("계속 기록 할게요",show_door_2)
+#----------------------------------------------
+#17.두번째 동굴의 문
+#---------------------------------------------
+def show_door_2():
+    clear_screen()
+    image=Image.open("cave_door_2.png")
+    image=image.resize((900,600))
+    photo=ImageTk.PhotoImage(image)
+    label=tk.Label(root,image=photo)
+    label.image=photo
+    label.place(x=0,y=0)
+    add_previous_button("이전",show_history_write,y=530)
+    add_next_button("앞으로 더 가볼까요?",show_second_door,y=530)
 #-----------------------------------------------
-# 17. 두번째 동굴의 문
+# 18. 동굴의 문 열어 줄 조건
 #---------------------------------------------
 def show_second_door():
     clear_screen()
@@ -277,10 +290,10 @@ def show_second_door():
     "앞에서 한번 경험해 봤으니,\n"
     "마음 단단히 먹고 신중하게 미리 생각해 선택해 보세요.")
     add_message(text,x=100,y=160,size=20)
-    add_previous_button("이전",show_history_write,x=100)
+    add_previous_button("이전",show_door_2,x=100)
     add_next_button("첫 번째 질문",show_second_question_1)
 #-----------------------------------------------
-# 18. 동굴 문의 첫 번째 질문
+# 19. 동굴 문의 첫 번째 질문
 #---------------------------------------------
 def show_second_question_1():
     clear_screen()
@@ -295,7 +308,7 @@ def show_second_question_1():
     add_previous_button("이전",show_second_door,x=100)
     add_next_button("결정했어요",show_second_question_2)
 #-----------------------------------------------
-# 19. 동굴 문의 두 번째 질문
+# 20. 동굴 문의 두 번째 질문
 #----------------------------------------------
 def show_second_question_2():
     clear_screen()
@@ -312,7 +325,7 @@ def show_second_question_2():
     add_previous_button("이전",show_second_question_1,x=100)
     add_next_button("방향 결정 했어요",show_second_code_1)
 #----------------------------------------------
-# 20. 첫 번째 동굴 질문 코딩
+# 21. 첫 번째 동굴 질문 코딩
 #----------------------------------------------
 def show_second_code_1():
     clear_screen()
@@ -328,7 +341,7 @@ def show_second_code_1():
     add_previous_button("이전",show_second_question_2,x=50)
     add_next_button("저장했어요.", show_second_code_2,x=700)
 #-------------------------------------------
-# 21. 두 번째 동굴 질문 코딩
+# 22. 두 번째 동굴 질문 코딩
 #--------------------------------------------
 def show_second_code_2():
     clear_screen()
@@ -344,7 +357,7 @@ def show_second_code_2():
     add_previous_button("이전", show_second_code_1,x=50)
     add_next_button("확인하고 저장까지 했어요", show_second_run)
 #--------------------------------------------
-# 22. 두 번째 동굴 문 선택 실행
+# 23. 두 번째 동굴 문 선택 실행
 #-------------------------------------------
 def show_second_run():
     clear_screen()
@@ -361,7 +374,7 @@ def show_second_run():
     add_previous_button("이전", show_second_code_2,x=100)
     add_next_button("이 구조의 의미를 이해했어요.", show_second_result)
 #--------------------------------------------
-# 23. 두 번째 동굴 문 통과
+# 24. 두 번째 동굴 문 통과
 #-------------------------------------------
 def show_second_result():
     clear_screen()
@@ -376,7 +389,7 @@ def show_second_result():
     add_previous_button("이전", show_second_run,x=100)
     add_next_button("이어지는 동굴 탐사로",show_review_stage)
 #---------------------------------------------
-# 24. 두 갈래길 탐사 되돌아 보기
+# 25. 두 갈래길 탐사 되돌아 보기
 #---------------------------------------------
 def show_review_stage():
     clear_screen()
