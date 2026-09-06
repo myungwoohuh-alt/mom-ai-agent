@@ -50,13 +50,13 @@ def show_ready():
     clear_screen()
     add_title("사전 준비물 확인",x=70,size=30)
     computer=tk.Checkbutton(root,text="노트북이나 컴퓨터 준비됐나요?",
-    font=("나눔고딕",18))
+    font=("나눔고딕",18,"bold"))
     computer.place(x=70,y=150)
     internet=tk.Checkbutton(root,text="인터넷에 연결할 수 있는 'Chrome' 같은 프로그램이 준비되어 있나요?",
-    font=("나눔고딕",18))
+    font=("나눔고딕",18,"bold"))
     internet.place(x=70,y=230)
     chatgpt=tk.Checkbutton(root,text="휴대폰에서 'ChatGpt' 같은 'AI'와 직접 이야기할 준비 되어있나요?",
-    font=("나눔고딕", 18))
+    font=("나눔고딕", 18,"bold"))
     chatgpt.place(x=70,y=310)
     add_previous_button("이전",show_entrance,x=70)
     add_next_button("OK! 함께 들어갈까요?", show_tool_room)
@@ -82,7 +82,7 @@ def show_tool_room():
 #-------------------
 def show_browser():
     clear_screen()
-    add_title("'인터넷 연결' 확인 하세요.",x=70,size=26)
+    add_title("'인터넷 연결' 확인 하세요.",x=70,size=28)
     text=("이 동굴은 인터넷에 연결해야 우리와 대화할 수 있어요.\n\n"
     "어떤 도구가 제일 먼저 필요할까요?\n\n"
     "바로 '브라우저'입니다.\n\n"
@@ -90,8 +90,8 @@ def show_browser():
     "그 'Chrome'이 바로 다양한 '브라우저' 중의 하나입니다.\n\n"
     "여기서도 잘 연결되나 한번 실행해 볼까요?")
     message = tk.Label(root,text=text,
-    font=("나눔고딕",18), justify="left")
-    message.place(x=70,y=140)
+    font=("나눔고딕",18,"bold"), justify="left")
+    message.place(x=70,y=120)
     add_next_button("엄마와 함께 실행 확인했어요.",show_ai)
     add_previous_button("이전",show_tool_room,x=70)
 #--------------------
@@ -109,7 +109,7 @@ def show_ai():
     "중요한 내용일수록 다시 한번 확인하는\n"
     "습관을 들이는게 좋아요.")
     message=tk.Label(root,text=text,
-    font=("나눔고딕",18), justify="left")
+    font=("나눔고딕",18,"bold"), justify="left")
     message.place(x=70,y=140)
     finish=tk.Button(root,
     text="브라우저와 AI 연결 다 확인했어요.",
@@ -170,7 +170,7 @@ def show_vscode_download():
 #-------------------------------
 def show_workspace():
     clear_screen()
-    add_title("'코드 작업실' 입니다.",x=90,size=28)
+    add_title("'코드 작업실' 입니다.",x=70,size=28)
     text=("'VS Code'창을 찬찬히 살펴볼까요?\n\n"
     "위쪽 넓은 곳은 코드를 쓰고 고치는\n"
     "작업 공간입니다.\n\n"
@@ -178,15 +178,15 @@ def show_workspace():
     "입력한 코드를 직접 확인하는 곳입니다.\n\n"
     "다시말해서 위에서 코드 만들고,\n"
     "아래에서 만든 코드를 실행하는 겁니다.")
-    add_message(text,x=90,y=130,size=18)
+    add_message(text,x=70,y=130,size=18)
     add_next_button("작업실 구조를 확인했어요.",show_run_method)
-    add_previous_button("이전",show_vscode_download,x=90)  
+    add_previous_button("이전",show_vscode_download,x=70)  
 #--------------------------------
 # 컷 10: 저장하고 실행하기
 #--------------------------------
 def show_run_method():
     clear_screen()
-    add_title("저장하고 실행하기",size=28,x=90)
+    add_title("저장하고 실행하기",size=28,x=70)
     text=("코드를 입력한 후 'Ctrl + S'를 눌러서,\n"
     "반드시 저장부터 먼저 해야겠죠?\n\n"
     "그다음 아래 터미널에 커서를 놓고\n"
@@ -194,24 +194,24 @@ def show_run_method():
     "'xxxx'는 코드 작업했던 파일이름입니다.\n"
     "내 파일에서 만든 이 코드를,\n"
     "실행해 달라고 부탁하는 거예요.\n\n")
-    add_message(text,x=90,y=140,size=18)
+    add_message(text,x=70,y=140,size=18)
     add_next_button("이제 직접 해볼까요?",show_nickname)
-    add_previous_button("이전",show_workspace,x=90)
+    add_previous_button("이전",show_workspace,x=70)
 #----------------------------------
 # 컷 11: 닉네임 만들기
 #----------------------------------
 def show_nickname():
     clear_screen()
-    add_title("이름 만들기",x=90,size=28)
+    add_title("이름 만들기",x=80,size=28)
     text=("우리를 부를 때 이름이 필요하겠죠?\n\n"
     "'미래로 통하는 동굴'에서 사용될,\n"
     "의미있는 닉네임을 하나 생각해 보세요.\n\n"
     "엄마도 하나 만들어 보세요.\n"
     "왜 그렇게 정했는지 서로 한번 이야기해 보세요.\n\n"
     "탐사 중 그 의미를 잊지마세요.")
-    add_message(text,x=90,y=130,size=18)
+    add_message(text,x=80,y=130,size=18)
     add_next_button("우리 이름 정했어요.",show_first_code)
-    add_previous_button("이전",show_run_method,x=90)
+    add_previous_button("이전",show_run_method,x=80)
 #------------------------------------
 # 컷 12: 첫 코드
 #------------------------------------
