@@ -74,7 +74,7 @@ def show_tool_room():
     background.place(x=0,y=0)
     title=tk.Label(root,text="도구방",
     font=("나눔고딕",20,"bold"))
-    title.place(x=30,y=20)
+    title.place(x=70,y=20)
     add_next_button("장착할 도구들을 찾아볼까요?",show_browser,y=540)
     add_previous_button("이전",show_ready,y=540)
 #-------------------
