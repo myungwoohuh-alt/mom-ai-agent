@@ -172,7 +172,7 @@ def show_workspace():
     clear_screen()
     add_title("'코드 작업실' 입니다.",x=90,size=28)
     text=("'VS Code'창을 찬찬히 살펴볼까요?\n\n"
-    "위쪽 넓은 곳은 코드를 쓰고 고치는'\n"
+    "위쪽 넓은 곳은 코드를 쓰고 고치는\n"
     "작업 공간입니다.\n\n"
     "'터미널'이라고 하는 아래쪽 공간은,\n"
     "입력한 코드를 직접 확인하는 곳입니다.\n\n"
@@ -218,7 +218,7 @@ def show_nickname():
 def show_first_code():
     clear_screen()
     add_title("동굴과의 첫 소통",x=70,size=28)
-    text=("먼저 'VS Code'에서 새 'Python' 파일 하나 만드세요.\n"
+    text=("'VS Code' 왼쪽 위 'File'을 눌러 'New File'을 만드세요.\n"
     "파일의 이름을 'hello_cave'라고 정하면 어떨까요?\n\n"
     "위쪽 작업공간에 아래처럼 코드를 입력해 보세요.\n\n"
     'name = input("당신의 닉네임은?")\n'
