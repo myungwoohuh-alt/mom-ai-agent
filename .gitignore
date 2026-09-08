@@ -1,3 +1,4 @@
 .env
 history.txt
 memory.txt
+__pycache__/
