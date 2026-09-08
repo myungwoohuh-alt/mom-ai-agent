@@ -190,8 +190,8 @@ def show_run_method():
     text=("코드를 입력한 후 'Ctrl + S'를 눌러서,\n"
     "반드시 저장부터 먼저 해야겠죠?\n\n"
     "그다음 아래 터미널에 커서를 놓고\n"
-    "'python xxxx.py'를 쓰고 'Enter'로 실행하세요.\n\n"
-    "'xxxx'는 코드 작업했던 파일이름입니다.\n"
+    "'python 파일이름.py'를 쓰고 'Enter'로 실행하면 됩니다.\n\n"
+    "새로운 파일을 만들어 그 파일이름으로\n"
     "내 파일에서 만든 이 코드를,\n"
     "실행해 달라고 부탁하는 거예요.\n\n")
     add_message(text,x=70,y=140,size=18)
@@ -219,7 +219,7 @@ def show_first_code():
     clear_screen()
     add_title("동굴과의 첫 소통",x=70,size=28)
     text=("'VS Code' 왼쪽 위 'File'을 눌러 'New File'을 만드세요.\n"
-    "파일의 이름을 'hello_cave'라고 정하면 어떨까요?\n\n"
+    "파일의 이름을 'hello_cave.py'라고 정하면 어떨까요?\n\n"
     "위쪽 작업공간에 아래처럼 코드를 입력해 보세요.\n\n"
     'name = input("당신의 닉네임은?")\n'
     'print("안녕,",name)\n'
@@ -270,13 +270,13 @@ def show_mom_code():
 def show_finish_today():
     clear_screen()
     add_title("오늘은 여기까지",x=80,size=28)
-    text=("동굴이 첫 인사한 것으로 충분하니,\n"
-    "오늘 탐사는 여기까지라고 하네요.\n\n"
-    "그러면, 코드에 다음처럼 한 줄 더 추가해야 합니다.\n\n"
-    'input("소통을 마치려면 종료라고 입력하세요:")\n\n'
-    "이전처럼 저장하고 다시 터미널에서 실행한 후,\n"
-    "마지막 질문 다음에 '종료'라 입력한 후 'Enter'를 누르세요.\n\n"
-    "그러면 '실행'으로 다시 부를 때까지 소통할 수 없습니다.")
+    text=("동굴이 준비하느라 수고 많았다고 합니다.\n\n"
+    "오늘은 첫 인사한 것으로 충분하니,\n"
+    "탐사는 여기까지이고 즐거웠다고 하네요.\n\n"
+    "우리도 동굴이 쉬도록 마지막에\n"
+    "'종료'라 입력한 후 'Enter'를 누름니다.\n\n"
+    "그러면 '실행'으로 다시 부를 때까지\n"
+    "우리 모두 편안히 휴식합시다.")
     add_message(text,x=80, y=120,size=18)
     add_next_button("'준비단계' 일정 끝났네요.",show_review)
     add_previous_button("이전",show_mom_code,x=80)

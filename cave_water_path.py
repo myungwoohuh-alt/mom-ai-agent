@@ -119,18 +119,19 @@ def show_elif_meaning():
 def show_elif_coding():
     clear_screen()
     add_title("여러 조건 중 하나 선택하는 코드 입력")
-    text=("'VS Code' 위쪽 '작업장'에서 지난 번에 이어 추가 입력합니다.\n\n"
-    'cave=input("이번엔 다른 동굴 길로 갈까요?y/n:")\n'
+    text=('cave=input("이번엔 다른 동굴 길로 갈까요?y/n:")\n\n'
     'if cave=="y":\n'
-    'print("여러동굴 길을 살펴봅니다)\n\n'
+        'print("여러동굴 길을 살펴봅니다")\n\n'
     'elif cave=="n":\n'
-    'print("다른 길을 생각해 봅시다.")\n\n'
-    'cave=input("배타고 물길 탐사해 보는 것은 어떨까요?y/n:")\n'
+        'print("다른 길을 찾아 봅시다.")\n\n'
+    'else:\n'
+        'print("어떤 길이 있을지 더 생각해 봅시다.)\n\n'
+    'cave=input("배타고 물길 탐사해 보는 것은 어떨까요?y/n:")\n\n'
     'if cave=="y":\n'
-    'print("배를타고 물길 탐사 시작합시다.")')
-    add_message(text,y=100)
-    add_previous_button("이전",show_elif_meaning)
-    add_next_button("저장까지 완료했습니다.",show_run)
+        'print("배를타고 물길 탐사 시작합시다.")')
+    add_message(text,y=90)
+    add_previous_button("이전",show_elif_meaning,y=550)
+    add_next_button("저장까지 완료했습니다.",show_run,y=550)
 #---------------------------------------
 # 8. 코딩 후 직접 실행
 #---------------------------------------
@@ -138,8 +139,8 @@ def show_run():
     clear_screen()
     add_title("이제 직접 '실행'해 볼까요?",size=28)
     text=("VS Code 아래쪽 '터미널'에서,\n"
-    "'python_choice.py'를 입력하고 'Enter'로 실행합니다.\n\n"
-    "'y'와 'n'을 바꿔 가면서\n"
+    "'python choice.py'를 입력하고 'Enter'로 실행합니다.\n\n"
+    "'y'와 'n', 그리고 다른 답도 입력해 보면서\n"
     "달라지는 결과를 확인해 보세요.\n\n"
     "'if'는 첫 번째 조건이고\n"
     "'elif'는 '그 조건이 아니면 뭐가 있을까?'를 의미하죠.\n\n"
@@ -192,12 +193,11 @@ def show_llm_2():
     "그래서, 효율적으로 사용하는 습관을 들이는게 좋아요?\n\n"
     "탐사 중 중요하다고 말한 구조를 잘 활용할수록\n"
     "더 효율적으로 미래를 펼쳐 나갈 수 있습니다.\n\n"
-    "암기보다 어떠한 구조로 코딩되어 있느냐가 중요한 거예요.\n"
     "미래에는 코딩이 어떠한 구조를 표현하는지\n"
     "판별하는 능력이 더 중요하지 않을까요?\n\n"
     "구조를 통해서 그 의미를 파악하는 방향으로\n"
     "탐색해 보는 좋은 습관을 만들어 보세요.")
-    add_message(text,y=100)
+    add_message(text,y=120)
     add_previous_button("이전",show_llm_1)
     add_next_button("구조부터 먼저 보는 습관 만들게요.",show_bright_path,x=580)
 #----------------------------------------------
@@ -256,7 +256,7 @@ def show_exit():
     text=("이 번 탐사에서 어떤 경험들을 했고,\n"
     "코딩으로는 어떤 구조로 표현되었는지 떠 올려 보세요.\n\n"
     "탐사 경험과 미래의 꿈까지\n"
-    "'history'에 잊지 않도록 꼭 기록하세요\n\n"
+    "'trip.txt'에 잊지 않도록 꼭 기록하세요\n\n"
     "가능한 한줄로 요약해 보는 습관을 만드세요.\n"
     "새로운 미래 설계도 한줄 요약이\n"
     "될 때까지 다지고 다진다음 출발하세요.\n\n"

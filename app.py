@@ -50,6 +50,7 @@ while True:
         memory = ""
         with open(MEMORY_FILE,"w", encoding = "utf-8") as file:
             file.write("")
+            memory=".join(lines)"
         print("중요한 기억을 삭제했어요.")
         continue
     elif question == "중요기억보기":

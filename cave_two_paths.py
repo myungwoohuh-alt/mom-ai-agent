@@ -132,9 +132,9 @@ def show_food_code_2():
     add_title("두 갈래 선택을 코드로 만들어 봅시다.",x=100,size=27)
     text=('answer=input("우리 지금 밥 먹을까요?(y/n):")\n\n'
     'if answer=="y":\n'
-    'print("네. 배고파요.")\n\n'
+        'print("네. 배고파요.")\n\n'
     'else:\n'
-    'print("아니요. 배불러요.")\n\n'
+        'print("아니요. 배불러요.")\n\n'
     "입력이 다 끝났으면 'Ctrl+S'를 눌러 저장합니다.")
     add_message(text, x=100,y=120,size=20)
     add_previous_button("이전",show_food_code,x=100)
@@ -149,7 +149,7 @@ def show_food_run():
     "'python choice.py'를\n"
     "입력하고 'Enter'를 누릅니다.\n\n"
     "한번은 'y'를 선택해 눌러보고,\n"
-    "종료 후 다시 살행해서 'n'도 눌러 보세요.\n\n"
+    "종료 후 다시 실행해서 'n'도 눌러 보세요.\n\n"
     "엄마도 직접 한번 해보세요.")
     add_message(text,x=100,y=140,size=20)
     add_previous_button("이전",show_food_code_2,x=100)
@@ -206,10 +206,10 @@ def show_door_code():
     add_title("코드 작업으로 문을 열어 볼까요?",x=30,size=28)
     text=('answer=input("Python이 스스로 코드를 만들어서 직접 작업할 수 있나요?(y/n):")\n'
     'if answer == "n":\n'
-    'print("철커덕! 문이 열렸습니다.")\n\n'
+        'print("철커덕! 문이 열렸습니다.")\n\n'
     'else:\n'
-    'print("지나왔던 길들을 다시 한번 살펴보세요.")\n\n'
-    "'Ctrl + S'로 저장하고 아래쪽 '터미널에서,\n"
+        'print("지나왔던 길들을 다시 한번 살펴보세요.")\n\n'
+    "'Ctrl + S'로 저장하고 아래쪽 '터미널'에서,\n"
     "'python choice.py'를 쓰고 'Enter'로 실행하세요.\n")
     add_message(text,x=30,y=140,size=18)
     add_previous_button("이전",show_door_question,x=30)
@@ -229,29 +229,29 @@ def show_door_result():
     "다시 한번 질문에 도전하세요.")
     add_message(text,x=100,y=120,size=20)
     add_previous_button("이전",show_door_code,y=520,x=100)
-    add_next_button("문을 통과했어요",show_history,y=520)
+    add_next_button("문을 통과했어요",show_trip_txt,y=520)
 #----------------------------------------
 # 15. 탐사 기록 
 #----------------------------------------
-def show_history():
+def show_trip_txt():
     clear_screen()
     add_title("우리 '탐사 기록'을 남겨 볼까요?",x=70,size=30)
     text=("어떤 도구를 어떻게 사용했었는지 깜빡깜빡하죠?.\n"
     "'탐사 기록'이 있으면 좋겠죠?.\n\n"
 
     "'VS Code'의 왼쪽 위 'File'을 누르고,\n"
-    "'history.txt'라는 '새 파일 이름'을 만듭니다.\n\n"
+    "'trip.txt'라는 '새 파일 이름'을 만듭니다.\n\n"
 
     "탐사하며 생각하고 느껴지는 것들의\n"
     "짧은 요약 노트입니다.\n\n"
     "탐사를 이어갈수록 경험따라 쌓여갈 겁니다.")
     add_message(text,y=120,size=20)
     add_previous_button("이전",show_door_result,x=70)
-    add_next_button("계속 기록해 볼게요",show_history_write)
+    add_next_button("계속 기록해 볼게요",show_trip_txt_write)
 #---------------------------------------------
 # 16. 탐사 기록 작성
 #---------------------------------------------
-def show_history_write():
+def show_trip_txt_write():
     clear_screen()
     add_title("경험을 기록으로 남기세요",x=70,size=30)
     text=("탐사했던 경험들을,\n"
@@ -263,7 +263,7 @@ def show_history_write():
     "일기쓰듯 하지 마시고 탐사 중에\n"
     "생각과 느낌을 그때그때 요약 기록해 두세요.")
     add_message(text,x=70,y=120,size=20)
-    add_previous_button("이전",show_history,x=70)
+    add_previous_button("이전",show_trip_txt,x=70)
     add_next_button("계속 기록 할게요",show_door_2)
 #----------------------------------------------
 #17.두번째 동굴의 문
@@ -276,7 +276,7 @@ def show_door_2():
     label=tk.Label(root,image=photo)
     label.image=photo
     label.place(x=0,y=0)
-    add_previous_button("이전",show_history_write,y=530)
+    add_previous_button("이전",show_trip_txt_write,y=530)
     add_next_button("앞으로 더 가볼까요?",show_second_door,y=530)
 #-----------------------------------------------
 # 18. 동굴의 문 열어 줄 조건
@@ -333,9 +333,9 @@ def show_second_code_1():
     text=("VS Code 위쪽 코드 작업 공간에 아래처럼 입력합니다.\n\n"
     'path=input("코딩에서도 두 갈래 이외의 다른 길이 있을까요?(y/n):")\n\n'
     'if path =="y":\n'
-    'print("철커덕! 첫 번째 잠금이 풀렸습니다.")\n\n'
+        'print("철커덕! 첫 번째 잠금이 풀렸습니다.")\n\n'
     'else:\n'
-    'print("엄마와 다시한번 잘 의논해 보세요.")\n\n'
+        'print("엄마와 다시한번 잘 의논해 보세요.")\n\n'
     "다 입력하고 꼼꼼하게 확인했으면 'Ctrl+S'로 꼭 저장부터 하세요.")
     add_message(text,x=50, y=120,size=18)
     add_previous_button("이전",show_second_question_2,x=50)
@@ -349,9 +349,9 @@ def show_second_code_2():
     text=("첫 번째 질문 상황 코딩에 이어서 계속 합니다.\n\n"
     'talk = input("미리 정해 놓지 않은 말들도 동굴이 할 수 있을까요?(y/n):")\n\n'
     'if talk == "y":\n'
-    'print("철커덕! 두 번째 잠금도 풀렸습니다.")\n\n'
+        'print("철커덕! 두 번째 잠금도 풀렸습니다.")\n\n'
     'else:\n'
-    'print("엄마와 다시한번 잘 의논해 보세요.")\n\n'
+        'print("엄마와 다시한번 잘 의논해 보세요.")\n\n'
     "입력 끝났으면 검토 확인하고 반드시 '저장'하세요.")
     add_message(text,x=50,y=110,size=19)
     add_previous_button("이전", show_second_code_1,x=50)
@@ -399,7 +399,7 @@ def show_review_stage():
     "깊이 찾아가는 좋은 습관을 만들어 보세요.\n\n"
     "이어지는 다음 탐사에서 동굴이\n"
     "다양한 소통 할 수 있는 방법을 찾아 볼까요?\n\n"
-    "지금 느껴지는 생각과 느낌을 꼭 'history'에 남기세요.\n\n"
+    "지금 느껴지는 생각과 느낌을 꼭 'trip.txt'에 남기세요.\n\n"
     "엄마도 이번 탐사 기록을 꼭 남겨두세요?")
     add_message(text,x=100,y=120,size=18)
     add_previous_button("이전",show_second_result,x=100)
