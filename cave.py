@@ -55,7 +55,7 @@ def show_ready():
     internet=tk.Checkbutton(root,text="인터넷에 연결할 수 있는 'Chrome' 같은 프로그램이 준비되어 있나요?",
     font=("나눔고딕",18,"bold"))
     internet.place(x=70,y=230)
-    chatgpt=tk.Checkbutton(root,text="휴대폰에서 'ChatGpt' 같은 'AI'와 직접 이야기할 준비 되어있나요?",
+    chatgpt=tk.Checkbutton(root,text="휴대폰에서 'ChatGPT' 같은 'AI'와 직접 이야기할 준비 되어있나요?",
     font=("나눔고딕", 18,"bold"))
     chatgpt.place(x=70,y=310)
     add_previous_button("이전",show_entrance,x=70)
@@ -101,7 +101,7 @@ def show_ai():
     clear_screen()
     add_title("'AI'와 이야기하기",x=70,size=28)
     text=("'AI'에게 궁금한 것을 물어보려면 어떻게 해야 할까요?\n\n"
-    "휴대폰에서 'ChatGpt'를 누르고 아래 'ChatGpt...'곳에,\n"
+    "휴대폰에서 'ChatGPT'를 누르고 아래 'ChatGPT...'곳에,\n"
     "선생님에게 물어보듯이 편안하게 입력하면 됩니다.\n\n"
     "컴퓨팅 작업이 잘 안될 경우에도 일단 멈추고,\n"
     "컴퓨터 창의 화면을 사진찍어서 상황설명하면,\n"

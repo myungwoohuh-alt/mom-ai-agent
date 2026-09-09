@@ -165,9 +165,43 @@ def show_boat():
     "아주 중요하고 유용한 도구니까 잘 보관해 달라네요.")
     add_message(text,size=19,y=100)
     add_previous_button("이전",show_run)
-    add_next_button("새 도구 연결했어요.",show_llm_1)
+    add_next_button("새로운 연결은 어떤 의미죠?",show_meaning)
 #--------------------------------------------
-# 10. 새로운 도구 LLM
+# 10. 새로운 도구 연결의 의미
+#--------------------------------------------
+def show_meaning():
+    clear_screen()
+    add_title("새로운 도구 연결은 어떤 의미 일까요?",size=28)
+    text=("지금까지는 우리가 코드로 미리 만든,\n"
+    "내용으로만 동굴과 소통할 수 있었죠?\n\n"
+    "동굴에게 새로운 연결 통로를 만들어주면,\n"
+    "외부의 'AI'들 세계와도 자유롭게 함께할 수 있습니다.\n\n"
+    "실제로 연결하려면 휴대폰 'AI'에게 컴퓨터 화면 창을\n"
+    "사진찍어 물어보면 한단계씩 자세히 안내해 줄겁니다.\n\n"
+    "이제, 외부와의 새로운 연결을 위해 우리가 미리 만든\n"
+    "'app.py'라는 '새 코드 파일'을 불러 볼게요.")
+    add_message(text,size=19,y=100)
+    add_previous_button("이전",show_boat)
+    add_next_button("연결시 꼭 확인하세요!",show_verify)
+#--------------------------------------------
+# 11. 새로운 도구 연결시 확인 사항
+#--------------------------------------------
+def show_verify():
+    clear_screen()
+    add_title("새로운 도구 연결할 때 꼭 확인하세요!",size=28)
+    text=("실제로 새로운 도구를 연결하려면,\n"
+    "몇가지 준비와 확인할 것들이 있습니다.\n\n"
+    "엄마의 협조가 필요하니 함께 휴대폰 'AI'에게\n"
+    "컴퓨터 창의 화면을 사진찍어 보내며 한단계씩 진행하세요.\n\n"
+    "그리고, 아래 사항도 꼭 확인하세요.\n\n"
+    "[Key]는 비밀번호처럼 중요한 것이니 남에게 공개하지 않기.\n"
+    "[비용]은 처음에는 '최소 연료비'만 넣어 시험하기.\n"
+    "[자동충전]은 창에 '자동충전'이 열려있으면 처음엔 꺼 줄것을 추천합니다.\n\n")
+    add_message(text,size=18,y=120)
+    add_previous_button("이전",show_meaning)
+    add_next_button("확인 끝났습니다.",show_llm_1)
+#--------------------------------------------
+# 12. 새로운 도구 LLM
 #--------------------------------------------
 def show_llm_1():
     clear_screen()
@@ -181,10 +215,10 @@ def show_llm_1():
     "그래도, 이렇게 유용한 도구는 인류에게 처음있는 일입니다.\n\n"
     "물길 탐사 중에 동굴과 소통하며 직접 경험해 보세요.")
     add_message(text,y=100,size=19)
-    add_previous_button("이전",show_boat)
+    add_previous_button("이전",show_verify)
     add_next_button("직접 경험해 볼게요.", show_llm_2)
 #---------------------------------------------
-# 11. LLM의 효율적 사용 방법
+# 13. LLM의 효율적 사용 방법
 #---------------------------------------------
 def show_llm_2():
     clear_screen()
@@ -201,7 +235,7 @@ def show_llm_2():
     add_previous_button("이전",show_llm_1)
     add_next_button("구조부터 먼저 보는 습관 만들게요.",show_bright_path,x=580)
 #----------------------------------------------
-# 12. 동굴 끝 밝은 빛이 보이는 이미지
+# 14. 동굴 끝 밝은 빛이 보이는 이미지
 #----------------------------------------------
 def show_bright_path():
     clear_screen()
@@ -214,7 +248,7 @@ def show_bright_path():
     add_previous_button("이전",show_llm_2,y=530)
     add_next_button("빛이 많이 들어 오네요!",show_llm_talk, x=700,y=530)
 #-----------------------------------------------
-# 13. LLM 사용 경험담
+# 15. LLM 사용 경험담
 #-----------------------------------------------
 def show_llm_talk():
     clear_screen()
@@ -231,7 +265,7 @@ def show_llm_talk():
     add_previous_button("이전",show_bright_path)
     add_next_button("우리도 행복한 기분들어요.",show_imagination)
 #----------------------------------------------
-# 14. 우리의 미래를 상상하며 
+# 16. 우리의 미래를 상상하며 
 #----------------------------------------------
 def show_imagination():
     clear_screen()
@@ -248,7 +282,7 @@ def show_imagination():
     add_previous_button("이전",show_llm_talk)
     add_next_button("미래의 꿈을 상상해 봤습니다.",show_exit)
 #--------------------------------------------------
-# 15. 나가는 통로를 맞이하면서
+# 17. 나가는 통로를 맞이하면서
 #-------------------------------------------------
 def show_exit():
     clear_screen()
@@ -265,7 +299,7 @@ def show_exit():
     add_previous_button("이전",show_imagination)
     add_next_button("밝은 미래로 나갑시다!",show_final)
 #----------------------------------------------------
-# 16. 밝은 미래로 향하는 이미지
+# 18. 밝은 미래로 향하는 이미지
 #----------------------------------------------------
 def show_final():
     clear_screen()
