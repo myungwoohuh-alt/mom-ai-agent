@@ -28,7 +28,21 @@ def add_message(text,x=70,y=120,size=18):
     font=("나눔고딕",size,"bold"),justify="left")
     message.place(x=x,y=y)
 #--------------------------------
-# 1. 겉 표지
+# 1: 아이들 관련 기본 안전 문구
+#--------------------------------
+def show_child_safety():
+    clear_screen()
+    add_message("'미래로 통하는 동굴' 탐사 프로그램은,\n"
+    "13세 이상을 대상으로 하며, 보호자와 함께 참여합니다.\n" 
+    "계속 진행하면 위 안내와 아래 사항에 동의한 것으로 간주합니다.\n\n",size=20,x=70,y=130)
+    add_message("* 개인정보는 입력하거나 공개하지 않습니다.\n" 
+    "* 비밀번호와 API Key는 다른 사람에게 보여주지 않습니다.\n"
+    "* 모르는 파일이나 프로그램은 함부로 설치하지 않습니다.\n"
+    "* 결제나 비용이 발생하는 작업은 보호자와 함께 확인하고 승인합니다.\n"
+    "* 'AI'의 답변은 틀릴 수 있으니 중요한 내용은 한 번 더 확인합니다.",size=18,x=70,y=270)
+    add_next_button("탐사시작",show_cover)
+#--------------------------------
+# 2: 겉 표지
 #--------------------------------
 def show_cover():
     clear_screen()
@@ -39,8 +53,9 @@ def show_cover():
     label.image=photo
     label.place(x=0,y=0)
     add_next_button("Go!",show_review,x=800,y=530)
+    add_previous_button("이전",show_child_safety,y=530)
 #-------------------------------
-# 2. 지나왔던 "준비단계" 돌아보기
+# 3: 지나왔던 "준비단계" 돌아보기
 #-------------------------------
 def show_review():
     clear_screen()
@@ -54,7 +69,7 @@ def show_review():
     add_previous_button("이전",show_cover)
     add_next_button("더 깊이 들어 갑시다.",show_deep_cave)
 #--------------------------------
-# 3. 더 깊은 동굴 안 탐사
+# 4: 더 깊은 동굴 안 탐사
 #--------------------------------
 def show_deep_cave():
     clear_screen()
@@ -69,7 +84,7 @@ def show_deep_cave():
     add_previous_button("이전",show_review,x=90)
     add_next_button("동굴 안 복잡한 길들",show_three_way)
 #-------------------------------
-# 4. 동굴 안 복잡한 길 이미지
+# 5: 동굴 안 복잡한 길 이미지
 #-------------------------------
 def show_three_way():
     clear_screen()
@@ -82,7 +97,7 @@ def show_three_way():
     add_previous_button("이전",show_deep_cave,y=550)
     add_next_button("어느 길로 갈까요?",show_path_choice,x=700,y=550)
 #-------------------------------
-# 5. 어느 길로 갈까요?
+# 6: 어느 길로 갈까요?
 # ------------------------------
 def show_path_choice():
     clear_screen()
@@ -97,7 +112,7 @@ def show_path_choice():
     add_previous_button("이전",show_three_way,x=90)
     add_next_button("결정했어요!",show_elif_meaning)
 #--------------------------------------
-# 6. 추가하는 elif 코드의 의미  
+# 7: 추가하는 elif 코드의 의미  
 #--------------------------------------
 def show_elif_meaning():
     clear_screen()
@@ -114,7 +129,7 @@ def show_elif_meaning():
     add_previous_button("이전",show_path_choice)
     add_next_button("구조의 의미를 이해했습니다!",show_elif_coding)
 #-------------------------------------
-# 7. if / elif / else 직접 코딩
+# 8: if / elif / else 직접 코딩
 #-------------------------------------
 def show_elif_coding():
     clear_screen()
@@ -133,7 +148,7 @@ def show_elif_coding():
     add_previous_button("이전",show_elif_meaning,y=550)
     add_next_button("저장까지 완료했습니다.",show_run,y=550)
 #---------------------------------------
-# 8. 코딩 후 직접 실행
+# 9: 코딩 후 직접 실행
 #---------------------------------------
 def show_run():
     clear_screen()
@@ -150,7 +165,7 @@ def show_run():
     add_previous_button("이전",show_elif_coding)
     add_next_button("배타러 물가로 갑시다.",show_boat)
 #------------------------------------------
-# 9. 물가에서 배에 승선
+# 10: 물가에서 배에 승선
 #------------------------------------------
 def show_boat():
     clear_screen()
@@ -167,7 +182,7 @@ def show_boat():
     add_previous_button("이전",show_run)
     add_next_button("새로운 연결은 어떤 의미죠?",show_meaning)
 #--------------------------------------------
-# 10. 새로운 도구 연결의 의미
+# 11: 새로운 도구 연결의 의미
 #--------------------------------------------
 def show_meaning():
     clear_screen()
@@ -184,7 +199,7 @@ def show_meaning():
     add_previous_button("이전",show_boat)
     add_next_button("연결시 꼭 확인하세요!",show_verify)
 #--------------------------------------------
-# 11. 새로운 도구 연결시 확인 사항
+# 12: 새로운 도구 연결시 확인 사항
 #--------------------------------------------
 def show_verify():
     clear_screen()
@@ -201,7 +216,7 @@ def show_verify():
     add_previous_button("이전",show_meaning)
     add_next_button("확인 끝났습니다.",show_llm_1)
 #--------------------------------------------
-# 12. 새로운 도구 LLM
+# 13: 새로운 도구 LLM
 #--------------------------------------------
 def show_llm_1():
     clear_screen()
@@ -218,7 +233,7 @@ def show_llm_1():
     add_previous_button("이전",show_verify)
     add_next_button("직접 경험해 볼게요.", show_llm_2)
 #---------------------------------------------
-# 13. LLM의 효율적 사용 방법
+# 14: LLM의 효율적 사용 방법
 #---------------------------------------------
 def show_llm_2():
     clear_screen()
@@ -235,7 +250,7 @@ def show_llm_2():
     add_previous_button("이전",show_llm_1)
     add_next_button("구조부터 먼저 보는 습관 만들게요.",show_bright_path,x=580)
 #----------------------------------------------
-# 14. 동굴 끝 밝은 빛이 보이는 이미지
+# 15: 동굴 끝 밝은 빛이 보이는 이미지
 #----------------------------------------------
 def show_bright_path():
     clear_screen()
@@ -248,7 +263,7 @@ def show_bright_path():
     add_previous_button("이전",show_llm_2,y=530)
     add_next_button("빛이 많이 들어 오네요!",show_llm_talk, x=700,y=530)
 #-----------------------------------------------
-# 15. LLM 사용 경험담
+# 16: LLM 사용 경험담
 #-----------------------------------------------
 def show_llm_talk():
     clear_screen()
@@ -265,7 +280,7 @@ def show_llm_talk():
     add_previous_button("이전",show_bright_path)
     add_next_button("우리도 행복한 기분들어요.",show_imagination)
 #----------------------------------------------
-# 16. 우리의 미래를 상상하며 
+# 17: 우리의 미래를 상상하며 
 #----------------------------------------------
 def show_imagination():
     clear_screen()
@@ -282,7 +297,7 @@ def show_imagination():
     add_previous_button("이전",show_llm_talk)
     add_next_button("미래의 꿈을 상상해 봤습니다.",show_exit)
 #--------------------------------------------------
-# 17. 나가는 통로를 맞이하면서
+# 18: 나가는 통로를 맞이하면서
 #-------------------------------------------------
 def show_exit():
     clear_screen()
@@ -299,7 +314,7 @@ def show_exit():
     add_previous_button("이전",show_imagination)
     add_next_button("밝은 미래로 나갑시다!",show_final)
 #----------------------------------------------------
-# 18. 밝은 미래로 향하는 이미지
+# 19: 밝은 미래로 향하는 이미지
 #----------------------------------------------------
 def show_final():
     clear_screen()
@@ -324,5 +339,5 @@ def show_final():
     mom.place(x=560,y=550)
     add_previous_button("이전",show_exit,y=550)
 
-show_cover()
+show_child_safety()
 root.mainloop() 

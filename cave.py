@@ -25,8 +25,23 @@ def add_message(text,x=70,y=100,size=16):
     message=tk.Label(root,text=text,
     font=("나눔고딕",size,"bold"),justify="left")
     message.place(x=x,y=y)
+#-----------------------------
+# 컷 1: 아이들 관련 기본 안전 문구
+#------------------------------ 
+def show_child_safety():
+    clear_screen()
+    add_next_button("탐사시작",show_entrance,x=750,y=550)
+    add_message("'미래로 통하는 동굴' 탐사 프로그램은,\n"
+    "13세 이상을 대상으로 하며, 보호자와 함께 참여합니다.\n" 
+    "계속 진행하면 위 안내와 아래 사항에 동의한 것으로 간주합니다.\n\n",size=20,x=70,y=130)
+    add_message("* 개인정보는 입력하거나 공개하지 않습니다.\n" 
+    "* 비밀번호와 API Key는 다른 사람에게 보여주지 않습니다.\n"
+    "* 모르는 파일이나 프로그램은 함부로 설치하지 않습니다.\n"
+    "* 결제나 비용이 발생하는 작업은 보호자와 함께 확인하고 승인합니다.\n"
+    "* 'AI'의 답변은 틀릴 수 있으니 중요한 내용은 한 번 더 확인합니다.",size=18,x=70,y=270)
+    add_next_button("탐사시작",show_entrance,x=750,y=550)
 #--------------- 
-# 컷 1: 미래로 통하는 동굴
+# 컷 2: 미래로 통하는 동굴
 #---------------
 def show_entrance():
     clear_screen()
@@ -42,9 +57,10 @@ def show_entrance():
     go=tk.Button(root,text="Go!",
     font=("나눔고딕",14,"bold"),
     command=show_ready)
-    go.place(x=800,y=550)
+    add_previous_button("이전",show_child_safety,y=550)
+    add_next_button("GO!",show_ready, x=800,y=550)
 #-------------
-# 컷 2 : 사전 준비물 확인
+# 컷 3 : 사전 준비물 확인
 #-------------
 def show_ready():
     clear_screen()
@@ -62,7 +78,7 @@ def show_ready():
     add_next_button("OK! 함께 들어갈까요?", show_tool_room)
 
 #----------------
-# 컷 3: 도구방
+# 컷 4: 도구방
 #----------------
 def show_tool_room():
     clear_screen()
@@ -78,7 +94,7 @@ def show_tool_room():
     add_next_button("장착할 도구들을 찾아볼까요?",show_browser,y=540)
     add_previous_button("이전",show_ready,y=540)
 #-------------------
-# 컷 4 : 인터넷 연결 확인
+# 컷 5 : 인터넷 연결 확인
 #-------------------
 def show_browser():
     clear_screen()
@@ -95,7 +111,7 @@ def show_browser():
     add_next_button("엄마와 함께 실행 확인했어요.",show_ai)
     add_previous_button("이전",show_tool_room,x=70)
 #--------------------
-# 컷 5 : AI와 이야기하기
+# 컷 6 : AI와 이야기하기
 #--------------------
 def show_ai():
     clear_screen()
@@ -118,7 +134,7 @@ def show_ai():
     finish.place(x=620,y=480)
     add_previous_button("이전",show_browser,x=70)
 #-------------------------
-# 컷 6 : 새로운 두가지 도구
+# 컷 7 : 새로운 두가지 도구
 #-------------------------
 def show_two_tools():
     clear_screen()
@@ -133,7 +149,7 @@ def show_two_tools():
     add_next_button("'Python'부터 만나볼까요?",show_python_download)
     add_previous_button("이전",show_ai,x=70)
 #----------------------------
-# 컷 7: Python 다운로드
+# 컷 8: Python 다운로드
 #----------------------------
 def show_python_download():
     clear_screen()
@@ -150,7 +166,7 @@ def show_python_download():
     add_next_button("'Python' 설치 확인했어요.",show_vscode_download,y=520)
     add_previous_button("이전",show_two_tools,x=70,y=520)
 #------------------------------
-# 컷 8: VS Code 다운로드
+# 컷 9: VS Code 다운로드
 #------------------------------
 def show_vscode_download():
     clear_screen()
@@ -166,7 +182,7 @@ def show_vscode_download():
     add_next_button("'VS Code'도 준비됐어요.",show_workspace)
     add_previous_button("이전",show_python_download,x=80)
 #-------------------------------
-# 컷 9: 우리의 작업실
+# 컷 10: 우리의 작업실
 #-------------------------------
 def show_workspace():
     clear_screen()
@@ -182,7 +198,7 @@ def show_workspace():
     add_next_button("작업실 구조를 확인했어요.",show_run_method)
     add_previous_button("이전",show_vscode_download,x=70)  
 #--------------------------------
-# 컷 10: 저장하고 실행하기
+# 컷 11: 저장하고 실행하기
 #--------------------------------
 def show_run_method():
     clear_screen()
@@ -198,7 +214,7 @@ def show_run_method():
     add_next_button("이제 직접 해볼까요?",show_nickname)
     add_previous_button("이전",show_workspace,x=70)
 #----------------------------------
-# 컷 11: 닉네임 만들기
+# 컷 12: 닉네임 만들기
 #----------------------------------
 def show_nickname():
     clear_screen()
@@ -213,7 +229,7 @@ def show_nickname():
     add_next_button("우리 이름 정했어요.",show_first_code)
     add_previous_button("이전",show_run_method,x=80)
 #------------------------------------
-# 컷 12: 첫 코드
+# 컷 13: 첫 코드
 #------------------------------------
 def show_first_code():
     clear_screen()
@@ -230,7 +246,7 @@ def show_first_code():
     add_next_button("코드 입력하고 저장했어요.",show_first_run,y=520)
     add_previous_button("이전",show_nickname,x=70,y=520)
 #--------------------------------------
-# 컷 13: 첫 실행
+# 컷 14: 첫 실행
 #--------------------------------------
 def show_first_run():
     clear_screen()
@@ -246,7 +262,7 @@ def show_first_run():
     add_next_button("첫 소통 성공!",show_mom_code,y=530)
     add_previous_button("이전",show_first_code,x=80,y=530)
 #----------------------------------------
-# 컷 14: 엄마도 함께
+# 컷 15: 엄마도 함께
 #----------------------------------------
 def show_mom_code():
     clear_screen()
@@ -265,7 +281,7 @@ def show_mom_code():
     add_next_button("둘 다 소통됐어요!",show_finish_today,y=530)
     add_previous_button("이전",show_first_run,x=80,y=530)
 #----------------------------------------
-# 컷 15: 오늘은 여기까지
+# 컷 16: 오늘은 여기까지
 #----------------------------------------
 def show_finish_today():
     clear_screen()
@@ -281,7 +297,7 @@ def show_finish_today():
     add_next_button("'준비단계' 일정 끝났네요.",show_review)
     add_previous_button("이전",show_mom_code,x=80)
 #------------------------------------------
-# 컷 16: 엄마와 함께 되돌아 보기
+# 컷 17: 엄마와 함께 되돌아 보기
 #------------------------------------------
 def show_review():
     clear_screen()
@@ -296,7 +312,7 @@ def show_review():
     add_next_button("많이 생각해 봤어요.",show_last)
     add_previous_button("이전",show_finish_today,x=70)
 #---------------------------------------------
-# 컷 17: 진짜 탐사의 시작
+# 컷 18: 진짜 탐사의 시작
 #---------------------------------------------
 def show_last():
     clear_screen()
@@ -311,5 +327,5 @@ def show_last():
     add_message(text,x=90,y=120,size=20)
     add_previous_button("이전",show_review,x=90)
 
-show_entrance()
+show_child_safety()
 root.mainloop()
