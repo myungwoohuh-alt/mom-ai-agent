@@ -91,7 +91,7 @@ def show_browser():
     "여기서도 잘 연결되나 한번 실행해 볼까요?")
     message = tk.Label(root,text=text,
     font=("나눔고딕",18,"bold"), justify="left")
-    message.place(x=70,y=120)
+    message.place(x=70,y=140)
     add_next_button("엄마와 함께 실행 확인했어요.",show_ai)
     add_previous_button("이전",show_tool_room,x=70)
 #--------------------
@@ -100,17 +100,17 @@ def show_browser():
 def show_ai():
     clear_screen()
     add_title("'AI'와 이야기하기",x=70,size=28)
-    text=("'AI'에게 바로 전에 연결했던 '브라우저'에 대해\n"
-    "궁금했던 것을 물어보려면 어떻게 해야 할까요?\n\n"
-    "휴대폰에서 'ChatGpt'를 누르고\n"
-    "질문하는 곳에 궁금했던 것들을 입력해 보세요.\n"
-    "선생님처럼 편안하게 질문하면 됩니다.\n\n"
-    "그런데, 'AI'도 가끔 실수할 수도 있어요.\n"
-    "중요한 내용일수록 다시 한번 확인하는\n"
-    "습관을 들이는게 좋아요.")
+    text=("'AI'에게 궁금한 것을 물어보려면 어떻게 해야 할까요?\n\n"
+    "휴대폰에서 'ChatGpt'를 누르고 아래 'ChatGpt...'곳에,\n"
+    "선생님에게 물어보듯이 편안하게 입력하면 됩니다.\n\n"
+    "컴퓨팅 작업이 잘 안될 경우에도 일단 멈추고,\n"
+    "컴퓨터 창의 화면을 사진찍어서 상황설명하면,\n"
+    "'AI'가 왜 그런지 자세히 알려줄겁니다.\n\n"
+    "그런데, 'AI'도 가끔은 실수할 수도 있으니,\n"
+    "다시 한번 확인하는 습관을 들이는게 좋아요.")
     message=tk.Label(root,text=text,
     font=("나눔고딕",18,"bold"), justify="left")
-    message.place(x=70,y=140)
+    message.place(x=70,y=130)
     finish=tk.Button(root,
     text="브라우저와 AI 연결 다 확인했어요.",
     font=("나눔고딕",12),
