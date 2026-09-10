@@ -46,14 +46,21 @@ def show_child_safety():
 #--------------------------------
 def show_cover():
     clear_screen()
-
-    add_next_button("--")
+    image=Image.open("cave_journey_cover_left_title.png")
+    image=image.resize((900,600))
+    photo=ImageTk.PhotoImage(image)
+    label=tk.Label(root,image=photo)
+    label.image=photo
+    label.place(x=0,y=0)
+    add_next_button("--",show_look_back)
     add_previous_button("이전",show_child_safety,y=530)
 #--------------------------------
 # 3:
 #-------------------------------
-
-
+def show_look_back():
+    clear_screen()
+    add_previous_button("이전",show_cover)
+    add_next_button("---") 
 
 show_child_safety()
 root.mainloop()
