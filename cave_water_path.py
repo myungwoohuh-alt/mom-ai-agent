@@ -3,9 +3,9 @@ from PIL import Image,ImageTk
 root=tk.Tk()
 root.title("물길 탐사")
 root.geometry("900x600")
-#--------------------------------
+#----------------------
 # 공통기능
-#--------------------------------
+#----------------------
 def clear_screen():
     for widget in root.winfo_children():
         widget.destroy()
