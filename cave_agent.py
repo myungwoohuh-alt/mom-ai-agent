@@ -108,13 +108,13 @@ def show_structure():
     add_title("왜 이렇게 하는지 구조와 의미를 알아볼까요?\n\n",size=28)
     add_message("'LLM'에게 'trip.txt'에 기록된 탐사기록을,\n"
     "각각 분류해서 계속 사용할 수 있게 해달라고 부탁했어요.\n\n"
-    "그래서, 우리는 'LLM'이 이러한 작업할 쉽게할 수 있는,\n"
+    "그래서, 우리는 'LLM'이 이러한 작업을 쉽게할 수 있는,\n"
     "새파일 'record_agent.py'를 만들었습니다.\n\n"
     "이 파일은 'trip.txt.'의 우리기록들을\n"
-    "'LLM'에게 분류해 정리를 부탁한 뒤 결과를\n"
+    "'LLM'에게 분류 정리를 부탁한 뒤, 결과를\n"
     "다시 각각의 새파일에 저장하도록 연결한다고 하네요.\n\n"
     "이렇게 목표를 주면 여러 작업을 이어서 수행하는,\n"
-    "작은 'AI Agent'의 형태를 우리가 직접 만들어 볼 겁니다.",size=18,y=130)
+    "'AI Agent'의 형태를 우리가 직접 만들어 볼 겁니다.",size=18,y=130)
     add_previous_button("이전",show_new_tool,y=510)
     add_next_button("만들어 보고 싶어요!",show_prompt_1,y=510)
 #---------------------------------------------
@@ -126,9 +126,9 @@ def show_prompt_1():
     add_message("먼저 'record_agent.py'가\n" 
     "해야 할 일들을 간단히 살펴보아야 합니다.\n\n"
     "1. 'trip.txt'에 저장된 '탐사기록'을 읽습니다.\n\n"
-    "2. 'LLM'에게 기록을 정리해 달라고 부탁합니다.\n\n"
-    "3. '(아이)와 (엄마)의 기록'을 각각 나누어 정리합니다.\n\n"
-    "4. '새로운 파일'에 각각 정리한 내용을 저장합니다.\n\n"
+    "2. 'LLM'에게 기록을 분류해 정리해 달라고 부탁합니다.\n\n"
+    "3. (아이)와 (엄마)의 기록을 각각 저장할 '새파일'을 만듭니다.\n\n"
+    "4. '새파일'에 각각 정리한 내용을 저장합니다.\n\n"
     "이렇게 중간에서 여러가지 일을하는 'Python 파일'입니다.",size=18,y=110)
     add_previous_button("이전",show_structure)
     add_next_button("어떻게 부탁하죠?",show_prompt_2)
@@ -158,20 +158,29 @@ def show_code_1():
     add_title("흐름에따라 구조적으로 간결하게 코딩하세요.",size=28)
     add_message("먼저, 코드를 몰라도 흐름의 내용은 알고있으니,\n"
     "스스로 어떻게 구조를 기획하는게 효과적일지 생각해 보세요.\n\n"
-    "여러가지 방법이 있겠지만, 'LLM'에게 추천해 달라고 부탁하니.\n"
+    "여러가지 방법이 있겠지만, 동굴에게 추천해 달라고 부탁하니.\n"
     "자기는 아래와 같이 코딩을 하고 싶다고 합니다.\n\n"
     "1. 작업 시작하려면 'record_agent.py'를 코딩으로 불러냅니다.\n" 
     "2. 그러면, '탐사기록'인 'trip.txt'를 읽고 'LLM'에게 전달 합니다.\n"
     "3. 'LLM'은 (아이)와 (엄마) 기록을 분류하고 정리합니다.\n"
-    "4. 'LLM'이 두 사람 각각의 새파일을 만들어 따로따로 정리시킵니다.\n"
+    "4. 'record_agent.py'가 두 사람의 새파일을 만들어 따로따로 저장합니다.\n"
     "5. 누군가 'Python'의 '터미널'에서 '실행'을 요청하면 보여줍니다.\n\n"
     "복잡한 것들도 구조적으로 흐름따라 요약하면 간결하게 정리된다고합니다.",size=18)
     add_previous_button("이전",show_prompt_2,y=530) 
-    add_next_button("구조가 중요하네요!",show_code_2,y=530)
+    add_next_button("구조가 중요하네요!",show_agent_flow,y=530)
 #-------------------------------------------------------
 # 10: 도식처럼 탐사기록/Python file/LLM 관계 보여주는 이미지
 #------------------------------------------------------
-
+def show_agent_flow():
+    clear_screen()
+    image=Image.open("agent_flow.png")
+    image=image.resize((900,600))
+    photo=ImageTk.PhotoImage(image)
+    label=tk.Label(root,image=photo)
+    label.image=photo
+    label.place(x=0,y=0)
+    add_previous_button("이전",show_code_1,y=550)
+    add_next_button("어느 길로 갈까요?",show_code_2,x=700,y=550)
 #--------------------------------------------------------
 # 11: 'record_agent.py' 불러내는 코딩
 #---------------------------------------------------------
@@ -187,7 +196,7 @@ def show_code_2():
         "with open(\"trip.txt\",\"r\",encoding=\"utf-8\")as file:\n"
         "     trip=file.read()\n\n", size=14,y=200)
     add_message("여기까지는 'trip.txt'에 있는 '탐사기록'을\n"
-    "'record_agent.py'에게 사용할 수있도록 불러오는 코딩입니다.\n"
+    "'record_agent.py'가 읽을 수있도록 불러오는 코딩입니다.\n"
     "참고로 마지막 줄처럼 안으로 4칸 '들여쓰기'를 똑같이 하세요.",size=18,y=400)
     add_previous_button("이전",show_prompt_2,y=530)
     add_next_button("다음 코딩은?",show_code_3,x=700,y=530)
@@ -249,11 +258,11 @@ def show_run_agent():
     "(아이)와 (엄마) 각각의 파일을 열어서,\n"
     "어떤 일들이 벌어졌는지 봐야겠죠?",size=18,y=140)
     add_previous_button("이전",show_code_4)
-    add_next_button("보고 싶어요!",show_agent_result)
+    add_next_button("보고 싶어요!",show_agent_result_1)
 #--------------------------------------------------
 # 15: 두 사람의 새로운 파일
 #--------------------------------------------------
-def show_agent_result():
+def show_agent_result_1():
     clear_screen()
     add_title("새로운 파일이 생겼나요?",size=28)
     add_message("'VS Code'의 왼쪽 파일 목록을 살펴보세요.\n\n"
@@ -263,27 +272,114 @@ def show_agent_result():
     "각각 하나씩 클릭해서 열어보시고 나서,\n"
     "탐사하는 동안의 생각과 느낌의 기록들이\n"
     "어떻게 정리되어 있는지 살펴보세요.\n\n"
-    "지나온 흐름과 구조를 되돌아보며\n"
-    "비교하면서 보면 또다른 느낌이 들겁니다.",size=18,y=140)
+    "지나온 탐사 과정의 흐름과 구조를 되돌아보며\n"
+    "비교해 보면 또다른 느낌이 들겁니다.",size=18,y=120)
     add_previous_button("이전",show_run_agent)
-    add_next_button("신기해요.",show_agent_difference)
+    add_next_button("신기해요.",show_agent_result)
+#------------------------------------------------------------
+# 16: 코딩 후 이와 관련된 실행 결과와 에이전트 역할 보여주는 이미지 컷
+#-------------------------------------------------------------
+def show_agent_result():
+    clear_screen()
+    image=Image.open("agent_result.png")
+    image=image.resize((900,600))
+    photo=ImageTk.PhotoImage(image)
+    label=tk.Label(root,image=photo)
+    label.image=photo
+    label.place(x=0,y=0)
+    add_previous_button("이전",show_agent_result_1,y=550)
+    add_next_button("어느 길로 갈까요?",show_agent_difference,x=700,y=550)
+#---------------------------------
+# 17: 예전 'LLM'과 무엇이 달라졌나요?
+#---------------------------------
 def show_agent_difference():
     clear_screen()
-    add_title("",size=28)
-    add_message("",size=18,y=140)
-#------------------------------------------------------
-# 16: 코딩 후 이와 관련된 변화와 에이전트 역할 관련 이미지 컷
-#-------------------------------------------------------
+    add_title("그런데, 조금 전과 무엇이 달라졌죠?",size=28)
+    add_message("예전에는 우리가 'LLM'에게 질문하면,\n"
+    "답변을 받는 것으로 끝났습니다.\n\n"
+    "이번에는 달랐죠?\n\n"
+    "탐사 기록을 읽고,\n"
+    "'LLM'에게 정리를 부탁하고,\n"
+    "결과를 받아서,\n"
+    "새로운 파일에 저장하는 일까지 이어졌습니다.\n\n"
+    "한 가지 목표를 위해,\n"
+    "여러 작업이 순서대로 연결된 겁니다.\n\n"  ,size=18,y=130)
+    add_previous_button("이전",show_agent_result,y=530)
+    add_next_button("무언가 달라졌네요.",show_agent_meaning,y=530)
+#-----------------------------------
+# 18:'AI Agent'의 첫 의미
+#-----------------------------------
+def show_agent_meaning():
+    clear_screen()
+    add_title("이것이 작은 'AI Agent'의 시작입니다.",size=28)
+    add_message("우리가 만든 것은 아주 작고\n"
+    "간단한 형태의 'AI Agent'입니다.\n\n"
+    "사람은 무엇을 할지 목표를 정하고,\n"
+    "프로그램은 필요한 작업을 수행합니다.\n\n"
+    "그리고 'LLM'은 그 과정에서 내용을 읽고,\n"
+    "이해하고 정리하는 일을 도와줍니다.\n\n"
+    "아직 작은 시작이지만 질문과 답변에서,\n"
+    "한 걸음 더 나아가 직접 일을하며 도와줍니다.",size=18,y=120)
+    add_previous_button("이전",show_agent_difference)
+    add_next_button("일이 편해졌어요.",show_human_role)
+#--------------------------------------
+# 19: 사람의 역할
+#-------------------------------------
+def show_human_role():
+    clear_screen()
+    add_title("그렇다면 사람들은 무엇을 해야 할까요?",size=28)
+    add_message("'AI'에게 일을 맡긴다고 해서,\n"
+    "사람이 아무 것도 하지 않는 것은 아니예요.\n\n"
+    "무엇을 할지 목표를 정확히 해야하고,\n"
+    "어떻게 효율적으로 부탁해야 할지 기획해야 하고,\n"
+    "결과가 제대로 되었는지 몇번이고 확인하고,\n"
+    "수정하면서 그 결과에 대한 책임이,\n"
+    "우리에게도 있다는 것을 알아야 합니다.\n\n"
+    "'AI Agent'는 필요에 따라서 도와주는 역할이지,\n"
+    "모든 방향과 결과를 결정하는 것은 바로 사람이예요.",size=18,y=130)
+    add_previous_button("이전",show_agent_meaning)
+    add_next_button("잘 이해했습니다.",show_agent_finish)
+#--------------------------------------
+# 20: 4 단계 마무리
+#-------------------------------------
+def show_agent_finish():
+    clear_screen()
+    add_title("우리의 기록을 가지고 밖으로 나가 볼까요?",size=28)
+    add_message("이제 탐사 기록도 다 정리됐죠?\n\n"
+    "조금 전 우리는 처음으로\n"
+    "'AI'에게 질문만 한 것이 아니라,\n"
+    "일을 이어서 하도록 만들어 보았습니다.\n\n"
+    "작은 경험이지만,\n"
+    "우리가 직접 만든 첫 번째 작은 'AI Agent'입니다.\n\n"
+    "이제 이 기록들을 가지고 동굴 밖으로 나가 볼까요?",size=18,y=140)
+    add_previous_button("이전",show_human_role)
+    add_next_button("밖으로 나갑시다!",show_exit)
+#---------------------------------------
+# 21: 바로 밖이 보이는 이미지 컷
+#---------------------------------------
+def show_exit():
+    clear_screen()
+    root.geometry("900x600")
+    image=Image.open("cave_exit_future.png")
+    image=image.resize((900,600))
+    photo=ImageTk.PhotoImage(image)
+    label=tk.Label(root,image=photo)
+    label.image=photo
+    label.place(x=0,y=0)
+    title=tk.Label(root,text="밝은 미래를 향해!",
+    font=("나눔고딕",24,"bold"),
+    bg="#f4e6bd")
+    title.place(x=70,y=35)
+    child=tk.Label(root,text='아이:"통과! 미래의 꿈을 펼쳐보자!"',
+    font=("나눔고딕",14,"bold"),
+    bg="#f4e6bd")
+    child.place(x=560,y=500)
+    mom=tk.Label(root,text='엄마:"우리 함께 미래로 나아가자!"',
+    font=("나눔고딕",14,"bold"),
+    bg="#f4e6bd")
+    mom.place(x=560,y=550)
+    add_previous_button("이전",show_agent_finish,y=550)
 
-#-----------------------------------------------------
-# 17: 예전 'LLM'과 무엇이 달라졌나요?
-#------------------------------------------------
-
-
-
-
-
- 
 
 show_child_safety()
 root.mainloop()

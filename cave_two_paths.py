@@ -253,22 +253,21 @@ def show_trip_txt():
     add_title("우리 '탐사 기록'을 남겨 볼까요?",x=70,size=30)
     text=("어떤 도구를 어떻게 사용했었는지 깜빡깜빡하죠?.\n"
     "'탐사 기록'이 있으면 좋겠죠?.\n\n"
-
     "'VS Code'의 왼쪽 위 'File'을 누르고,\n"
     "'trip.txt'라는 '새 파일 이름'을 만듭니다.\n\n"
-
     "탐사하며 생각하고 느껴지는 것들의\n"
     "짧은 요약 노트입니다.\n\n"
+    "작은 것들이라도 많이 기록 할수록 좋아요.\n"
     "탐사를 이어갈수록 경험따라 쌓여갈 겁니다.")
     add_message(text,y=120,size=20)
-    add_previous_button("이전",show_door_result,x=70)
-    add_next_button("계속 기록해 볼게요",show_trip_txt_write)
+    add_previous_button("이전",show_door_result,x=70,y=500)
+    add_next_button("계속 기록해 볼게요",show_trip_txt_write,y=500)
 #---------------------------------------------
 # 17: 탐사 기록 작성
 #---------------------------------------------
 def show_trip_txt_write():
     clear_screen()
-    add_title("경험을 기록으로 남기세요",x=70,size=30)
+    add_title("경험을 기록으로 남기세요",x=70,size=28)
     text=("탐사했던 경험들을,\n"
     "하나의 흐름처럼 느껴보세요.\n\n"
     "도구를 찾아서 사용 방법을 어떻게 배웠죠?.\n"
@@ -276,10 +275,12 @@ def show_trip_txt_write():
     "흐름따라 기억나는 순서대로 요약하세요.\n\n"
     "엄마도 느낌을 기록해두면 좋지 않을까요?\n"
     "일기쓰듯 하지 마시고 탐사 중에\n"
-    "생각과 느낌을 그때그때 요약 기록해 두세요.")
-    add_message(text,x=70,y=120,size=20)
-    add_previous_button("이전",show_trip_txt,x=70)
-    add_next_button("계속 기록 할게요",show_door_2)
+    "생각과 느낌을 그때그때 요약 기록해 두세요.\n\n"
+    "두 사람 다 각각 기록할 내용 맨 앞에다,\n"
+    "반드시, (아이)와 (엄마)라고 꼭 먼저 쓰세요.")
+    add_message(text,x=70,y=120,size=18)
+    add_previous_button("이전",show_trip_txt,x=70,y=530)
+    add_next_button("계속 기록 할게요",show_door_2,y=530)
 #----------------------------------------------
 #18: 두번째 동굴의 문
 #---------------------------------------------
@@ -414,10 +415,12 @@ def show_review_stage():
     "깊이 찾아가는 좋은 습관을 만들어 보세요.\n\n"
     "이어지는 다음 탐사에서 동굴이\n"
     "다양한 소통 할 수 있는 방법을 찾아 볼까요?\n\n"
-    "지금 느껴지는 생각과 느낌을 꼭 'trip.txt'에 남기세요.\n\n"
-    "엄마도 이번 탐사 기록을 꼭 남겨두세요?")
+    "지금 느껴지는 생각과 느낌을,\n"
+    "꼭 'trip.txt'에 '탐사기록'으로 남기세요.\n\n"
+    "잊지 마시고 글 맨 앞에 (아이)와 (엄마)를,\n"
+    "구분할 수 있도록 반드시 먼저 쓰고 시작하세요.")
     add_message(text,x=100,y=120,size=18)
-    add_previous_button("이전",show_second_result,x=100)
+    add_previous_button("이전",show_second_result,x=100,y=520)
 
 show_child_safety()
 root.mainloop()     

@@ -248,22 +248,9 @@ def show_llm_2():
     "탐색해 보는 좋은 습관을 만들어 보세요.")
     add_message(text,y=120)
     add_previous_button("이전",show_llm_1)
-    add_next_button("구조부터 먼저 보는 습관 만들게요.",show_bright_path,x=580)
-#----------------------------------------------
-# 15: 동굴 끝 밝은 빛이 보이는 이미지
-#----------------------------------------------
-def show_bright_path():
-    clear_screen()
-    image=Image.open("boat_cave_explore.png")   
-    image=image.resize((900,600))
-    photo=ImageTk.PhotoImage(image)
-    label=tk.Label(root,image=photo)
-    label.image=photo
-    label.place(x=0,y=0)
-    add_previous_button("이전",show_llm_2,y=530)
-    add_next_button("빛이 많이 들어 오네요!",show_llm_talk, x=700,y=530)
+    add_next_button("구조부터 먼저 보는 습관 만들게요.",show_llm_talk,x=580)
 #-----------------------------------------------
-# 16: LLM 사용 경험담
+# 15: LLM 사용 경험담
 #-----------------------------------------------
 def show_llm_talk():
     clear_screen()
@@ -280,7 +267,7 @@ def show_llm_talk():
     add_previous_button("이전",show_bright_path)
     add_next_button("우리도 행복한 기분들어요.",show_imagination)
 #----------------------------------------------
-# 17: 우리의 미래를 상상하며 
+# 16: 우리의 미래를 상상하며 
 #----------------------------------------------
 def show_imagination():
     clear_screen()
@@ -295,49 +282,19 @@ def show_imagination():
     "엄마도 미래의 삶을 마음 속에 그려보시지 않겠어요?")
     add_message(text,size=19)
     add_previous_button("이전",show_llm_talk)
-    add_next_button("미래의 꿈을 상상해 봤습니다.",show_exit)
+    add_next_button("미래의 꿈을 상상해 봤습니다.",show_bright_path)
 #--------------------------------------------------
-# 18: 나가는 통로를 맞이하면서
+# 17: 나가는 통로를 맞이하면서
 #-------------------------------------------------
-def show_exit():
+def show_bright_path():
     clear_screen()
-    add_title("와우! 밖으로 나가는 통로가 보여요!",size=28)
-    text=("이 번 탐사에서 어떤 경험들을 했고,\n"
-    "코딩으로는 어떤 구조로 표현되었는지 떠 올려 보세요.\n\n"
-    "탐사 경험과 미래의 꿈까지\n"
-    "'trip.txt'에 잊지 않도록 꼭 기록하세요\n\n"
-    "가능한 한줄로 요약해 보는 습관을 만드세요.\n"
-    "새로운 미래 설계도 한줄 요약이\n"
-    "될 때까지 다지고 다진다음 출발하세요.\n\n"
-    "동굴도 함께해서 행복했고 밝은 미래를 응원한데요.")
-    add_message(text,size=19,)
-    add_previous_button("이전",show_imagination)
-    add_next_button("밝은 미래로 나갑시다!",show_final)
-#----------------------------------------------------
-# 19: 밝은 미래로 향하는 이미지
-#----------------------------------------------------
-def show_final():
-    clear_screen()
-    root.geometry("900x600")
-    image=Image.open("cave_exit_future.png")
+    image=Image.open("boat_cave_explore.png")   
     image=image.resize((900,600))
     photo=ImageTk.PhotoImage(image)
     label=tk.Label(root,image=photo)
     label.image=photo
     label.place(x=0,y=0)
-    title=tk.Label(root,text="밝은 미래를 향해!",
-    font=("나눔고딕",24,"bold"),
-    bg="#f4e6bd")
-    title.place(x=70,y=35)
-    child=tk.Label(root,text='아이:"통과! 미래의 꿈을 펼쳐보자!"',
-    font=("나눔고딕",14,"bold"),
-    bg="#f4e6bd")
-    child.place(x=560,y=500)
-    mom=tk.Label(root,text='엄마:"우리 함께 미래로 나아가자!"',
-    font=("나눔고딕",14,"bold"),
-    bg="#f4e6bd")
-    mom.place(x=560,y=550)
-    add_previous_button("이전",show_exit,y=550)
+    add_previous_button("이전",show_llm_2,y=530)
 
 show_child_safety()
 root.mainloop() 
