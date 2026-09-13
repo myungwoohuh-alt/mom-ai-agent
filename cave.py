@@ -269,15 +269,13 @@ def show_mom_code():
     add_title("엄마도 함께",x=80,size=28)
     text=("이번에는 코드에 엄마의 이름도 넣어볼까요?\n"
     "앞에했던 코딩에 추가 합니다.\n\n"
-    'name=input("당신의 닉네임은?")\n'
     'mom=input("함께하는 엄마의 닉네임은?")\n'
-    'print("안녕,", name)\n'
     'print(mom,"정말 반갑습니다.")\n'
     'print("우리의 첫 번째 연결 시작 되었어요!")\n\n'
     "검토 후 'Ctrl+S'로 저장, 아래 '터미널'에서,\n"
     "'python hello_cave.py'를 쓰고 'Enter'로 실행합니다.\n\n"
     "엄마도 동굴과 인사했나요?")
-    add_message(text,x=80,y=110,size=18)
+    add_message(text,x=80,y=130,size=18)
     add_next_button("둘 다 소통됐어요!",show_finish_today,y=530)
     add_previous_button("이전",show_first_run,x=80,y=530)
 #----------------------------------------
