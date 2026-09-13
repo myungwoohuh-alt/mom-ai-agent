@@ -9,7 +9,7 @@ root.geometry("900x600")
 def clear_screen():
     for widget in root.winfo_children():
         widget.destroy()
-def add_title(text,size=25,x=70,y=20):
+def add_title(text,size=28,x=70,y=20):
     title=tk.Label(root,text=text,
     font=("나눔고딕",size,"bold"))
     title.place(x=x,y=y)
@@ -52,15 +52,173 @@ def show_cover():
     label=tk.Label(root,image=photo)
     label.image=photo
     label.place(x=0,y=0)
-    add_next_button("--",show_look_back)
     add_previous_button("이전",show_child_safety,y=530)
+    add_next_button("Go!",show_look_back,x=750,y=530)
 #--------------------------------
-# 3:
+# 3: 첫걸음
 #-------------------------------
 def show_look_back():
     clear_screen()
+    add_title("동굴 밖으로 나오니 무엇이 달라 졌나요?")
+    add_message("'미래로 통하는 동굴' 탐사를 끝내니,\n" 
+    "뭔가 많이 달라진 기분 안들어요?\n\n"
+    "일단, 동굴 입구에 처음 들어갔을 때,\n"
+    "생소했던 유용한 도구들을 이미 많이 갖고 있잖아요?\n\n"
+    "또한, 지나왔던 동굴 길들과 물길의 구조들이,\n"
+    "어느새 하나의 흐름으로 연결되어 그려지지 않나요?\n\n"
+    "'AI Agent'가 정리해준 '탐사기록'과 함께,\n"
+    "다시 한번 지나온 길들을 떠 올려 보면 어떨까요?")
     add_previous_button("이전",show_cover)
-    add_next_button("---") 
+    add_next_button("회상해 볼까요?",show_first_tools) 
+#---------------------------------
+# 4: '준비단계' 회고
+#--------------------------------
+def show_first_tools():
+    clear_screen()
+    add_title("'도구방'에서 부터 많이 당황했었어요.")
+    add_message("뭐가 뭔지도 잘 몰라서,\n"
+    "처음으로 동굴의 도움을 많이 받았었죠.\n\n"
+    "'Python'이 무엇인지도,\n"
+    "'VS Code'가 무엇인지도,\n"
+    "'새로운 파일'을 어떻게 만드는지도 몰랐었어요.\n\n"
+    "하지만, 동굴의 도움과 휴대폰 'ChatGPT'에게 물어보면서,\n"
+    "직접 '다운로드'해서 설치하고, 입력한 다음 저장하고,\n"
+    "'터미널'에서 반복 실행하면서 많이 익숙해 졌었어요.",y=130)
+    add_previous_button("이전",show_look_back)
+    add_next_button("자신감이 생겼었어요.",show_if_agent_image)
+#-------------------------------------------------------------------------
+# 5. 구조 흐름 이미지 컷 ; if,else---if,elif,else---'LLM'---Ai Agent 이 순서로.
+#-------------------------------------------------------------------------
+def show_if_agent_image():
+    clear_screen()
+    image=Image.open("step5_if_llm_agent.png")
+    image=image.resize((900,600))
+    photo=ImageTk.PhotoImage(image)
+    label=tk.Label(root,image=photo)
+    label.image=photo
+    label.place(x=0,y=0)
+    add_previous_button("이전",show_first_tools,y=530)
+    add_next_button("흐름의 구조가 잘 보여요",show_two_paths,x=630,y=530)
+#--------------------------------
+# 6: '두 갈래길' 회고
+#---------------------------------
+def show_two_paths():
+    clear_screen()
+    add_title("선택에 따라 달라지는 구조를 알게 됐어요.")
+    add_message("'두갈래길'에서는 두가지 조건 중에서\n"
+    "하나를 선택하는 조건에 따라 결과가 달라질 수밖에 없습니다.\n\n"
+    "'if'와 'else'라는 코드로 직접 코딩하면서,\n"
+    "디지털 세계에서는 이런 방법으로 표현한다는 것을 알았어요.\n\n"
+    "코드는 단순히 외우는 것이 아니라,\n"
+    "생각하고 있는 구조를 논리적으로 코딩하는 방법이라고 느꼈습니다.",size=20,y=140)
+    add_previous_button("이전",show_first_tools)
+    add_next_button("구조를 알기 시작했어요.",show_water_path)
+#-------------------------------------
+# 7: 물길탐사 회고
+#-----------------------------------
+def show_water_path():
+    clear_screen()
+    add_title("'물길탐사'에서 'LLM'이라는 새도구를 마련했어요.")
+    add_message("두가지 조건이 넘는 경우에 새로운 코드,\n"
+    "'elif'를 사용하면 쉽게 표현할 수 있다는 것도 알았어요.\n\n"
+    "또한, 연결이 조금 어려웠지만 무엇보다도 인상 깊었던 경험은,\n"
+    "동굴의 요청으로 'LLM'이라는 새로운 도구를 마련해 준 일입니다.\n\n"
+    "그동안 프로그램에 따라 미리 정해놓은 답만 이야기하던 동굴에게\n"
+    "우리와 자유롭고 다양한 대화를 할 수 있도록 만들어 주었기 때문입니다.\n\n"
+    "동굴 밖의 더 넓은 'AI 세계'와 처음으로 연결된 순간이었죠.",y=130)
+    add_previous_button("이전",show_two_paths)
+    add_next_button("행복감을 함께 느꼈었어요.",show_agent_memory)
+#-----------------------------------
+# 8: 'Agent' 만들기 회고
+#----------------------------------
+def show_agent_memory():
+    clear_screen()
+    add_title("'AI'에게 우리가 할 일을 맡겨보았습니다.")
+    add_message("먼저, 일을 할 수 있도록 새파일을 만들어 주었죠?\n"
+    "이 파일이 우리 '탐사기록'을 읽고,\n"
+    "'LLM'에게 분류와 정리 부탁한 결과를\n"
+    "다시 각각 다른 파일에 저장하도록 코딩했었죠?\n\n"
+    "아주 간단하고 작지만 'AI Agent'를,\n"
+    "우리가 직접 만들어 그 결과까지 확인했었죠?\n\n"
+    "단순하게 질문하고 답을 하는 단계를 넘어서,\n"
+    "목표를 정해주면 직접 일을 수행하며 도와주게 되었다는 겁니다.",y=130)
+    add_previous_button("이전",show_water_path)
+    add_next_button("일하는게 매우 쉬워졌어요.",show_python_agent_image)
+#----------------------------------------------------------------------------------
+# 9:3 개의 중요한 'python file'과 그 역할 이미지 컷; choice.py/ app.py/ record_agent.py
+#-----------------------------------------------------------------------------------
+def show_python_agent_image():
+    clear_screen()
+    image=Image.open("step9_python_agent.png")
+    image=image.resize((900,600))
+    photo=ImageTk.PhotoImage(image)
+    label=tk.Label(root,image=photo)
+    label.image=photo
+    label.place(x=0,y=0)
+    add_previous_button("이전",show_agent_memory,y=530)
+    add_next_button("'Python'파일들 구조 이해 됐어요.",show_learning_way,x=630,y=530)
+#----------------------------------
+# 10:가장 중요한 학습방식
+#----------------------------------
+def show_learning_way():
+    clear_screen()
+    add_title("코드를 전부 기억하고 있나요?")
+    add_message("")
+    add_previous_button("이전",show_agent_memory)
+    add_next_button("",show_two_records)
+#---------------------------------
+# 11: 아이와 엄마의 서로 다른 기록
+#---------------------------------
+def show_two_records():
+    clear_screen()
+    add_title("같이 걸었지만 기억은 다를 수 있습니다.")
+    add_message("")
+    add_previous_button("이전",show_learning_way)
+    add_next_button("",show_keep_recording)
+#--------------------------------
+# 12:기록은 계속된다.
+#--------------------------------
+def show_keep_recording():
+    clear_screen()
+    add_title("동굴 밖에서도 기록해 볼까요?")
+    add_message("")
+    add_previous_button("이전",show_two_records)
+    add_next_button("",show_share_record)
+#--------------------------------
+# 13: 나누고 싶은 것
+#--------------------------------
+def show_share_record():
+    clear_screen()
+    add_title("어떤 것은 다른 사람들과 나눌 수도 있습니다.")
+    add_message("")
+    add_previous_button("이전",show_keep_recording)
+    add_next_button("",show_new_paths)
+#----------------------------------
+# 14: 더 넓은 길
+#--------------------------------
+def show_new_paths():
+    clear_screen()
+    add_title("동굴 밖에는 더 많은 길이 있습니다.")
+    add_message("")
+    add_previous_button("이전",show_share_record)
+    add_next_button("",show_bright_future)
+#----------------------------------
+# 15: 밝은 미래 이미지 컷
+#---------------------------------
+def show_bright_future():
+    clear_screen()
+
+    add_previous_button("이전",show_new_paths)
+    add_next_button("",show_goodbye)
+#-----------------------------------
+# 16: 마지막
+#----------------------------------
+def show_goodbye():
+    clear_screen()
+    add_title("다음에 또 만나요.")
+    add_message("")
+    add_previous_button("이전",show_bright_future) 
+
 
 show_child_safety()
 root.mainloop()
