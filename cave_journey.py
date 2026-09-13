@@ -223,14 +223,6 @@ def show_share_record():
     "그래서, 밝은 미래를 모두 함께 힘을 모아,\n"
     "펼쳐 나가면 더 좋지않을까요?",size=17,y=110)
     add_previous_button("이전",show_keep_recording,y=550)
-    add_next_button("그렇게 된다면 너무 좋아요.",show_bright_future,x=580,y=550)
-#----------------------------------
-# 14: 밝은 미래 이미지 컷
-#---------------------------------
-def show_bright_future():
-    clear_screen()
-
-    add_previous_button("이전",show_share_record)
 
 
 show_child_safety()
