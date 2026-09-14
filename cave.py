@@ -21,7 +21,7 @@ def add_previous_button(text,command,x=50,y=480,size=12):
     button=tk.Button(root,text=text,
     font=("나눔고딕",size,"bold"),command=command)
     button.place(x=70,y=y)
-def add_message(text,x=70,y=100,size=16):
+def add_message(text,x=70,y=120,size=16):
     message=tk.Label(root,text=text,
     font=("나눔고딕",size,"bold"),justify="left")
     message.place(x=x,y=y)
@@ -153,24 +153,31 @@ def show_two_tools():
 #----------------------------
 def show_python_download():
     clear_screen()
-    add_title("'Python' 다운로드 하세요.",x=70,size=28)
-    text=("'브라우저' 검색 창에 'Python'을 입력합니다.\n\n"
-    "'Python' 사이트를 찾아 'Download'를 누르고,\n"
-    "다운로드가 끝난 후 화면에 표시되는 'Python'을 클릭하세요.\n\n"
-    "'Python'을 컴퓨터에서 준비하는 설치 화면이 나타나면,\n"
-    "화면의 안내에 따라 설치를 끝내세요.\n\n"
-    "설치가 끝나면 윈도우 아래쪽 검색 창에 'Python'이라고 입력하고,\n"
-    "'Python'이 나타나면 클릭해서 직접 열어 보세요.\n\n"
-    "창이 열렸나요? 그러면 제대로 설치된 겁니다.")
-    add_message(text,y=130,size=18)
-    add_next_button("'Python' 설치 확인했어요.",show_vscode_download,y=520)
-    add_previous_button("이전",show_two_tools,x=70,y=520)
+    add_title("먼저 'Python'부터 설치할까요?",size=25)
+    text=("1.  'chrome' 검색 창에 'Python'을 쓰고 'Enter'를 누르세요.\n"
+    "2.  'python org'를 누른 뒤 '공식적 프로그램'인 'Python.org'을 클릭하세요.\n\n"
+    "3.  'python 설치 창'이 뜨면 '다운로드'에 '커서'를  놓고 보이는 창에서,\n"
+    "    '파이썬소스' 중 가장 위에 보이는 '파이썬 3 버전'이라는 곳을 클릭하세요.\n\n"
+    "4.  자동으로 '다운로드'되니 조금 기다리면\n"
+    "    위에 '다운로드'가 '완료' 되었다는 작은 창이 열립니다.\n\n"
+    "5.  그 곳에 '커서' 놓고 옆에 보이는 '파일 모양'을 '클릭'하면,\n"
+    "6.  '파일 검색창'이 열리고 파란색으로 지금 설치하려는 파일이 보이게 됩니다.\n\n"
+    "7.  그 곳에 '커서'를 놓고 연속으로 빨리 2번 '더블 클릭'하세요.\n"
+    "8.  그러면, 'python을 설치하겠냐고 묻는 창'이 나오고,\n"
+    "    밑에 보이는 'python 설치'라는 곳을 '클릭'합니다.\n\n"
+    "9.  조금 기다리면, 검은 색의 'python' 창이 열리는데,\n"
+    "    아무 것도 누르지 말고 그냥 'Enter'를 누르세요.\n\n"
+    "10. '기본선택'은 이미 자동으로 '설치' 되고 있으니 다시 'Enter'를 클릭하세요.\n"
+    "    그다음 오른 쪽 위의 'X'를 눌러 이 'Python' 창을 닫으면 설치 완료된 겁니다.")
+    add_message(text,size=13,y=90)
+    add_next_button("'Python' 설치 확인했어요.",show_vscode_download,y=530)
+    add_previous_button("이전",show_two_tools,y=530)
 #------------------------------
 # 컷 9: VS Code 다운로드
 #------------------------------
 def show_vscode_download():
     clear_screen()
-    add_title("'VS Code' 다운로드 하세요.",x=80,size=28)
+    add_title("같은 방식으로 'VS Code'를  설치할까요?",size=25)
     text=("'브라우저' 검색 창에 'VS Code'를 입력하세요.\n\n"
     "'Visual Studio Code' 공식 사이트를 찾아서,\n"
     "'다운로드'하고 화면의 안내에 따라 설치하세요.\n\n"
@@ -178,9 +185,9 @@ def show_vscode_download():
     "'VS Code'가 나타나면 클릭해서 직접 열어 보세요.\n\n"
     "창이 열렸나요? 그러면 제대로 설치된 겁니다.\n\n"
     "앞으로 자주 돌아오게 될 우리의 작업실입니다.")
-    add_message(text,x=80,y=130,size=18)
-    add_next_button("'VS Code'도 준비됐어요.",show_workspace)
-    add_previous_button("이전",show_python_download,x=80)
+    add_message(text,y=90,size=13)
+    add_next_button("'VS Code'도 준비됐어요.",show_workspace,y=530)
+    add_previous_button("이전",show_python_download,y=530)
 #-------------------------------
 # 컷 10: 우리의 작업실
 #-------------------------------
