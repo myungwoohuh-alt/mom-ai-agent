@@ -273,15 +273,14 @@ def show_nickname():
 def show_first_file():
     clear_screen()
     add_title("동굴과의 첫 소통 준비하세요?",x=70,size=25)
-    text=("컴퓨터 아래에 있는 '윈도우 표시'를 누르고 창이 나오면,\n"
-    "아래로 내려가 '개발자 도구'라는 곳에서 'VS Code 상징'을\n"
-    "찾아서 클릭하면 앞에서 설치한 'VS Code' 창이 열릴겁니다.\n\n"
-    "'VS Code' 창의 왼쪽 위에 'File'을 찾아 클릭하세요.\n"
-    "창이 열린 후 'New File'를 클릭하면 '파란색'작은 창이 열립니다,\n\n"
+    text=("이제 'Windows 검색'에 입력해서,\n"
+    "우리가 설치한 'VS Code'를 불러 볼까요?\n\n"
+    "'VS Code'창이 열리면 왼쪽 위에 'File'을 찾아 클릭하세요.\n"
+    "그 곳에서 'New File'을 클릭하면 '파란색'작은 창이 열립니다,\n\n"
     "맨 위의 빈칸에 커서를 놓고 'hello_cave.py'라고 입력하고,\n"
     "'Enter'한 후 나온 파일 창 아래의 'Create File'를 누르세요.\n\n"
     "그러면, 'VS Code' 창이 다시 열리면서,\n"
-    "왼쪽 'Explore'에 'hello_cave.py'가 보이게 됩니다.\n\n"
+    "왼쪽 'Explorer'에 'hello_cave.py'가 보이게 됩니다.\n\n"
     "우리가 방금 새롭게 만든 첫 파일의 이름입니다.\n"
     "이 파일로 동굴과 소통이 되는가를 직접 시험해 볼겁니다.")
     add_message(text,size=15,y=120)
@@ -317,7 +316,7 @@ def show_first_run():
     "당신의 닉네임을 입력해 보세요.\n\n"
     "와우!\n"
     "환영한다고 하나요?\n\n"
-    "당신이 만든 코드로 동굴과 처음으로 소통 됐습니다.")
+    "당신이 만든 코드로 동굴과 첫 소통에 성공했습니다.")
     add_message(text,y=140,size=18)
     add_next_button("첫 소통 성공!",show_mom_code,x=570,y=530)
     add_previous_button("이전",show_first_code,x=80,y=530)
