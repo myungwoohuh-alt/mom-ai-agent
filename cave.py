@@ -30,7 +30,6 @@ def add_message(text,x=70,y=120,size=16):
 #------------------------------ 
 def show_child_safety():
     clear_screen()
-    add_next_button("탐사시작",show_entrance,x=750,y=550)
     add_message("'미래로 통하는 동굴' 탐사 프로그램은,\n"
     "13세 이상을 대상으로 하며, 보호자와 함께 참여합니다.\n" 
     "계속 진행하면 위 안내와 아래 사항에 동의한 것으로 간주합니다.\n\n",size=20,x=70,y=130)
@@ -39,10 +38,10 @@ def show_child_safety():
     "* 모르는 파일이나 프로그램은 함부로 설치하지 않습니다.\n"
     "* 결제나 비용이 발생하는 작업은 보호자와 함께 확인하고 승인합니다.\n"
     "* 'AI'의 답변은 틀릴 수 있으니 중요한 내용은 한 번 더 확인합니다.",size=18,x=70,y=270)
-    add_next_button("탐사시작",show_entrance,x=750,y=550)
-#--------------- 
+    add_next_button("탐사시작",show_entrance,x=750,y=500)
+#----------------------- 
 # 컷 2: 미래로 통하는 동굴
-#---------------
+#----------------------
 def show_entrance():
     clear_screen()
     image=Image.open("cave_entrance.png")
@@ -67,16 +66,16 @@ def show_ready():
     add_title("사전 준비물 확인",x=70,size=30)
     computer=tk.Checkbutton(root,text="노트북이나 컴퓨터 준비됐나요?",
     font=("나눔고딕",18,"bold"))
-    computer.place(x=70,y=150)
+    computer.place(x=70,y=140)
     internet=tk.Checkbutton(root,text="인터넷에 연결할 수 있는 'Chrome' 같은 프로그램이 준비되어 있나요?",
     font=("나눔고딕",18,"bold"))
-    internet.place(x=70,y=230)
+    internet.place(x=70,y=220)
     chatgpt=tk.Checkbutton(root,text="휴대폰에서 'ChatGPT' 같은 'AI'와 직접 이야기할 준비 되어있나요?",
     font=("나눔고딕", 18,"bold"))
-    chatgpt.place(x=70,y=310)
+    chatgpt.place(x=70,y=300)
     add_message("앞으로 컴퓨터로 직접 작업하는 화면이 나오면,\n"
     "먼저, 그 안내 화면을 휴대폰으로 사진 찍어 두세요.\n"
-    "그 사진을 옆에 놓고 하나씩 따라하면 훨씬 쉽지 않을까요?",size=18,x=70,y=400)
+    "그 사진을 옆에 놓고 하나씩 따라하면 훨씬 쉽지 않을까요?",size=18,x=70,y=390)
     add_previous_button("이전",show_entrance,x=70,y=520)
     add_next_button("OK! 함께 들어갈까요?", show_tool_room,y=520)
 
@@ -94,7 +93,7 @@ def show_tool_room():
     title=tk.Label(root,text="도구방",
     font=("나눔고딕",20,"bold"))
     title.place(x=70,y=20)
-    add_next_button("장착할 도구들을 찾아볼까요?",show_browser,y=540)
+    add_next_button("필요한 도구들을 찾아볼까요?",show_browser,y=540)
     add_previous_button("이전",show_ready,y=540)
 #-------------------
 # 컷 5 : 인터넷 연결 확인
@@ -118,24 +117,26 @@ def show_browser():
 #--------------------
 def show_ai():
     clear_screen()
-    add_title("'AI'와 이야기하기",x=100,size=28)
+    add_title("'AI'와 이야기하기",x=100,size=27)
     text=("'AI'에게 궁금한 것을 물어보려면 어떻게 해야 할까요?\n\n"
     "휴대폰에서 'ChatGPT'를 누르고 아래 'ChatGPT...'곳에,\n"
-    "선생님에게 물어보듯이 편안하게 입력하면 됩니다.\n\n"
+    "선생님에게 물어보듯이 편안하게 쓰기만 하면 됩니다.\n\n"
     "컴퓨팅 작업이 잘 안될 경우에도 일단 멈추고,\n"
-    "컴퓨터 창의 화면을 사진찍어서 상황설명하면,\n"
-    "'AI'가 왜 그런지 자세히 알려줄겁니다.\n\n"
+    "컴퓨터 창 화면 사진찍어 질문 앞 (+)를 눌러,\n"
+    "보낼 사진들을 선정하면 그 사진들이 질문창에 뜹니다. .\n\n"
+    "그다음 사진 밑에 잘 안되는 상황을 함께 쓰고 보내면,\n"
+    "'AI'는 왜 그런지 자세히 알려줄겁니다.\n\n"
     "그런데, 'AI'도 가끔은 실수할 수도 있으니,\n"
     "다시 한번 확인하는 습관을 들이는게 좋아요.")
     message=tk.Label(root,text=text,
-    font=("나눔고딕",18,"bold"), justify="left")
-    message.place(x=100,y=130)
+    font=("나눔고딕",16,"bold"), justify="left")
+    message.place(x=100,y=110)
     finish=tk.Button(root,
     text="브라우저와 AI 연결 다 확인했어요.",
     font=("나눔고딕",12),
     command=show_two_tools)
-    finish.place(x=550,y=480)
-    add_previous_button("이전",show_browser,x=100)
+    finish.place(x=550,y=520)
+    add_previous_button("이전",show_browser,x=100,y=520)
 #-------------------------
 # 컷 7 : 새로운 두가지 도구
 #-------------------------
@@ -157,20 +158,20 @@ def show_two_tools():
 def show_python_download():
     clear_screen()
     add_title("먼저 'Python'부터 설치할까요?",size=25,x=90)
-    text=("1.  'chrome' 검색 창에 'Python'을 쓰고 'Enter'를 누르세요.\n"
-    "2.  'python org'를 누른 뒤 '공식적 프로그램'인 'Python.org'을 클릭하세요.\n\n"
-    "3.  'python 설치 창'이 뜨면 '다운로드'에 '커서'를  놓고 보이는 창에서,\n"
+    text=("1.  'Chrome' 검색 창에 'Python'을 쓰고 'Enter'를 누르세요.\n"
+    "2.  'Python org'를 누른 뒤 '공식적 프로그램'인 'Python.org'을 클릭하세요.\n\n"
+    "3.  'Python 설치 창'이 뜨면 '다운로드'에 '커서'를  놓고 보이는 창에서,\n"
     "    '파이썬소스' 중 가장 위에 보이는 '파이썬 3 버전'이라는 곳을 클릭하세요.\n\n"
-    "4.  자동으로 '다운로드'되니 조금 기다리면\n"
+    "4.  자동으로 '다운로드'되니 조금 기다리면,\n"
     "    위에 '다운로드'가 '완료' 되었다는 작은 창이 열립니다.\n\n"
     "5.  그 곳에 '커서' 놓고 옆에 보이는 '파일 모양'을 '클릭'하면,\n"
-    "6.  '파일 검색창'이 열리고 파란색으로 지금 설치하려는 파일이 보이게 됩니다.\n\n"
-    "7.  그 곳에 '커서'를 놓고 연속으로 빨리 2번 '더블 클릭'하세요.\n"
-    "8.  그러면, 'python을 설치하겠냐고 묻는 창'이 나오고,\n"
-    "    밑에 보이는 'python 설치'라는 곳을 '클릭'합니다.\n\n"
-    "9.  조금 기다리면, 검은 색의 'python' 창이 열리는데,\n"
+    "    '파일 검색창'이 열리고 파란색으로 지금 설치하려는 파일이 보이게 됩니다.\n\n"
+    "6.  그 곳에 '커서'를 놓고 연속으로 빨리 두번 '더블 클릭'하세요.\n"
+    "    그러면, 'Python을 설치하겠냐고 묻는 창'이 나오고,\n"
+    "    밑에 보이는 'Python 설치'라는 곳을 '클릭'합니다.\n\n"
+    "7.  조금 기다리면, 검은 색의 'Python' 창이 열리는데,\n"
     "    아무 것도 누르지 말고 그냥 'Enter'를 누르세요.\n\n"
-    "10. '기본선택'은 이미 자동으로 '설치' 되고 있으니 다시 'Enter'를 클릭하세요.\n"
+    "8. '기본선택'은 이미 자동으로 '설치' 되고 있으니 다시 'Enter'를 클릭하세요.\n"
     "    그다음 오른 쪽 위의 'X'를 눌러 이 'Python' 창을 닫으면 설치 완료된 겁니다.")
     add_message(text,size=13,x=90,y=90)
     add_next_button("'Python' 설치 확인했어요.",show_vscode_download_1,x=650,y=530)
@@ -181,19 +182,19 @@ def show_python_download():
 def show_vscode_download_1():
     clear_screen()
     add_title("같은 방식으로 'VS Code'를  설치할까요?",size=25,x=90)
-    text=("처음이라 'python'설치하느라 많이 힘드셨죠?\n"
+    text=("처음이라 'Python'설치하느라 많이 힘드셨죠?\n"
     "이 동굴을 다 통과해 보면 아마 좋은 좋은 추억거리가 될겁니다.\n\n"
     "이제 앞으로 가장 많이 사용하게될 'VS Code'를\n"
-    "'python'보다는 약간 길지만 거의 비슷한 방식으로\n"
+    "'Python'보다는 약간 길지만 거의 비슷한 방식으로\n"
     "안내할테니 그대로 쫒아오면 아마 쉽게 설치될 겁니다.\n\n"
-    "1.   먼저, 이전처럼 'chrome 검색'에 'VS Code'를 쓰고 'Enter'을 누르세요.\n"
+    "1.   먼저, 이전처럼 'Chrome 검색'에 'VS Code'를 쓰고 'Enter'를 누르세요.\n"
     "     맨 위의 공식 프로그램인 'Visual Studio Code'를 클릭합니다.\n\n"
     "2.   그러면 '다운로드'창이 보이는데, '윈도우 로고' 아래\n"
     "     파란색 '윈도우 10,11'을 클릭하면 '다운로드'가 진행되는 창이 보일 겁니다.\n\n"
     "     자동으로 '다운로드'가 진행되고 있으니,\n"
     "     절대로 오른 쪽 위의 파란색 '다운로드 버튼'은 누르지 마세요.\n\n"
     "3.   잠시 기다린 후, 오른쪽 위의 '다운로드'에 '커서'를 놓고 확인하신 다음,\n"
-    "     앞의 'python'처럼 '파일 모양'을 클릭하면, '파일 검색창'에 '파란색'으로 보일겁니다.")
+    "     앞의 'Python'처럼 '파일 모양'을 클릭하면, '파일 검색창'에 '파란색'으로 보일겁니다.")
     add_message(text,size=13,x=90, y=110)
     add_next_button("힘들지만 재미있어요.",show_vscode_download_2,x=650,y=500)
     add_previous_button("이전",show_python_download,x=90,y=500)
@@ -212,9 +213,9 @@ def show_vscode_download_2():
     "7.   '설치 준비 완료' 창이 뜰겁니다. 밑에 있는 '설치'를 클릭하세요.\n"
     "     'VS Code'의 상징 심볼과 함께 '설치 마법사 완료'라는 창이 보일겁니다.\n\n"
     "8.   오른쪽 아래에 있는 '종료'를 클릭하면, 'VS Code'가 자동으로 열릴겁니다.\n"
-    "     드디어, 'vs Code' 설치가 완료된 된 겁니다. 오른 쪽 위의 'X'를 눌러 종료하세요\n\n"
+    "     드디어, 'VS Code' 설치가 완료된 겁니다. 오른 쪽 위의 'X'를 눌러 종료하세요\n\n"
     "혹시라도, 설치가 잘 안될 경우 일단 멈추고, 휴대폰으로 'ChatGPT'에게 이상한 부분을\n"
-    "사진찍어서 질문 옆의 (+)을 눌러 사진 보내면서 왜 그런지 질문해 보세요?") 
+    "사진찍어서 질문 옆의 (+)를 눌러 사진 보내면서 왜 그런지 질문해 보세요?") 
     add_message(text,y=110,size=13,x=90)
     add_next_button("'VS Code' 설치도 끝냈어요.",show_workspace,x=650,y=510)
     add_previous_button("이전",show_vscode_download_1,x=90,y=510)
@@ -230,10 +231,10 @@ def show_workspace():
     "'터미널'이라고 하는 아래쪽 공간은,\n"
     "우리가 만든 코드를 직접 실행하고\n"
     "그 결과를 다시 확인하는 곳입니다.\n\n"
-    "다시말해서, 위에서 코드 만들고,\n"
-    "아래에서 만든 코드를 실행하는 겁니다.")
+    "다시말해서, 위에서는 코드를 만들고,\n"
+    "아래에서는 만든 코드를 실행하는 겁니다.")
     add_message(text,x=100,y=130,size=18)
-    add_next_button("작업실 구조를 확인했어요.",show_run_method,x=550)
+    add_next_button("작업실 구조를 확인했어요.",show_run_method,x=570)
     add_previous_button("이전",show_vscode_download_2,x=100)  
 #--------------------------------
 # 컷 11: 저장하고 실행하기
@@ -241,15 +242,15 @@ def show_workspace():
 def show_run_method():
     clear_screen()
     add_title("저장하고 실행하기",size=28,x=70)
-    text=("코드를 입력한 후 'Ctrl + S'를 눌러서,\n"
-    "반드시 저장부터 먼저 해야겠죠?\n\n"
+    text=("코드를 입력한 후 반드시 저장부터 해야겠죠?\n"
+    "왼쪽 아래 'Ctrl' 키를 찾아 'S'와 함께 누르면 '저장'이 됩니다.\n\n"
     "그다음 아래 터미널에 커서를 놓고\n"
     "'python 파일이름.py'를 쓰고 'Enter'로 실행하면 됩니다.\n\n"
     "새로운 파일을 만들어 그 파일이름으로\n"
     "내 파일에서 만든 이 코드를,\n"
     "실행해 달라고 부탁하는 거예요.\n\n")
-    add_message(text,x=70,y=140,size=18)
-    add_next_button("이제 직접 해볼까요?",show_nickname,x=550)
+    add_message(text,x=70,y=130,size=18)
+    add_next_button("이제 직접 해볼까요?",show_nickname,x=570)
     add_previous_button("이전",show_workspace,x=70)
 #----------------------------------
 # 컷 12: 닉네임 만들기
@@ -263,44 +264,65 @@ def show_nickname():
     "엄마도 하나 만들어 보세요.\n"
     "왜 그렇게 정했는지 서로 한번 이야기해 보세요.\n\n"
     "탐사 중 그 의미를 잊지마세요.")
-    add_message(text,x=80,y=130,size=18)
-    add_next_button("우리 이름 정했어요.",show_first_code,x=550)
+    add_message(text,x=80,y=140,size=18)
+    add_next_button("우리 이름 정했어요.",show_first_file,x=570)
     add_previous_button("이전",show_run_method,x=80)
 #------------------------------------
-# 컷 13: 첫 코드
+# 컷 13: 새 파일 만들기
 #------------------------------------
+def show_first_file():
+    clear_screen()
+    add_title("동굴과의 첫 소통 준비하세요?",x=70,size=25)
+    text=("컴퓨터 아래에 있는 '윈도우 표시'를 누르고 창이 나오면,\n"
+    "아래로 내려가 '개발자 도구'라는 곳에서 'VS Code 상징'을\n"
+    "찾아서 클릭하면 앞에서 설치한 'VS Code' 창이 열릴겁니다.\n\n"
+    "'VS Code' 창의 왼쪽 위에 'File'을 찾아 클릭하세요.\n"
+    "창이 열린 후 'New File'를 클릭하면 '파란색'작은 창이 열립니다,\n\n"
+    "맨 위의 빈칸에 커서를 놓고 'hello_cave.py'라고 입력하고,\n"
+    "'Enter'한 후 나온 파일 창 아래의 'Create File'를 누르세요.\n\n"
+    "그러면, 'VS Code' 창이 다시 열리면서,\n"
+    "왼쪽 'Explore'에 'hello_cave.py'가 보이게 됩니다.\n\n"
+    "우리가 방금 새롭게 만든 첫 파일의 이름입니다.\n"
+    "이 파일로 동굴과 소통이 되는가를 직접 시험해 볼겁니다.")
+    add_message(text,size=15,y=120)
+    add_previous_button("이전",show_nickname,x=70,y=520)
+    add_next_button("직접 해 볼게요.", show_first_code,y=540)
+#--------------------------------------------
+# 컷 14: 첫 코딩
+#--------------------------------------------
 def show_first_code():
     clear_screen()
-    add_title("동굴과의 첫 소통",x=70,size=28)
-    text=("'VS Code' 왼쪽 위 'File'을 눌러 'New File'을 만드세요.\n"
-    "파일의 이름을 'hello_cave.py'라고 정하면 어떨까요?\n\n"
+    add_title("동굴과의 첫 소통 코딩해 볼까요?",x=70)
+    text=("왼쪽 'Explorer'에서 'hello_cave.py'를 클릭하고\n"
+    "이 파일을 불러서 'VS Code'로 코딩 작업을 하려는 겁니다.\n\n"
     "위쪽 작업공간에 아래처럼 코드를 입력해 보세요.\n\n"
     'name = input("당신의 닉네임은?")\n'
     'print("안녕,",name)\n'
     'print("미래로 통하는 동굴에 온 것을 환영해!")\n\n'
     "점하나 틀려도 연결 안될 수 있으니 꼭 검토하세요.\n\n"
-    "확인됐으면 'Ctrl + S'를 눌러 꼭 저장하세요.")
+    "확인됐으면 'Ctrl'과 'S'를 함께 눌러 꼭 저장하세요.")
     add_message(text,y=130,size=18)
-    add_next_button("코드 입력하고 저장했어요.",show_first_run,x=550,y=520)
-    add_previous_button("이전",show_nickname,x=70,y=520)
+    add_next_button("코드 입력하고 저장했어요.",show_first_run,x=600,y=520)
+    add_previous_button("이전",show_first_file,x=70,y=520)
 #--------------------------------------
-# 컷 14: 첫 실행
+# 컷 15: 첫 실행
 #--------------------------------------
 def show_first_run():
     clear_screen()
     add_title("첫 실행",x=80,size=27)
-    text=("'python hello_cave.py'라고 쓰고,\n"
-    "'터미널'에서'Enter'를 눌러 실행해 보세요.\n\n"
+    text=("아래 '터미널'에서 흰색으로 반짝거리는 곳에,\n"
+    "커서를 놓고 'python hello_cave.py'라고 쓴 다음,\n"
+    "'Enter'를 눌러 처음으로 직접 실행해 보세요.\n\n"
     "당신이 누구냐고 물어 보나요?\n"
     "당신의 닉네임을 입력해 보세요.\n\n"
     "와우!\n"
     "환영한다고 하나요?\n\n"
     "당신이 만든 코드로 동굴과 처음으로 소통 됐습니다.")
     add_message(text,y=140,size=18)
-    add_next_button("첫 소통 성공!",show_mom_code,x=550,y=530)
+    add_next_button("첫 소통 성공!",show_mom_code,x=570,y=530)
     add_previous_button("이전",show_first_code,x=80,y=530)
 #----------------------------------------
-# 컷 15: 엄마도 함께
+# 컷 16: 엄마도 함께
 #----------------------------------------
 def show_mom_code():
     clear_screen()
@@ -314,10 +336,10 @@ def show_mom_code():
     "'python hello_cave.py'를 쓰고 'Enter'로 실행합니다.\n\n"
     "엄마도 동굴과 인사했나요?")
     add_message(text,x=80,y=130,size=18)
-    add_next_button("둘 다 소통됐어요!",show_finish_today,x=550,y=530)
+    add_next_button("둘 다 소통됐어요!",show_finish_today,x=580,y=530)
     add_previous_button("이전",show_first_run,x=80,y=530)
 #----------------------------------------
-# 컷 16: 오늘은 여기까지
+# 컷 17: 오늘은 여기까지
 #----------------------------------------
 def show_finish_today():
     clear_screen()
@@ -330,25 +352,27 @@ def show_finish_today():
     "그러면 '실행'으로 다시 부를 때까지\n"
     "우리 모두 편안히 휴식합시다.")
     add_message(text,x=80, y=120,size=18)
-    add_next_button("'준비단계' 일정 끝났네요.",show_review,x=550)
+    add_next_button("'준비단계' 일정 끝났네요.",show_review,x=570)
     add_previous_button("이전",show_mom_code,x=80)
 #------------------------------------------
-# 컷 17: 엄마와 함께 되돌아 보기
+# 컷 18: 엄마와 함께 되돌아 보기
 #------------------------------------------
 def show_review():
     clear_screen()
-    add_title("'준비 단계'에서 어떤 경험들을 했죠?",x=70,size=28)
-    text=("'도구방'에서 장착한 도구들은 뭐가 있었죠?\n\n"
+    add_title("'준비 단계'에서 어떤 경험들을 했죠?",x=70,size=27)
+    text=("'도구방'에서 필요한 도구들을 찾아서,\n"
+    "어떻게 설치했고 무슨 작업들을 했었죠?\n\n"
+    "새로운 파일을 만들어 이름까지 지어 주었죠?\n\n"
     "'코드 작업'은 어디에서 어떻게 했었죠?\n\n"
-    "'코드 작업'으로 동굴에게 내용들을,\n"
-    "왜 미리 알려주었을까요?\n\n"
+    "그런데, 왜 동굴에게 '코드 작업'으로 미리,\n"
+    "대화 내용들을 알려주었을까요?\n\n"
     "엄마와 함께 이야기 해보고,\n"
     "더 궁금한 것들 있으면 휴대폰 'AI'에게도 물어보세요.")
-    add_message(text,y=140,size=18)
-    add_next_button("많이 생각해 봤어요.",show_last,x=550)
+    add_message(text,y=130,size=17)
+    add_next_button("많이 생각해 볼게요.",show_last,x=550)
     add_previous_button("이전",show_finish_today,x=70)
 #---------------------------------------------
-# 컷 18: 진짜 탐사의 시작
+# 컷 19: 진짜 탐사의 시작
 #---------------------------------------------
 def show_last():
     clear_screen()
