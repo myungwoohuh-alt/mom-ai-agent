@@ -226,14 +226,16 @@ def show_door_code():
     add_title("코드 작업으로 문을 열어 볼까요?",x=30,size=28)
     text=('answer=input("Python이 스스로 코드를 만들어서 직접 작업할 수 있나요?(y/n):")\n'
     'if answer == "n":\n'
-    '    print("철커덕! 문이 열렸습니다.")\n\n'
+    '    print("철커덕! 문이 열렸습니다.")\n'
     'else:\n'
-    '    print("지나왔던 길들을 다시 한번 살펴보세요.")\n\n'
-    "'Ctrl + S'로 저장하고 아래쪽 '터미널'에서,\n"
-    "'python choice.py'를 쓰고 'Enter'로 실행하세요.\n")
-    add_message(text,x=30,y=140,size=18)
-    add_previous_button("이전",show_door_question,x=30)
-    add_next_button("실행해볼게요",show_door_result,x=700)
+    '    print("지나왔던 길들을 다시 한번 살펴보세요.")\n\n\n'
+    "4칸 '들여쓰기' 까지 다시 한번 자세히 검토한 뒤,\n"
+    "밑에있는 '오류 표시 확인'이 전부(0)가 나오면 'Ctrl+S'로 저장하세요.\n\n"
+    "그리고나서, 아래쪽 '터미널'에서 'python choice.py'를 쓰고\n"
+    "직접 'Enter'로 실행해 보세요.\n")
+    add_message(text,x=30,y=120,size=18)
+    add_previous_button("이전",show_door_question,x=30,y=510)
+    add_next_button("실행해 볼게요",show_door_result,x=700,y=510)
 #--------------------------------------
 # 15: 실제 선택
 #--------------------------------------
@@ -255,16 +257,17 @@ def show_door_result():
 #----------------------------------------
 def show_trip_txt():
     clear_screen()
-    add_title("우리 '탐사 기록'을 남겨 볼까요?",x=70,size=30)
+    add_title("우리 '탐사 기록'을 남겨 볼까요?",x=70,size=28)
     text=("어떤 도구를 어떻게 사용했었는지 깜빡깜빡하죠?.\n"
-    "'탐사 기록'이 있으면 좋겠죠?.\n\n"
-    "'VS Code'의 왼쪽 위 'File'을 누르고,\n"
-    "'trip.txt'라는 '새 파일 이름'을 만듭니다.\n\n"
+    "이럴때 '탐사 기록'같은 것이 있으면 좋지 않겠어요?.\n\n"
+    "'VS Code'의 왼쪽 위에서 'New File'을 누르고,\n"
+    "뒤에다 'py'는 쓰지 말고'trip.txt'라는\n"
+    "'새 파일'을 만들어 볼게요.\n\n"
     "탐사하며 생각하고 느껴지는 것들의\n"
     "짧은 요약 노트입니다.\n\n"
     "작은 것들이라도 많이 기록 할수록 좋아요.\n"
     "탐사를 이어갈수록 경험따라 쌓여갈 겁니다.")
-    add_message(text,y=120,size=20)
+    add_message(text,y=120,size=18)
     add_previous_button("이전",show_door_result,x=70,y=500)
     add_next_button("계속 기록해 볼게요",show_trip_txt_write,y=500)
 #---------------------------------------------
@@ -352,13 +355,14 @@ def show_second_code_1():
     clear_screen()
     add_title("첫 번째 질문 상황을 코드로 만들어 봅시다.",x=50,size=29)
     text=("VS Code 위쪽 코드 작업 공간에 아래처럼 입력합니다.\n\n"
-    'path=input("코딩에서도 두 갈래 이외의 다른 길이 있을까요?(y/n):")\n\n'
+    'path=input("코딩에서도 두 갈래 이외의 다른 길이 있을까요?(y/n):")\n'
     'if path =="y":\n'
-    '    print("철커덕! 첫 번째 잠금이 풀렸습니다.")\n\n'
+    '    print("철커덕! 첫 번째 잠금이 풀렸습니다.")\n'
     'else:\n'
     '    print("엄마와 다시한번 잘 의논해 보세요.")\n\n'
-    "다 입력하고 꼼꼼하게 확인했으면 'Ctrl+S'로 꼭 저장부터 하세요.")
-    add_message(text,x=50, y=120,size=18)
+    "다 입력하고 4 컷 '들여쓰기'까지 꼼꼼하게 확인했으면\n"
+    "'Ctrl+S'로 꼭 저장부터 하세요.")
+    add_message(text,x=50, y=130,size=18)
     add_previous_button("이전",show_second_question_2,x=50)
     add_next_button("저장했어요.", show_second_code_2,x=700)
 #-------------------------------------------
@@ -367,16 +371,18 @@ def show_second_code_1():
 def show_second_code_2():
     clear_screen()
     add_title("두 번째 질문 상황도 코드로 만들어 봅시다.",x=50,size=29)
-    text=("첫 번째 질문 상황 코딩에 이어서 계속 합니다.\n\n"
-    'talk = input("미리 정해 놓지 않은 말들도 동굴이 할 수 있을까요?(y/n):")\n\n'
+    text=("첫 번째 질문 상황 코딩에 이어서 계속 합니다.\n\n\n"
+    'talk = input("미리 정해 놓지 않은 말들도 동굴이 할 수 있을까요?(y/n):")\n'
     'if talk == "y":\n'
-    '    print("철커덕! 두 번째 잠금도 풀렸습니다.")\n\n'
+    '    print("철커덕! 두 번째 잠금도 풀렸습니다.")\n'
     'else:\n'
-    '    print("엄마와 다시한번 잘 의논해 보세요.")\n\n'
-    "입력 끝났으면 검토 확인하고 반드시 '저장'하세요.")
+    '    print("엄마와 다시한번 잘 의논해 보세요.")\n\n\n'
+    "입력 끝났으면 '들여쓰기'까지 꼼꼼히 확인하고,\n"
+    "아래에 있는 '오류 표시 확인'도 검토한 뒤\n"
+    "반드시 '저장'하세요.")
     add_message(text,x=50,y=110,size=19)
-    add_previous_button("이전", show_second_code_1,x=50)
-    add_next_button("확인하고 저장까지 했어요", show_second_run)
+    add_previous_button("이전", show_second_code_1,x=50,y=520)
+    add_next_button("확인하고 저장까지 했어요", show_second_run,y=520)
 #--------------------------------------------
 # 24: 두 번째 동굴 문 선택 실행
 #-------------------------------------------
