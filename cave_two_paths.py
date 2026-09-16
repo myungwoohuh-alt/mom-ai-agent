@@ -40,7 +40,7 @@ def show_child_safety():
     "* 모르는 파일이나 프로그램은 함부로 설치하지 않습니다.\n"
     "* 결제나 비용이 발생하는 작업은 보호자와 함께 확인하고 승인합니다.\n"
     "* 'AI'의 답변은 틀릴 수 있으니 중요한 내용은 한 번 더 확인합니다.",size=18,x=70,y=270)
-    add_next_button("탐사시작",show_cover,x=750,y=550)
+    add_next_button("탐사시작",show_cover,x=750,y=500)
 #---------------------
 # 2: 겉표지
 # --------------------
@@ -53,7 +53,7 @@ def show_cover():
     label.image=photo
     label.place(x=0,y=0)
     add_next_button("탐사시작",show_review,x=800,y=530)
-    add_previous_button("이전",show_child_safety)
+    add_previous_button("이전",show_child_safety,y=530)
 #---------------------
 #3: 준비단계 돌아보기
 #---------------------
@@ -130,13 +130,15 @@ def show_choice_2():
 #-----------------------------
 def show_food_code():
     clear_screen()
-    add_title("지금 밥 먹을까요?",x=100,size=30)
+    add_title("지금 밥 먹을까요?",x=100,size=29)
     text=("매우 간단한 '선택 구조'를 만들어 볼까요?\n\n"
     "'VS Code'의 창 왼쪽 위에있는 'File'을 클릭해,\n"
     "'Python'의 'New File'을 만드세요.\n\n"
+    "잘 안되면 이미 지나왔던 '준비단계'로 돌아가서\n"
+    "'동굴과의 첫 소통 준비하세요?'라는 제목을 참고하세요.\n\n"
     "새 파일 이름을 'choice.py'로 입력하면,\n"
     "좌측의 'Explorer'에 'choice.py'라고 보이게 됩니다.")
-    add_message(text,x=100,y=150,size=20)
+    add_message(text,x=100,y=120,size=19)
     add_previous_button("이전",show_choice_2,x=100)
     add_next_button("코드를 볼까요?",show_food_code_2)
 #-----------------------------
@@ -145,15 +147,18 @@ def show_food_code():
 def show_food_code_2():
     clear_screen()
     add_title("두 갈래 선택을 코드로 만들어 봅시다.",x=100,size=27)
-    text=('answer=input("우리 지금 밥 먹을까요?(y/n):")\n\n'
+    text=('answer=input("우리 지금 밥 먹을까요?(y/n):")\n'
     'if answer=="y":\n'
-        'print("네. 배고파요.")\n\n'
+    '    print("네. 배고파요.")\n'
     'else:\n'
-        'print("아니요. 배불러요.")\n\n'
+    '    print("아니요. 배불러요.")\n\n'
+    "'if'와 'else' 아래에서 실행할 코드는,\n"
+    "'print'처럼 앞을 4칸 띄워 씁니다.\n"
+    "이것을 '들여쓰기'라고 합니다.\n\n"
     "입력이 다 끝났으면 'Ctrl+S'를 눌러 저장합니다.")
     add_message(text, x=100,y=120,size=20)
-    add_previous_button("이전",show_food_code,x=100)
-    add_next_button("입력했어요",show_food_run)
+    add_previous_button("이전",show_food_code,x=100,y=520)
+    add_next_button("입력했어요",show_food_run,y=520)
 #-----------------------------
 # 10: 직접실행
 #-----------------------------
@@ -221,9 +226,9 @@ def show_door_code():
     add_title("코드 작업으로 문을 열어 볼까요?",x=30,size=28)
     text=('answer=input("Python이 스스로 코드를 만들어서 직접 작업할 수 있나요?(y/n):")\n'
     'if answer == "n":\n'
-        'print("철커덕! 문이 열렸습니다.")\n\n'
+    '    print("철커덕! 문이 열렸습니다.")\n\n'
     'else:\n'
-        'print("지나왔던 길들을 다시 한번 살펴보세요.")\n\n'
+    '    print("지나왔던 길들을 다시 한번 살펴보세요.")\n\n'
     "'Ctrl + S'로 저장하고 아래쪽 '터미널'에서,\n"
     "'python choice.py'를 쓰고 'Enter'로 실행하세요.\n")
     add_message(text,x=30,y=140,size=18)
@@ -349,9 +354,9 @@ def show_second_code_1():
     text=("VS Code 위쪽 코드 작업 공간에 아래처럼 입력합니다.\n\n"
     'path=input("코딩에서도 두 갈래 이외의 다른 길이 있을까요?(y/n):")\n\n'
     'if path =="y":\n'
-        'print("철커덕! 첫 번째 잠금이 풀렸습니다.")\n\n'
+    '    print("철커덕! 첫 번째 잠금이 풀렸습니다.")\n\n'
     'else:\n'
-        'print("엄마와 다시한번 잘 의논해 보세요.")\n\n'
+    '    print("엄마와 다시한번 잘 의논해 보세요.")\n\n'
     "다 입력하고 꼼꼼하게 확인했으면 'Ctrl+S'로 꼭 저장부터 하세요.")
     add_message(text,x=50, y=120,size=18)
     add_previous_button("이전",show_second_question_2,x=50)
@@ -365,9 +370,9 @@ def show_second_code_2():
     text=("첫 번째 질문 상황 코딩에 이어서 계속 합니다.\n\n"
     'talk = input("미리 정해 놓지 않은 말들도 동굴이 할 수 있을까요?(y/n):")\n\n'
     'if talk == "y":\n'
-        'print("철커덕! 두 번째 잠금도 풀렸습니다.")\n\n'
+    '    print("철커덕! 두 번째 잠금도 풀렸습니다.")\n\n'
     'else:\n'
-        'print("엄마와 다시한번 잘 의논해 보세요.")\n\n'
+    '    print("엄마와 다시한번 잘 의논해 보세요.")\n\n'
     "입력 끝났으면 검토 확인하고 반드시 '저장'하세요.")
     add_message(text,x=50,y=110,size=19)
     add_previous_button("이전", show_second_code_1,x=50)

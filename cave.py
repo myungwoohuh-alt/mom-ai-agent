@@ -241,7 +241,7 @@ def show_workspace():
 #--------------------------------
 def show_run_method():
     clear_screen()
-    add_title("저장하고 실행하기",size=28,x=70)
+    add_title("저장하고 실행하기",size=29,x=70)
     text=("코드를 입력한 후 반드시 저장부터 해야겠죠?\n"
     "왼쪽 아래 'Ctrl' 키를 찾아 'S'와 함께 누르면 '저장'이 됩니다.\n\n"
     "그다음 아래 터미널에 커서를 놓고\n"
@@ -249,7 +249,7 @@ def show_run_method():
     "새로운 파일을 만들어 그 파일이름으로\n"
     "내 파일에서 만든 이 코드를,\n"
     "실행해 달라고 부탁하는 거예요.\n\n")
-    add_message(text,x=70,y=130,size=18)
+    add_message(text,x=70,y=140,size=18)
     add_next_button("이제 직접 해볼까요?",show_nickname,x=570)
     add_previous_button("이전",show_workspace,x=70)
 #----------------------------------
@@ -293,20 +293,39 @@ def show_first_file():
 #--------------------------------------------
 def show_first_code():
     clear_screen()
-    add_title("동굴과의 첫 소통 코딩해 볼까요?",x=70)
+    add_title("동굴과의 첫 소통 코딩해 볼까요?",size=28,x=70)
     text=("왼쪽 'Explorer'에서 'hello_cave.py'를 클릭하고\n"
     "이 파일을 불러서 'VS Code'로 코딩 작업을 하려는 겁니다.\n\n"
     "위쪽 작업공간에 아래처럼 코드를 입력해 보세요.\n\n"
     'name = input("당신의 닉네임은?")\n'
     'print("안녕,",name)\n'
     'print("미래로 통하는 동굴에 온 것을 환영해!")\n\n'
-    "점하나 틀려도 연결 안될 수 있으니 꼭 검토하세요.\n\n"
-    "확인됐으면 'Ctrl'과 'S'를 함께 눌러 꼭 저장하세요.")
+    "아주 작은 오타에도 실행이 안될 수 있으니 꼼꼼히 확인하세요.\n\n"
+    "그리고 반드시 확인해야 할 내용있는 다음 컷을 참고하세요.")
     add_message(text,y=130,size=18)
-    add_next_button("코드 입력하고 저장했어요.",show_first_run,x=600,y=520)
-    add_previous_button("이전",show_first_file,x=70,y=520)
+    add_next_button("코드 입력하고 저장했어요.",show_note,x=600,y=500)
+    add_previous_button("이전",show_first_file,x=70,y=500)
+#---------------------------------------
+# 컷 15. 확인 사항
+#---------------------------------------
+def show_note():
+    clear_screen()
+    add_title("확인해야할 내용이니 꼭 참고하세요.",size=28,x=70)
+    text=("먼저 코딩이 다 끝났으면 화면 아래쪽의 '오류 표시'를 한번 확인해 보세요.\n"
+    "만약에 숫자가 보이면 그 곳에 커서를 놓고 클릭하세요.\n\n"
+    "그러면, 'python' 문법에 오타가 있거나, 잘 못된 줄 표시같은 것들이\n"
+    "보이게 될겁니다. 입력한 것들을 재검토하고 수정하면 숫자가 (0)가 됩니다.\n\n"
+    "잘 모르겠거나 수정이 잘 안되면, 일단 거기서 멈추고 휴대폰으로,\n"
+    "화면을 사진 찍어서 'ChatGPT'에게 물어보면 자세히 알려줄겁니다.\n"
+    "그래서 제대로 수정되어 (0)가 확인되면, 'Ctrl'과 'S'를 함께 눌러 꼭 저장하세요.\n\n"
+    "참고로, 컴퓨터나 'VS Code'버전에 따라 화면이 조금씩 다를 수 있는데,\n"
+    "'터미널'이 안보이는 경우, 위에 '터미널'이 있거나 없으면 (...)가 보일겁니다.\n"
+    "'터미널'을 누르고 'New Terminar'을 클릭하면 됩니다.\n\n")
+    add_message(text, y=130,size=16)
+    add_previous_button("이전",show_first_code,x=70)
+    add_next_button("도움 많이 됐어요.",show_first_run)
 #--------------------------------------
-# 컷 15: 첫 실행
+# 컷 16: 첫 실행
 #--------------------------------------
 def show_first_run():
     clear_screen()
@@ -321,9 +340,9 @@ def show_first_run():
     "당신이 만든 코드로 동굴과 첫 소통에 성공했습니다.")
     add_message(text,y=140,size=18)
     add_next_button("첫 소통 성공!",show_mom_code,x=570,y=530)
-    add_previous_button("이전",show_first_code,x=80,y=530)
+    add_previous_button("이전",show_note,x=80,y=530)
 #----------------------------------------
-# 컷 16: 엄마도 함께
+# 컷 17: 엄마도 함께
 #----------------------------------------
 def show_mom_code():
     clear_screen()
@@ -340,7 +359,7 @@ def show_mom_code():
     add_next_button("둘 다 소통됐어요!",show_finish_today,x=580,y=530)
     add_previous_button("이전",show_first_run,x=80,y=530)
 #----------------------------------------
-# 컷 17: 오늘은 여기까지
+# 컷 18: 오늘은 여기까지
 #----------------------------------------
 def show_finish_today():
     clear_screen()
@@ -356,7 +375,7 @@ def show_finish_today():
     add_next_button("'준비단계' 일정 끝났네요.",show_review,x=570)
     add_previous_button("이전",show_mom_code,x=80)
 #------------------------------------------
-# 컷 18: 엄마와 함께 되돌아 보기
+# 컷 19: 엄마와 함께 되돌아 보기
 #------------------------------------------
 def show_review():
     clear_screen()
@@ -373,7 +392,7 @@ def show_review():
     add_next_button("많이 생각해 볼게요.",show_last,x=550)
     add_previous_button("이전",show_finish_today,x=70)
 #---------------------------------------------
-# 컷 19: 진짜 탐사의 시작
+# 컷 20: 진짜 탐사의 시작
 #---------------------------------------------
 def show_last():
     clear_screen()
