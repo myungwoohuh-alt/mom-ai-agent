@@ -273,17 +273,19 @@ def show_nickname():
 def show_first_file():
     clear_screen()
     add_title("동굴과의 첫 소통 준비하세요?",x=70,size=25)
-    text=("이제 'Windows 검색'에 입력해서,\n"
-    "우리가 설치한 'VS Code'를 불러 볼까요?\n\n"
+    text=("우리가 설치한 'VS Code'를 한번 불러 볼까요?\n\n"
+    "컴퓨터 화면 아래에서 돋보기(검색) 모양을 클릭하고,\n"
+    "'vs code'를 입력하세요. 검색창이 열리면 왼쪽 위에,\n"
+    "상징 모양과 같이있는 'Visual Studio Code' 앱을 클릭합니다.\n\n"
     "'VS Code'창이 열리면 왼쪽 위에 'File'을 찾아 클릭하세요.\n"
     "그 곳에서 'New File'을 클릭하면 '파란색'작은 창이 열립니다,\n\n"
     "맨 위의 빈칸에 커서를 놓고 'hello_cave.py'라고 입력하고,\n"
-    "'Enter'한 후 나온 파일 창 아래의 'Create File'를 누르세요.\n\n"
+    "'Enter'한 후 나온 파일 창 아래의 'Create File'을 누르세요.\n\n"
     "그러면, 'VS Code' 창이 다시 열리면서,\n"
     "왼쪽 'Explorer'에 'hello_cave.py'가 보이게 됩니다.\n\n"
     "우리가 방금 새롭게 만든 첫 파일의 이름입니다.\n"
     "이 파일로 동굴과 소통이 되는가를 직접 시험해 볼겁니다.")
-    add_message(text,size=15,y=120)
+    add_message(text,size=15,y=100)
     add_previous_button("이전",show_nickname,x=70,y=520)
     add_next_button("직접 해 볼게요.", show_first_code,y=540)
 #--------------------------------------------
