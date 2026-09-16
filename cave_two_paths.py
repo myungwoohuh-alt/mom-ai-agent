@@ -66,7 +66,7 @@ def show_review():
     "지난 '준비단계' 탐사에서 직접 확인해 보세요.")
     add_message(text,x=150,y=150,size=20)
     add_previous_button("이전",show_cover,x=150)
-    add_next_button("직접 확인해 볼게요",show_run_check)
+    add_next_button("직접 확인해 볼게요.",show_run_check)
 #-----------------------
 # 4: 준비단계 코드 다시 반복 실행
 #-----------------------
@@ -82,7 +82,7 @@ def show_run_check():
     "지난번처럼 동굴과 인사하며 소통되는지 확인해 보세요.")
     add_message(text,x=100,y=130,size=19)
     add_previous_button("이전",show_review,x=100)
-    add_next_button("확인했어요",show_two_paths)
+    add_next_button("확인했어요.",show_two_paths)
 #-------------------------------
 # 5: 두 갈래길 이미지
 #-------------------------------
@@ -158,7 +158,7 @@ def show_food_code_2():
     "입력이 다 끝났으면 'Ctrl+S'를 눌러 저장합니다.")
     add_message(text, x=100,y=120,size=20)
     add_previous_button("이전",show_food_code,x=100,y=520)
-    add_next_button("입력했어요",show_food_run,y=520)
+    add_next_button("입력했어요.",show_food_run,y=520)
 #-----------------------------
 # 10: 직접실행
 #-----------------------------
@@ -217,7 +217,7 @@ def show_door_question():
     "먼저 마음 속으로 '네' 또는 '아니요'를 선택해 보세요.\n\n")
     add_message(text,x=100,y=120,size=20)
     add_previous_button("이전",show_door,x=100)
-    add_next_button("선택했어요",show_door_code)
+    add_next_button("선택했어요.",show_door_code)
 #-----------------------------------
 # 14: 첫 번째 동굴 문 통과 선택 코드
 #----------------------------------
@@ -235,7 +235,7 @@ def show_door_code():
     "직접 'Enter'로 실행해 보세요.\n")
     add_message(text,x=30,y=120,size=18)
     add_previous_button("이전",show_door_question,x=30,y=510)
-    add_next_button("실행해 볼게요",show_door_result,x=700,y=510)
+    add_next_button("실행해 볼게요.",show_door_result,x=700,y=510)
 #--------------------------------------
 # 15: 실제 선택
 #--------------------------------------
@@ -251,7 +251,7 @@ def show_door_result():
     "다시 한번 질문에 도전하세요.")
     add_message(text,x=100,y=120,size=20)
     add_previous_button("이전",show_door_code,y=520,x=100)
-    add_next_button("문을 통과했어요",show_trip_txt,y=520)
+    add_next_button("문을 통과했어요.",show_trip_txt,y=520)
 #----------------------------------------
 # 16: 탐사 기록 
 #----------------------------------------
@@ -269,7 +269,7 @@ def show_trip_txt():
     "탐사를 이어갈수록 경험따라 쌓여갈 겁니다.")
     add_message(text,y=120,size=18)
     add_previous_button("이전",show_door_result,x=70,y=500)
-    add_next_button("계속 기록해 볼게요",show_trip_txt_write,y=500)
+    add_next_button("계속 기록해 볼게요.",show_trip_txt_write,y=500)
 #---------------------------------------------
 # 17: 탐사 기록 작성
 #---------------------------------------------
@@ -288,7 +288,7 @@ def show_trip_txt_write():
     "반드시, (아이)와 (엄마)라고 꼭 먼저 쓰세요.")
     add_message(text,x=70,y=120,size=18)
     add_previous_button("이전",show_trip_txt,x=70,y=530)
-    add_next_button("계속 기록 할게요",show_door_2,y=530)
+    add_next_button("계속 기록 할게요.",show_door_2,y=530)
 #----------------------------------------------
 #18: 두번째 동굴의 문
 #---------------------------------------------
@@ -315,7 +315,7 @@ def show_second_door():
     "마음 단단히 먹고 신중하게 미리 생각해 선택해 보세요.")
     add_message(text,x=100,y=160,size=20)
     add_previous_button("이전",show_door_2,x=100)
-    add_next_button("첫 번째 질문",show_second_question_1)
+    add_next_button("첫 번째 질문은?",show_second_question_1)
 #-----------------------------------------------
 # 20: 동굴 문의 첫 번째 질문
 #---------------------------------------------
@@ -330,7 +330,7 @@ def show_second_question_1():
     "엄마와도 잘 의논해서 선택할 방향을 결정하세요.")
     add_message(text,x=100,y=130,size=20)
     add_previous_button("이전",show_second_door,x=100)
-    add_next_button("결정했어요",show_second_question_2)
+    add_next_button("결정했어요.",show_second_question_2)
 #-----------------------------------------------
 # 21: 동굴 문의 두 번째 질문
 #----------------------------------------------
@@ -347,7 +347,7 @@ def show_second_question_2():
     "첫 질문처럼 엄마와 잘 의논해 보시고 선택하세요.")
     add_message(text,x=100,y=130,size=20)
     add_previous_button("이전",show_second_question_1,x=100)
-    add_next_button("방향 결정 했어요",show_second_code_1)
+    add_next_button("방향 결정 했어요.",show_second_code_1)
 #----------------------------------------------
 # 22: 첫 번째 동굴 질문 코딩
 #----------------------------------------------
@@ -382,7 +382,7 @@ def show_second_code_2():
     "반드시 '저장'하세요.")
     add_message(text,x=50,y=110,size=19)
     add_previous_button("이전", show_second_code_1,x=50,y=520)
-    add_next_button("확인하고 저장까지 했어요", show_second_run,y=520)
+    add_next_button("확인하고 저장까지 했어요.", show_second_run,y=520)
 #--------------------------------------------
 # 24: 두 번째 동굴 문 선택 실행
 #-------------------------------------------
@@ -394,9 +394,9 @@ def show_second_run():
     "직접 'Enter'로 실행해 봅니다.\n\n"
     "첫 번째 질문에 답하고,\n"
     "두 번째 질문에도 답해 보세요.\n\n"
-    "반복해 보면서 주어지는 조건들과,\n"
-    "선택에 따라서 결과가 달라지는 이 구조의\n"
-    "의미를 이해하고 꼭 기억해 두어야 합니다.")
+    "몇 번 직접 실행 해보면\n"
+    "조건과 선택에 따라서 결과가 달라지는\n" 
+    "이 구조가 자연스럽게 느껴질 겁니다.")
     add_message(text,x=100,y=130,size=20)
     add_previous_button("이전", show_second_code_2,x=100)
     add_next_button("이 구조의 의미를 이해했어요.", show_second_result)
@@ -414,7 +414,7 @@ def show_second_result():
     "그 이외에 다양한 방법들이 필요하지 않을까요?")
     add_message(text,x=100,y=130,size=20)
     add_previous_button("이전", show_second_run,x=100)
-    add_next_button("이어지는 동굴 탐사로",show_review_stage)
+    add_next_button("이어지는 동굴 탐사는?",show_review_stage)
 #---------------------------------------------
 # 26: 두 갈래길 탐사 되돌아 보기
 #---------------------------------------------
