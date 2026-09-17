@@ -156,13 +156,13 @@ def show_elif_coding():
 def show_run():
     clear_screen()
     add_title("이제 직접 '실행'해 볼까요?",size=28)
-    text=("VS Code 아래쪽 '터미널'에서,\n"
-    "'python choice.py'를 입력하고 'Enter'로 실행합니다.\n\n"
-    "'y'와 'n', 그리고 다른 답도 입력해 보면서\n"
-    "달라지는 결과를 확인해 보세요.\n\n"
-    "'if'는 첫 번째 조건이고\n"
-    "'elif'는 '그 조건이 아니면 뭐가 있을까?'를 의미하죠.\n\n"
-    "'else'는 위의 조건들 찾을 필요 없을 때 사용하죠.\n\n"
+    text=("'VS Code' 아래쪽 '터미널'에서,\n"
+    "'python water.py'를 입력하고 'Enter'로 실행합니다.\n\n"
+    "앞에서 두가지 중 하나를 선택했을 때와,\n"
+    "'elif'가 추가 된 다음에는 무엇이 달라졌을까요?\n\n"
+    "'if'는 첫 번째 조건이고,\n"
+    "'elif'는 또 다른 조건을 확인합니다.\n\n"
+    "'else'는 다른 조건들 찾을 필요 없을 때 사용합니다.\n\n"
     "코딩은 이렇게 우리가 생각하는 구조를 표현합니다.")
     add_message(text,size=19,y=100)
     add_previous_button("이전",show_elif_coding)
