@@ -131,16 +131,17 @@ def show_choice_2():
 def show_food_code():
     clear_screen()
     add_title("지금 밥 먹을까요?",x=100,size=29)
-    text=("매우 간단한 '선택 구조'를 만들어 볼까요?\n\n"
-    "'VS Code'의 창 왼쪽 위에있는 'File'을 클릭해,\n"
-    "'Python'의 'New File'을 만드세요.\n\n"
-    "잘 안되면 이미 지나왔던 '준비단계'로 돌아가서\n"
-    "'동굴과의 첫 소통 준비하세요?'라는 제목을 참고하세요.\n\n"
-    "새 파일 이름을 'choice.py'로 입력하면,\n"
-    "좌측의 'Explorer'에 'choice.py'라고 보이게 됩니다.")
+    text=("매우 간단한 사례로 '선택 구조'를 만들어 볼까요?\n\n"
+    "먼저 새파일부터 더 쉬운 방법으로 만들어 볼 겁니다.\n\n" 
+    "왼쪽 'Explorer'의 윗부분 (+)가 있는 종이 모양 아이콘에,\n"
+    "커서를 대고 'New File'이라고 나오는 곳을 클릭하세요.\n\n"
+    "그리고 나타난 칸에 새파일 이름 'choice.py'를 쓰고,\n" 
+    "'Enter'를 누르기만 하면 됩니다.\n\n"
+    "그러면, 이전에 만들었던 'hello_cave.py'처럼,\n"
+    "'Explorer'에 'choice.py'라는 새파일이 보이게 됩니다.")
     add_message(text,x=100,y=120,size=19)
-    add_previous_button("이전",show_choice_2,x=100)
-    add_next_button("코드를 볼까요?",show_food_code_2)
+    add_previous_button("이전",show_choice_2,x=100,y=520)
+    add_next_button("새파일 만들기 쉽네요!",show_food_code_2,x=600,y=520)
 #-----------------------------
 # 9: 선택하는 코드 입력
 #-----------------------------
