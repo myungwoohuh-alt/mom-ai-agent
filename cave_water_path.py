@@ -40,7 +40,7 @@ def show_child_safety():
     "* 모르는 파일이나 프로그램은 함부로 설치하지 않습니다.\n"
     "* 결제나 비용이 발생하는 작업은 보호자와 함께 확인하고 승인합니다.\n"
     "* 'AI'의 답변은 틀릴 수 있으니 중요한 내용은 한 번 더 확인합니다.",size=18,x=70,y=270)
-    add_next_button("탐사시작",show_cover)
+    add_next_button("탐사시작",show_cover,x=700)
 #--------------------------------
 # 2: 겉 표지
 #--------------------------------
@@ -61,9 +61,9 @@ def show_review():
     clear_screen()
     add_title("장착한 도구들 점검 해볼까요?",x=70,size=30)
     text=("배 고프지 않아요?\n\n"
-    "'VS Code'아래 '터미널'에 'python choice.py'를 실행합니다.\n\n "
-    "저번에 만들었던 '밥 먹을까요?'를 반복해 보세요.\n\n" 
-    "도구들 점검하면서 배도 채워볼까요?\n\n"
+    "'VS Code' 아래 '터미널'에 'python choice.py'를 실행합니다.\n\n "
+    "'두갈래길'에서 만들었던 '밥 먹을까요?'를 반복해 보세요.\n\n" 
+    "탐사 전에 배도 채웠으니 도구들 점검해 볼까요?\n\n"
     "자, 그럼 이제 동굴 안으로 더 깊이 들어가 봅시다.")
     add_message(text,y=140,size=20)
     add_previous_button("이전",show_cover)
@@ -133,20 +133,23 @@ def show_elif_meaning():
 #-------------------------------------
 def show_elif_coding():
     clear_screen()
-    add_title("여러 조건 중 하나 선택하는 코드 입력")
-    text=('cave=input("이번엔 다른 동굴 길로 갈까요?y/n:")\n\n'
+    add_title("여러 조건 중 하나 선택하는 코드 입력",size=28)
+    text=("먼저, 'water.py'라는 새파일을 'Explore'에서\n"
+    "쉽게 만든 다음, 'water.py'를 열고 위의 작업창에 입력하세요.\n\n"
+    'cave=input("이번엔 다른 동굴 길로 갈까요?y/n:")\n'
     'if cave=="y":\n'
-        'print("여러동굴 길을 살펴봅니다")\n\n'
+    '    print("여러 동굴 길을 살펴봅니다.")\n\n'
+    "'들여쓰기' 확인하고 저장한 뒤 터미널에서 실행해 보세요.\n"
+    "그런데, 여기에 'elif'를 추가한다면 어떻게 될까요?\n\n"
     'elif cave=="n":\n'
-        'print("다른 길을 찾아 봅시다.")\n\n'
-    'else:\n'
-        'print("어떤 길이 있을지 더 생각해 봅시다.)\n\n'
-    'cave=input("배타고 물길 탐사해 보는 것은 어떨까요?y/n:")\n\n'
+    '    print("다른 길을 찾아 봅시다.")\n'
+    'cave=input("배타고 물길 탐사해 보는 것은 어떨까요?y/n:")\n'
     'if cave=="y":\n'
-        'print("배를타고 물길 탐사 시작합시다.")')
-    add_message(text,y=90)
-    add_previous_button("이전",show_elif_meaning,y=550)
-    add_next_button("저장까지 완료했습니다.",show_run,y=550)
+    '    print("배타고 물길 탐사 시작합시다.")\n\n'
+    "'들여쓰기'와 아래 '오류 표시 확인'까지 꼭 검토하고 저장하세요.")
+    add_message(text,size=16,y=100)
+    add_previous_button("이전",show_elif_meaning,y=540)
+    add_next_button("저장까지 완료했습니다.",show_run,y=540)
 #---------------------------------------
 # 9: 코딩 후 직접 실행
 #---------------------------------------
