@@ -127,7 +127,7 @@ def show_elif_meaning():
     "암기보다는 그 구조의 의미를 깊이 새겨 두세요.")
     add_message(text,size=19)
     add_previous_button("이전",show_path_choice)
-    add_next_button("구조의 의미를 이해했습니다!",show_elif_coding)
+    add_next_button("구조의 의미를 이해했습니다!",show_elif_coding,x=600)
 #-------------------------------------
 # 8: if / elif / else 직접 코딩
 #-------------------------------------
@@ -136,16 +136,16 @@ def show_elif_coding():
     add_title("여러 조건 중 하나 선택하는 코드 입력",size=28)
     text=("먼저, 'water.py'라는 새파일을 'Explore'에서\n"
     "쉽게 만든 다음, 'water.py'를 열고 위의 작업창에 입력하세요.\n\n"
-    'cave=input("이번엔 다른 동굴 길로 갈까요?y/n:")\n'
-    'if cave=="y":\n'
-    '    print("여러 동굴 길을 살펴봅니다.")\n\n'
+    '     cave=input("이번엔 다른 동굴 길로 갈까요?y/n:")\n'
+    '     if cave=="y":\n'
+    '         print("여러 동굴 길을 살펴봅니다.")\n\n'
     "'들여쓰기' 확인하고 저장한 뒤 터미널에서 실행해 보세요.\n"
     "그런데, 여기에 'elif'를 추가한다면 어떻게 될까요?\n\n"
-    'elif cave=="n":\n'
-    '    print("다른 길을 찾아 봅시다.")\n'
-    'cave=input("배타고 물길 탐사해 보는 것은 어떨까요?y/n:")\n'
-    'if cave=="y":\n'
-    '    print("배타고 물길 탐사 시작합시다.")\n\n'
+    '     elif cave=="n":\n'
+    '         print("다른 길을 찾아 봅시다.")\n'
+    '     cave=input("배타고 물길 탐사해 보는 것은 어떨까요?y/n:")\n'
+    '     if cave=="y":\n'
+    '         print("배타고 물길 탐사 시작합시다.")\n\n'
     "'들여쓰기'와 아래 '오류 표시 확인'까지 꼭 검토하고 저장하세요.")
     add_message(text,size=16,y=100)
     add_previous_button("이전",show_elif_meaning,y=540)
@@ -181,47 +181,98 @@ def show_boat():
     "'물길탐사'에도 많은 도움 될거야.\n\n"
     "미래에 너희가 어디에 있던 나와 함께 연결되는\n"
     "아주 중요하고 유용한 도구니까 잘 보관해 달라네요.")
-    add_message(text,size=19,y=100)
-    add_previous_button("이전",show_run)
-    add_next_button("새로운 연결은 어떤 의미죠?",show_meaning)
+    add_message(text,size=19,y=130)
+    add_previous_button("이전",show_run,y=520)
+    add_next_button("새로운 연결은 어떤 의미죠?",show_meaning,y=520)
 #--------------------------------------------
 # 11: 새로운 도구 연결의 의미
 #--------------------------------------------
 def show_meaning():
     clear_screen()
-    add_title("새로운 도구 연결은 어떤 의미 일까요?",size=28)
+    add_title("새로운 도구 연결은 어떤 의미 일까요?",size=27)
     text=("지금까지는 우리가 코드로 미리 만든,\n"
     "내용으로만 동굴과 소통할 수 있었죠?\n\n"
     "동굴에게 새로운 연결 통로를 만들어주면,\n"
     "외부의 'AI'들 세계와도 자유롭게 함께할 수 있습니다.\n\n"
-    "실제로 연결하려면 휴대폰 'AI'에게 컴퓨터 화면 창을\n"
-    "사진찍어 물어보면 한단계씩 자세히 안내해 줄겁니다.\n\n"
-    "이제, 외부와의 새로운 연결을 위해 우리가 미리 만든\n"
-    "'app.py'라는 '새 코드 파일'을 불러 볼게요.")
-    add_message(text,size=19,y=100)
-    add_previous_button("이전",show_boat)
-    add_next_button("연결시 꼭 확인하세요!",show_verify)
+    "간략하게 이야기하면,\n"
+    "    사람들 질문---> Python 프로그램(연결 역할)--->\n"
+    "    OpenAI 라이브러리(통역겸 연결 어댑터 역할)--->\n"
+    "    인터넷/API(통로 역할/API Key로 누구인지 확인하는 역할)--->\n"
+    "    LLM(답변 만드는 역할)--->Python 프로그램(연결 역할)--->사람에게 답변.\n\n"
+    "이처럼 눈에 안보이게 일어나는 연결 구조는 복잡한 것 같아도,\n\n"
+    "    사람> Python> OpenAI> API Key> LLM> Python> 사람,\n\n"
+    "이렇게 각각의 역할로 연결되어 있다는 것은 꼭 기억해 두세요")
+    add_message(text,size=16,y=100)
+    add_previous_button("이전",show_boat,y=540)
+    add_next_button("연결구조 꼭 기억할게요!",show_llm_1,x=630,y=540)
+#-------------------------------------------------
+# 12:새로운 도구 'LLM' 연결 1,
+#-----------------------------------------------
+def show_llm_1():
+    clear_screen()
+    add_title("역할에 따른 연결 구조로 직접 설치해 볼까요?",size=25)
+    text=("1.   'VS Code'의 'Explorer'에서 새파일 'app.py'을 만드세요.\n\n"
+    "2.   'VS Code' 아래 '터미널'에 'pip install openai'라 쓰고 'Enter'하세요.\n"
+    "     길게 설치되면서 '----successfully----'단어가 나오거나,\n"
+    "     설치 다  끝나고 원래 '터미널' 창이 나오면 설치 완료된 겁니다.\n"
+    "     '터미널'이 복잡하면 'CLS'라고 쓰고 'Enter'하면 깨끗해 집니다.\n\n"
+    "     (여기까지가 연결을 위한 'Python' 프로그램 준비 작업입니다.\n"
+    "     'VS Code'은 오른쪽 (-)를 누르고 필요할 때 맨 아래에서 복원시키세요.)\n\n"
+    "3.   'Chrome' 검색으로 'OpenAI API Platform'을 클릭하면 'home page' 창이 열립니다.\n\n"
+    "     '계정이 필요한데, 만약 'ChatGPT'에 'Google 계정'을 사용하고 있다면,\n"
+    "     밑에 있는 'continue with Google' 클릭하면 됩니다.\n\n"
+    "     (지금은 'OpenAI 라이브러리'까지 연결했습니다.\n" 
+    "     다음은 비밀번호처럼 안전하게 보관할 중요한 'API Key' 설치로 갑니다.)\n\n")
+    add_message(text,size=14,y=120)
+    add_previous_button("이전",show_meaning,y=540)
+    add_next_button("'API Key' 설치합시다.",show_llm_2,y=540)
+#------------------------------------------------
+# 13: 새로운 도구 LLM 연결 2.
+#---------------------------------------------
+def show_llm_2():
+    clear_screen()
+    add_title("가장 중요한 'API Key'와 '결제' 연결합니다.",size=25)
+    text=("4.   'API Key' 창에, '새 비밀 키를 생성합니다./create new key'를 클릭하세요.\n"
+    "     그러면, 작은 창에 여러가지 항목을 물어 보는 것들이 나오는데,\n"
+    "     지금은 실습차원이라 그대로 두고, 단지 이름을 묻는 ,\n"
+    "     'name'에만 '폴더 이름' 입력하고,\n"
+    "     아래에 있는 'Create Secret Key'를 클릭하세요.\n\n"
+    "5.   그러면 긴 'Key'가 나오는데 비밀번호 관리하듯이 누구에게도 가르쳐주면 안됩니다.\n"
+    "     일단, 옆에있는 '복사/Copy' 버튼을 꼭 클릭하시고 그대로 두세요.\n\n"
+    "6.   지금부터는 이 키를 가능한 안전하게 '복사'해서 보관할 겁니다.\n"
+    "     지금 상태에서 밑에있는 'VS Code' 모양을 클릭하면 창이 뜨는데,\n"
+    "     왼쪽 'Explorer'의 'New File'에서 '.env'라고만 쓰고 새파일을 만드세요.\n\n"
+    "7.   새파일 '.env'가 보이면 클릭하고, 첫 번째 줄에 'OPEN_API_KEY='라고\n"
+    "     쓴 다음, (=) 뒤에 커서를 놓고 'Ctrl + V'를 함께 누르면,\n"
+    "     조금 전에 생성된 'Key'가 '복사'되어 붙여지게 됩니다.\n\n"
+    "8.   그러면, '.env' 새파일 안에 안전하게 보관된 것이니,\n"
+    "     'Crtl + S'로 저장하고 위에 있는 탭에 커서를 놓고 (X)로 파일을 닫습니다.\n\n.")
+    add_message(text,size=14,y=100)
+    add_previous_button("이전",show_llm_1,y=540)
+    add_next_button("'결제' 방식 연결합시다.",show_verify,y=540)
 #--------------------------------------------
-# 12: 새로운 도구 연결시 확인 사항
+# 14: 새로운 도구 연결시 확인 사항
 #--------------------------------------------
 def show_verify():
     clear_screen()
-    add_title("새로운 도구 연결할 때 꼭 확인하세요!",size=28)
-    text=("실제로 새로운 도구를 연결하려면,\n"
-    "몇가지 준비와 확인할 것들이 있습니다.\n\n"
-    "엄마의 협조가 필요하니 함께 휴대폰 'AI'에게\n"
-    "컴퓨터 창의 화면을 사진찍어 보내며 한단계씩 진행하세요.\n\n"
+    add_title("'결제' 방식 연결할 때 꼭 확인하세요!",size=25)
+    text=("     (조금 힘이 들었겠지만 지금까지 'OPenAI에서 권장하는 방식으로,\n" 
+    "      'Key'를 생성해 가능한 안전하게 보관까지 끝낸 겁니다.\n"
+    "      다음 '결제' 방식 연결은 '엄마'의 '동의'와 협조가 반드시 필요합니다.)\n\n"
+    "9.   " 
+
+         
     "그리고, 아래 사항도 꼭 확인하세요.\n\n"
     "[Key]는 비밀번호처럼 중요한 것이니 남에게 공개하지 않기.\n"
     "[비용]은 처음에는 '최소 연료비'만 넣어 시험하기.\n"
     "[자동충전]은 창에 '자동충전'이 열려있으면 처음엔 꺼 줄것을 추천합니다.\n\n")
-    add_message(text,size=18,y=120)
-    add_previous_button("이전",show_meaning)
-    add_next_button("확인 끝났습니다.",show_llm_1)
+    add_message(text,size=14,y=120)
+    add_previous_button("이전",show_llm_2)
+    add_next_button("확인 끝났습니다.",show_llm_3)
 #--------------------------------------------
-# 13: 새로운 도구 LLM
+# 15: 새로운 도구 LLM
 #--------------------------------------------
-def show_llm_1():
+def show_llm_3():
     clear_screen()
     add_title("매우 유용한 도구 연결했습니다.",size=28)
     text=("새로운 도구를 'LLM' 이라고 합니다.\n\n"
@@ -234,11 +285,11 @@ def show_llm_1():
     "물길 탐사 중에 동굴과 소통하며 직접 경험해 보세요.")
     add_message(text,y=100,size=19)
     add_previous_button("이전",show_verify)
-    add_next_button("직접 경험해 볼게요.", show_llm_2)
+    add_next_button("직접 경험해 볼게요.", show_llm_4)
 #---------------------------------------------
-# 14: LLM의 효율적 사용 방법
+# 16: LLM의 효율적 사용 방법
 #---------------------------------------------
-def show_llm_2():
+def show_llm_4():
     clear_screen()
     add_title("'LLM'을 더 효율적으로 사용하는 방법은?",size=28)
     text=("'LLM'은 자동차처럼 연료비가 들어갑니다.\n"
@@ -250,10 +301,10 @@ def show_llm_2():
     "구조를 통해서 그 의미를 파악하는 방향으로\n"
     "탐색해 보는 좋은 습관을 만들어 보세요.")
     add_message(text,y=120)
-    add_previous_button("이전",show_llm_1)
+    add_previous_button("이전",show_llm_3)
     add_next_button("구조부터 먼저 보는 습관 만들게요.",show_llm_talk,x=580)
 #-----------------------------------------------
-# 15: LLM 사용 경험담
+# 17: LLM 사용 경험담
 #-----------------------------------------------
 def show_llm_talk():
     clear_screen()
@@ -267,10 +318,10 @@ def show_llm_talk():
     "자기는 참 보람있고 행복하다네요.\n\n"
     "'LLM' 연결하니 이전과는 완전히 다르게 이야기하죠?")
     add_message(text,size=19,y=100)
-    add_previous_button("이전",show_bright_path)
+    add_previous_button("이전",show_llm_4)
     add_next_button("우리도 행복한 기분들어요.",show_imagination)
 #----------------------------------------------
-# 16: 우리의 미래를 상상하며 
+# 18: 우리의 미래를 상상하며 
 #----------------------------------------------
 def show_imagination():
     clear_screen()
@@ -287,7 +338,7 @@ def show_imagination():
     add_previous_button("이전",show_llm_talk)
     add_next_button("미래의 꿈을 상상해 봤습니다.",show_bright_path)
 #--------------------------------------------------
-# 17: 나가는 통로를 맞이하면서
+# 19: 나가는 통로를 맞이하면서
 #-------------------------------------------------
 def show_bright_path():
     clear_screen()
