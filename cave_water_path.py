@@ -108,7 +108,7 @@ def show_path_choice():
     "아래에 보이는 물길따라서\n"
     "배를 타고 가는 '물길탐사'를 하면,\n"
     "더 신비롭고 재미있지 않을까요?")
-    add_message(text,size=20,x=90)
+    add_message(text,size=20,x=90,y=130)
     add_previous_button("이전",show_three_way,x=90)
     add_next_button("결정했어요!",show_elif_meaning)
 #--------------------------------------
@@ -190,7 +190,7 @@ def show_boat():
 def show_meaning():
     clear_screen()
     add_title("새로운 도구 연결은 어떤 의미 일까요?",size=27)
-    text=("지금까지는 우리가 코드로 미리 만든,\n"
+    text=("지금까지는 우리가 코드로 미리 만든\n"
     "내용으로만 동굴과 소통할 수 있었죠?\n\n"
     "동굴에게 새로운 연결 통로를 만들어주면,\n"
     "외부의 'AI'들 세계와도 자유롭게 함께할 수 있습니다.\n\n"
@@ -212,17 +212,17 @@ def show_llm_1():
     clear_screen()
     add_title("역할에 따른 연결 구조로 직접 설치해 볼까요?",size=25)
     text=("1.   'VS Code'의 'Explorer'에서 새파일 'app.py'을 만드세요.\n\n"
-    "2.   'VS Code' 아래 '터미널'에 'pip install openai'라 쓰고 'Enter'하세요.\n"
+    "2.   'VS Code' 아래 '터미널'에 'pip install openai'라 쓰고 'Enter'하세요.\n\n"
     "     길게 설치되면서 '----successfully----'단어가 나오거나,\n"
     "     설치 다  끝나고 원래 '터미널' 창이 나오면 설치 완료된 겁니다.\n"
     "     '터미널'이 복잡하면 'CLS'라고 쓰고 'Enter'하면 깨끗해 집니다.\n\n"
     "     (여기까지가 연결을 위한 'Python' 프로그램 준비 작업입니다.\n"
-    "     'VS Code'은 오른쪽 (-)를 누르고 필요할 때 맨 아래에서 복원시키세요.)\n\n"
+    "      'VS Code'는 오른쪽 위 (-)를 누르고 필요할 때 맨 아래에서 클릭하면 됩니다.)\n\n"
     "3.   'Chrome' 검색으로 'OpenAI API Platform'을 클릭하면 'home page' 창이 열립니다.\n\n"
     "     '계정이 필요한데, 만약 'ChatGPT'에 'Google 계정'을 사용하고 있다면,\n"
-    "     밑에 있는 'continue with Google' 클릭하면 됩니다.\n\n"
+    "     밑에 있는 'continue with Google'을 클릭하세요.\n\n"
     "     (지금은 'OpenAI 라이브러리'까지 연결했습니다.\n" 
-    "     다음은 비밀번호처럼 안전하게 보관할 중요한 'API Key' 설치로 갑니다.)\n\n")
+    "      다음은 비밀번호처럼 안전하게 보관할 중요한 'API Key' 설치로 갑니다.)\n\n")
     add_message(text,size=14,y=120)
     add_previous_button("이전",show_meaning,y=540)
     add_next_button("'API Key' 설치합시다.",show_llm_2,y=540)
@@ -232,24 +232,26 @@ def show_llm_1():
 def show_llm_2():
     clear_screen()
     add_title("가장 중요한 'API Key'와 '결제' 연결합니다.",size=25)
-    text=("4.   'API Key' 창에, '새 비밀 키를 생성합니다./create new key'를 클릭하세요.\n"
-    "     그러면, 작은 창에 여러가지 항목을 물어 보는 것들이 나오는데,\n"
-    "     지금은 실습차원이라 그대로 두고, 단지 이름을 묻는 ,\n"
-    "     'name'에만 '폴더 이름' 입력하고,\n"
+    text=("4.   'API Key' 창에서 '새 비밀 키를 생성합니다./create new key'를 클릭하세요.\n"
+    "     그러면, 작은 창에 여러가지 항목들을 물어 보는 것이 나오는데,\n"
+    "     지금은 '실습차원'이라 그대로 두고, 단지 이름을 묻는\n"
+    "     'name'에만 그냥 '물길탐사-연결연습'이라고 입력하고,\n"
     "     아래에 있는 'Create Secret Key'를 클릭하세요.\n\n"
-    "5.   그러면 긴 'Key'가 나오는데 비밀번호 관리하듯이 누구에게도 가르쳐주면 안됩니다.\n"
-    "     일단, 옆에있는 '복사/Copy' 버튼을 꼭 클릭하시고 그대로 두세요.\n\n"
+    "5.   'Key'가 생성되었으면, 옆의 '복사/Copy' 버튼을 꼭 클릭하시고 그대로 두세요.\n"
+    "          [혹시 잘몰라서 'ChatGPT'에게 사진으로 물어볼 때도,\n"
+    "           'Key'가 보이는 사진은 절대로 보내면 안됩니다.]\n"
+    "      마치 은행의 비밀번호처럼 누구에게도 가르쳐주면 안됩니다.\n\n "
     "6.   지금부터는 이 키를 가능한 안전하게 '복사'해서 보관할 겁니다.\n"
-    "     지금 상태에서 밑에있는 'VS Code' 모양을 클릭하면 창이 뜨는데,\n"
-    "     왼쪽 'Explorer'의 'New File'에서 '.env'라고만 쓰고 새파일을 만드세요.\n\n"
+    "      지금 상태에서 밑에있는 'VS Code' 모양을 클릭하면 창이 뜨는데,\n"
+    "      왼쪽 'Explorer'의 'New File'에서 '.env'라고만 쓰고 새파일을 만드세요.\n\n"
     "7.   새파일 '.env'가 보이면 클릭하고, 첫 번째 줄에 'OPEN_API_KEY='라고\n"
-    "     쓴 다음, (=) 뒤에 커서를 놓고 'Ctrl + V'를 함께 누르면,\n"
-    "     조금 전에 생성된 'Key'가 '복사'되어 붙여지게 됩니다.\n\n"
+    "      '대문자' 똑같이 쓴 다음, (=) 바로 뒤에 커서를 놓고 'Ctrl + V'를 함께 누르면,\n"
+    "      조금 전에 생성된 'Key'가 '복사'되어 붙여지게 됩니다.\n\n"
     "8.   그러면, '.env' 새파일 안에 안전하게 보관된 것이니,\n"
-    "     'Crtl + S'로 저장하고 위에 있는 탭에 커서를 놓고 (X)로 파일을 닫습니다.\n\n.")
-    add_message(text,size=14,y=100)
-    add_previous_button("이전",show_llm_1,y=540)
-    add_next_button("'결제' 방식 연결합시다.",show_verify,y=540)
+    "      'Crtl + S'로 저장하고 위에 있는 탭에 커서를 놓고 (X)로 파일을 닫습니다.\n\n.")
+    add_message(text,size=14,y=80)
+    add_previous_button("이전",show_llm_1,y=550)
+    add_next_button("'결제' 방식 연결합시다.",show_verify,y=550)
 #--------------------------------------------
 # 14: 새로운 도구 연결시 확인 사항
 #--------------------------------------------
@@ -258,24 +260,31 @@ def show_verify():
     add_title("'결제' 방식 연결할 때 꼭 확인하세요!",size=25)
     text=("     (조금 힘이 들었겠지만 지금까지 'OPenAI에서 권장하는 방식으로,\n" 
     "      'Key'를 생성해 가능한 안전하게 보관까지 끝낸 겁니다.\n"
-    "      다음 '결제' 방식 연결은 '엄마'의 '동의'와 협조가 반드시 필요합니다.)\n\n"
-    "9.   " 
-
-         
-    "그리고, 아래 사항도 꼭 확인하세요.\n\n"
-    "[Key]는 비밀번호처럼 중요한 것이니 남에게 공개하지 않기.\n"
-    "[비용]은 처음에는 '최소 연료비'만 넣어 시험하기.\n"
-    "[자동충전]은 창에 '자동충전'이 열려있으면 처음엔 꺼 줄것을 추천합니다.\n\n")
-    add_message(text,size=14,y=120)
-    add_previous_button("이전",show_llm_2)
-    add_next_button("확인 끝났습니다.",show_llm_3)
+    "      다음 '결제' 방식 연결은 '엄마'의 '동의'와 '협조'가 반드시 필요합니다.)\n\n"
+    "9.    'key' 생성과 관련된 작은 창은 밖에 아무 곳이나 놓고 클릭해 닫은 후,\n"
+    "      왼쪽 맨 위의 화살표를 눌러 처음 'home page'창으로 갑니다.\n\n"
+    "      그 창에서 'go to billing' 또는 '결제/billing/credit'을 클릭하세요.\n"
+    "      그러면, 'Billing/결제'라는 제목의 창이 열릴 겁니다.\n\n"
+    "10.   검은색으로 된 'add payment details' 버튼을 누르면,\n"
+    "       카드번호, 카드종류, 만료날짜, 보안코드(cvc/cvv)가 나옵니다.\n"
+    "       '보안코드'는 대부분 신용카드 뒷면 '3 자리'를 적으면 됩니다.\n\n"
+    "       제대로 다 기입했으면, 아래에 있는 'continue'를 누르세요.\n"
+    "       'configure payment'라는 창이 열리는데, 처음엔 '최소금액'을 쓰고,\n"
+    "       'use auto-reload/자동충전' 옆의 버튼을 눌러 일단 'off/끔'을 클릭합니다.\n\n"
+    "       그리고 밑에 'continue'를 클릭하면 '최종 확인하는 작은 창'이 열립니다.\n"
+    "       '최소금액'부분과 회색으로 '자동충전' 부분이 꺼져있는 것 재확인 한 후,\n"
+    "       밑에있는 'continue'를 누르고 창을 닫으면 'LLM' 연결 끝난 겁니다.\n\n")
+    add_message(text,size=14,y=90)
+    add_previous_button("이전",show_llm_2,y=550)
+    add_next_button("'LLM' 연결 끝냈습니다!",show_llm_3,y=550)
 #--------------------------------------------
 # 15: 새로운 도구 LLM
 #--------------------------------------------
 def show_llm_3():
     clear_screen()
-    add_title("매우 유용한 도구 연결했습니다.",size=28)
-    text=("새로운 도구를 'LLM' 이라고 합니다.\n\n"
+    add_title("매우 유용한 도구 연결했습니다.",size=27)
+    text=("연결하는데 복잡하고 조금 힘이 들었지만\n"
+    "지금 연결된 새로운 도구를 'LLM' 이라고 합니다.\n\n"
     "'LLM'은 지금까지 글자로 기록된\n"
     "방대한 자료와 정보들을 알고 있어요.\n\n"
     "그래서, 질문하면 가능한 정확한\n"
@@ -283,7 +292,7 @@ def show_llm_3():
     "간혹 실수가 있을 수도 있습니다.\n"
     "그래도, 이렇게 유용한 도구는 인류에게 처음있는 일입니다.\n\n"
     "물길 탐사 중에 동굴과 소통하며 직접 경험해 보세요.")
-    add_message(text,y=100,size=19)
+    add_message(text,y=100,size=16)
     add_previous_button("이전",show_verify)
     add_next_button("직접 경험해 볼게요.", show_llm_4)
 #---------------------------------------------
