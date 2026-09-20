@@ -155,7 +155,7 @@ def show_food_code_2():
     '    print("아니요. 배불러요.")\n\n'
     "'if'와 'else' 아래에서 실행할 코드는,\n"
     "'print'처럼 앞을 4칸 띄워 씁니다.\n"
-    "이것을 '들여쓰기'라고 합니다.\n\n"
+    "이것을 '들여쓰기'라고 합니다. 옆에 있는 'Tab' 키를 사용하면 편합니다. \n\n"
     "입력이 다 끝났으면 'Ctrl+S'를 눌러 저장합니다.")
     add_message(text, x=100,y=120,size=20)
     add_previous_button("이전",show_food_code,x=100,y=520)
