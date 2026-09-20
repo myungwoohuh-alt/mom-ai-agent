@@ -46,7 +46,7 @@ def show_child_safety():
 #--------------------------------
 def show_cover():
     clear_screen()
-    image=Image.open("cave_agent_cover_left_title.png")
+    image=Image.open("cave_agent_cover_left_title (2).png")
     image=image.resize((900,600))
     photo=ImageTk.PhotoImage(image)
     label=tk.Label(root,image=photo)
@@ -175,7 +175,7 @@ def show_code_1():
 #------------------------------------------------------
 def show_agent_flow():
     clear_screen()
-    image=Image.open("agent_flow (2).png")
+    image=Image.open("agent_flow(2).png")
     image=image.resize((900,600))
     photo=ImageTk.PhotoImage(image)
     label=tk.Label(root,image=photo)
@@ -191,7 +191,7 @@ def show_code_2():
     add_title("코드 암기하지 말고 흐름과 구조를 느껴보세요.",size=25)
     add_message("먼저, 'VS Code'의 '터미널'에 'OpenAI 라이브러리'가\n" 
     "일을하도록 'pip install openai python-dotenv'을 쓰고 'Enter'하세요.\n"
-    "길게 내용이 나오고 중간에 ---sucessfully---가 나오면 설치된 겁니다.\n\n"
+    "설치가 완료되었다는 내용이 나오면 준비가 끝난 겁니다.\n\n"
     " 자 이제 본격적으로 'app.py'를 열고 'VS Code' 위쪽 작업창에,\n"
     "아래 코드를 '4칸 띄여쓰기'한 것이나 점 하나까지 정확히 입력하세요.\n"
     "특히, 대문자와 소문자에 매우 예민하니 정확히 검토하세요.\n\n",size=16,y=110)
@@ -289,7 +289,7 @@ def show_agent_result_1():
 #-------------------------------------------------------------
 def show_agent_result():
     clear_screen()
-    image=Image.open("agent_result (2).png")
+    image=Image.open("agent_result(2).png")
     image=image.resize((900,600))
     photo=ImageTk.PhotoImage(image)
     label=tk.Label(root,image=photo)
