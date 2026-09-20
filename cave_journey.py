@@ -46,7 +46,7 @@ def show_child_safety():
 #--------------------------------
 def show_cover():
     clear_screen()
-    image=Image.open("cave_journey_cover_left_title.png")
+    image=Image.open("cave_journey_cover.png")
     image=image.resize((900,600))
     photo=ImageTk.PhotoImage(image)
     label=tk.Label(root,image=photo)

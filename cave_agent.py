@@ -175,7 +175,7 @@ def show_code_1():
 #------------------------------------------------------
 def show_agent_flow():
     clear_screen()
-    image=Image.open("agent_flow.png")
+    image=Image.open("agent_flow (2).png")
     image=image.resize((900,600))
     photo=ImageTk.PhotoImage(image)
     label=tk.Label(root,image=photo)
@@ -289,7 +289,7 @@ def show_agent_result_1():
 #-------------------------------------------------------------
 def show_agent_result():
     clear_screen()
-    image=Image.open("agent_result.png")
+    image=Image.open("agent_result (2).png")
     image=image.resize((900,600))
     photo=ImageTk.PhotoImage(image)
     label=tk.Label(root,image=photo)
